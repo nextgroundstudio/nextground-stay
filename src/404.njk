@@ -1,0 +1,15 @@
+---js
+// Page d'erreur 404 (servie automatiquement par Netlify), en anglais avec lien vers le français.
+const permalink = "/404.html";
+const layout = "layouts/base.njk";
+const pageKey = "home";
+const noindex = true;
+const title = "Page not found — Next Ground Stay";
+const description = "Page not found";
+const eleventyComputed = { lang: (data) => data.langs[0] };
+---
+<article class="container prose prose--center">
+  <h1>{{ i18n.en.notFound.title }}</h1>
+  <p>{{ i18n.en.notFound.text }}</p>
+  <p><a class="btn" href="/">{{ i18n.en.notFound.back }}</a> &nbsp; <a class="link" href="/fr/" lang="fr">{{ i18n.fr.notFound.back }}</a></p>
+</article>

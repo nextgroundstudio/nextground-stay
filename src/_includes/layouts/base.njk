@@ -1,0 +1,69 @@
+{#- Gabarit commun à toutes les pages.
+    Variables attendues (fournies par chaque page) :
+      lang      : entrée de src/_data/langs.js (code, locale…)
+      pageKey   : clé de src/_data/routes.js, pour les liens de langue
+      title / description : balises <title> et meta description
+      noindex   : true pour les pages à ne pas référencer -#}
+{%- set t = i18n[lang.code] -%}
+{%- set route = routes[pageKey] -%}
+<!doctype html>
+<html lang="{{ lang.code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  {%- if noindex %}
+  <meta name="robots" content="noindex, nofollow">
+  {%- else %}
+  <link rel="canonical" href="{{ site.url }}{{ route[lang.code] }}">
+  {%- for l in langs %}
+  <link rel="alternate" hreflang="{{ l.code }}" href="{{ site.url }}{{ route[l.code] }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ route.en }}">
+  {%- endif %}
+
+  {#- Aperçu lors d'un partage (WhatsApp, réseaux sociaux) #}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ site.url }}{{ route[lang.code] }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/og-image.jpg">
+  <meta property="og:locale" content="{{ lang.locale | replace('-', '_') }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon-180.png">
+  <meta name="theme-color" content="#4B4F3F">
+
+  <link rel="preload" href="/assets/fonts/jost-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  {%- block head %}{% endblock %}
+</head>
+<body>
+  <a class="skip" href="#main">{{ t.nav.skip }}</a>
+  {% include "partials/header.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+
+  {#- Données utiles au JavaScript (textes de la langue courante, contacts, devises) #}
+  <script>
+    window.NGS = {{ {
+      lang: lang.code,
+      locale: lang.locale,
+      whatsapp: site.contact.whatsapp,
+      currencies: site.currencies,
+      symbols: site.currencySymbols,
+      t: { calendar: t.calendar, book: t.book, houseRules: t.houseRules }
+    } | json | safe }};
+  </script>
+  <script src="/assets/js/main.js" defer></script>
+  {%- if site.analytics.cloudflareToken %}
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.analytics.cloudflareToken }}"}'></script>
+  {%- endif %}
+</body>
+</html>

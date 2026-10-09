@@ -1,0 +1,52 @@
+---
+# Page d'accueil, générée une fois par langue : « / » (anglais) et « /fr/ » (français).
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "{{ routes.home[lang.code] }}"
+layout: layouts/base.njk
+pageKey: home
+eleventyComputed:
+  title: "{{ i18n[lang.code].meta.title }}"
+  description: "{{ i18n[lang.code].meta.description }}"
+---
+{%- set t = i18n[lang.code] -%}
+{%- import "partials/icons.njk" as icons -%}
+
+{% include "sections/hero.njk" %}
+{% include "sections/apartment.njk" %}
+{% include "sections/reviews.njk" %}
+{% include "sections/neighborhood.njk" %}
+{% include "sections/book.njk" %}
+{% include "sections/faq.njk" %}
+
+{#- Bouton WhatsApp flottant (mobile surtout) -#}
+<a class="wa-float" href="https://wa.me/{{ site.contact.whatsapp }}" data-wa-link aria-label="{{ t.hero.whatsapp }}">{{ icons.icon("whatsapp", 24) }}</a>
+
+{#- Données structurées pour les moteurs de recherche -#}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": site.name,
+  "description": t.meta.description,
+  "url": site.url + routes.home[lang.code],
+  "image": site.url + "/assets/img/og-image.jpg",
+  "telephone": site.contact.phone,
+  "email": site.contact.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": site.address.building + ", " + site.address.street,
+    "addressLocality": site.address.city,
+    "addressRegion": site.address.district,
+    "addressCountry": site.address.countryCode
+  },
+  "checkinTime": site.stay.checkIn,
+  "checkoutTime": site.stay.checkOut,
+  "petsAllowed": false,
+  "numberOfRooms": 1,
+  "availableLanguage": ["English", "French"],
+  "sameAs": [site.contact.instagram]
+} | json | safe }}
+</script>

@@ -1,0 +1,26 @@
+{#- Le quartier : carte (chargée au clic, pas de cookies Google avant), lieux proches et durées. -#}
+{%- set mapsUrl = "https://www.google.com/maps/search/?api=1&query=" + (site.address.mapsQuery | urlencode) -%}
+<section class="section" id="neighborhood">
+  <div class="container neighborhood">
+    <div class="map" data-map="https://www.google.com/maps?q={{ site.address.mapsQuery | urlencode }}&output=embed&hl={{ lang.code }}">
+      <div class="map__cover">
+        {{ icons.icon("pin", 28) }}
+        <p>{{ t.neighborhood.address }}</p>
+        <button class="btn btn--ghost" type="button" data-map-load>{{ t.neighborhood.mapButton }}</button>
+        <p class="small muted">{{ t.neighborhood.mapNote }}</p>
+      </div>
+    </div>
+    <div class="neighborhood__info">
+      <p class="label">{{ t.neighborhood.kicker }}</p>
+      <h2>{{ t.neighborhood.title }}</h2>
+      <p>{{ t.neighborhood.text }}</p>
+      <p class="address">{{ icons.icon("pin", 18) }}<span>{{ t.neighborhood.address }} · <a class="link-inline" href="{{ mapsUrl }}" rel="noopener" target="_blank">{{ t.neighborhood.openMaps }}</a></span></p>
+      <dl class="places">
+        {%- for pl in home.places %}
+        <div><dt>{{ pl.name | loc(lang.code) }}</dt><dd>{{ pl.time | loc(lang.code) }}</dd></div>
+        {%- endfor %}
+      </dl>
+      <p class="small muted">{{ t.neighborhood.note }}</p>
+    </div>
+  </div>
+</section>

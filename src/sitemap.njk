@@ -1,0 +1,16 @@
+---js
+// Plan du site pour les moteurs de recherche (pages cachées exclues).
+const permalink = "/sitemap.xml";
+const eleventyExcludeFromCollections = true;
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for key, route in routes %}{% if not route.hidden %}{% for l in langs %}
+  <url>
+    <loc>{{ site.url }}{{ route[l.code] }}</loc>
+    {%- for alt in langs %}
+    <xhtml:link rel="alternate" hreflang="{{ alt.code }}" href="{{ site.url }}{{ route[alt.code] }}"/>
+    {%- endfor %}
+  </url>
+{%- endfor %}{% endif %}{% endfor %}
+</urlset>

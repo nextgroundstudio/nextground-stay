@@ -1,0 +1,26 @@
+{#- Avis voyageurs (données : home.reviews). -#}
+<section class="section section--tint" id="reviews">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="label">{{ t.reviews.kicker }}</p>
+        <h2>{{ t.reviews.title }}</h2>
+      </div>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> {{ t.reviews.summary | fill({ rating: home.reviews.rating, count: home.reviews.count }) }}</p>
+    </div>
+    <div class="reviews">
+      {%- for r in home.reviews.items %}
+      <figure class="review">
+        <div>
+          <p class="stars" aria-label="{{ t.reviews.stars }}">★★★★★</p>
+          <blockquote lang="{{ r.lang }}">{{ "« " if lang.code == "fr" else "“" }}{{ r.text }}{{ " »" if lang.code == "fr" else "”" }}</blockquote>
+        </div>
+        <figcaption>
+          <span class="avatar" aria-hidden="true">{{ r.name | first }}</span>
+          <span><strong>{{ r.name }}</strong> · {{ r.meta | loc(lang.code) }}</span>
+        </figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

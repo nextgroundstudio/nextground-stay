@@ -1,0 +1,33 @@
+{#- En-tête collant : logo (le trait s'allonge au défilement), menu, langue, devise, bouton Réserver. -#}
+{%- set home = routes.home[lang.code] -%}
+{%- set anchor = "" if pageKey == "home" else home -%}
+<header class="header">
+  <nav class="header__inner" aria-label="Menu">
+    <a class="brand" href="{{ home }}" aria-label="{{ site.name }}">
+      <svg class="brand__mark" viewBox="0 0 160 100" width="52" height="33" aria-hidden="true">{% include "partials/monogram-nav.svg" %}</svg>
+      <span class="brand__line" aria-hidden="true"><span data-scroll-line></span></span>
+      <span class="brand__stay">STAY</span>
+    </a>
+    <ul class="menu">
+      <li class="menu__link"><a href="{{ anchor }}#apartment">{{ t.nav.apartment }}</a></li>
+      <li class="menu__link"><a href="{{ anchor }}#reviews">{{ t.nav.reviews }}</a></li>
+      <li class="menu__link"><a href="{{ anchor }}#neighborhood">{{ t.nav.neighborhood }}</a></li>
+      <li class="menu__link"><a href="{{ anchor }}#faq">{{ t.nav.faq }}</a></li>
+      <li>
+        {#- Lien vers la même page dans l'autre langue -#}
+        {%- for l in langs %}{% if l.code != lang.code %}
+        <a class="menu__lang" href="{{ route[l.code] }}" hreflang="{{ l.code }}" lang="{{ l.code }}" aria-label="{{ t.nav.language }} : {{ l.label }}">{{ l.label }}</a>
+        {%- endif %}{% endfor %}
+      </li>
+      {%- if pageKey == "home" %}
+      <li>
+        <label class="visually-hidden" for="currency">{{ t.nav.currency }}</label>
+        <select class="currency" id="currency" data-currency-select>
+          {%- for c in site.currencies %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+        </select>
+      </li>
+      {%- endif %}
+      <li><a class="btn btn--small" href="{{ anchor }}#book">{{ t.nav.book }}</a></li>
+    </ul>
+  </nav>
+</header>

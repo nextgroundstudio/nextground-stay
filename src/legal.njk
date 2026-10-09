@@ -1,0 +1,25 @@
+---js
+// Pages légales (mentions légales, confidentialité, conditions), une par langue.
+// Le contenu est dans src/_data/legal.js.
+const pagination = { data: "legalPages", size: 1, alias: "entry" };
+const permalink = (data) => data.routes[data.entry.key][data.entry.lang.code];
+const layout = "layouts/base.njk";
+const eleventyComputed = {
+  lang: (data) => data.entry.lang,
+  pageKey: (data) => data.entry.key,
+  title: (data) => `${data.legal[data.entry.key][data.entry.lang.code].title} — Next Ground Stay`,
+  description: (data) => `${data.legal[data.entry.key][data.entry.lang.code].title} — Next Ground Stay`,
+};
+---
+{%- set doc = legal[entry.key][lang.code] -%}
+<article class="container prose">
+  <p class="label">{{ site.name }}</p>
+  <h1>{{ doc.title }}</h1>
+  <p class="small muted">{{ "Last updated:" if lang.code == "en" else "Mise à jour :" }} {{ legal[entry.key].updated | readableDate(lang.locale) }}</p>
+  {%- for s in doc.sections %}
+  <h2>{{ s.h }}</h2>
+  {%- for para in s.p %}
+  <p>{{ para | fill({ checkIn: site.stay.checkInLabel[lang.code], checkOut: site.stay.checkOutLabel[lang.code] }) }}</p>
+  {%- endfor %}
+  {%- endfor %}
+</article>

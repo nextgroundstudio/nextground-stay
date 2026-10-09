@@ -1,0 +1,9 @@
+---js
+// Autorise l'exploration du site. Les pages cachées sont protégées par la balise « noindex ».
+const permalink = "/robots.txt";
+const eleventyExcludeFromCollections = true;
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml

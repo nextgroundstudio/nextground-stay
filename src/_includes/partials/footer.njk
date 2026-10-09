@@ -1,0 +1,31 @@
+{#- Pied de page : signature (monogramme + filet + STAY), contacts, liens légaux. -#}
+<footer class="footer">
+  <div class="footer__sign" aria-hidden="true">
+    <svg viewBox="0 0 160 100" width="80" height="50">{% include "partials/monogram-footer.svg" %}</svg>
+    <span class="footer__line"></span>
+    <span class="footer__stay">STAY</span>
+  </div>
+  <div class="footer__cols container">
+    <div>
+      <p class="label">{{ t.footer.contact }}</p>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}">WhatsApp · {{ site.contact.whatsappDisplay }}</a>
+      <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+      <span>{{ site.address.building }}, {{ site.address.street }}, {{ site.address.city }}</span>
+    </div>
+    <div>
+      <p class="label">{{ t.footer.info }}</p>
+      <a href="{{ routes.terms[lang.code] }}">{{ t.footer.terms }}</a>
+      <a href="{{ routes.privacy[lang.code] }}">{{ t.footer.privacy }}</a>
+      <a href="{{ routes.legal[lang.code] }}">{{ t.footer.legal }}</a>
+    </div>
+    <div>
+      <p class="label">{{ t.footer.follow }}</p>
+      <a href="{{ site.contact.instagram }}" rel="noopener" target="_blank">Instagram</a>
+    </div>
+    <div class="footer__end">
+      <p class="label label--light">The right place, simply.</p>
+      <span>{{ site.name }} · {{ t.footer.house }}</span>
+      <span>© {% year %} {{ site.company }}</span>
+    </div>
+  </div>
+</footer>

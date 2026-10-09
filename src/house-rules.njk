@@ -1,0 +1,45 @@
+---js
+// Règlement intérieur + signature. Page NON référencée (noindex, absente du sitemap) :
+// on envoie son lien aux voyageurs avant l'arrivée. Elle reste publique pour qui connaît
+// l'adresse : n'y mettez jamais de code d'accès ni de mot de passe.
+const pagination = { data: "langs", size: 1, alias: "lang" };
+const permalink = (data) => data.routes.houseRules[data.lang.code];
+const layout = "layouts/base.njk";
+const pageKey = "houseRules";
+const noindex = true;
+const eleventyComputed = {
+  title: (data) => `${data.i18n[data.lang.code].houseRules.title} — Next Ground Stay`,
+  description: (data) => data.i18n[data.lang.code].houseRules.metaDescription,
+};
+---
+{%- set t = i18n[lang.code] -%}
+{%- set doc = legal.houseRules[lang.code] -%}
+<article class="container prose">
+  <p class="label">{{ site.name }}</p>
+  <h1>{{ t.houseRules.title }}</h1>
+  <p class="lead">{{ t.houseRules.intro }}</p>
+  <ol class="rules">
+    {%- for s in doc.sections %}
+    <li><h2>{{ s.h }}</h2>{% for para in s.p %}<p>{{ para | fill({ checkIn: site.stay.checkInLabel[lang.code], checkOut: site.stay.checkOutLabel[lang.code] }) }}</p>{% endfor %}</li>
+    {%- endfor %}
+  </ol>
+
+  {#- Signature : enregistrée dans Netlify Forms (formulaire « house-rules ») avec la date d'envoi. -#}
+  <form class="form form--sign" name="house-rules" method="POST" data-netlify="true" netlify-honeypot="company" data-sign-form>
+    <h2>{{ t.houseRules.formTitle }}</h2>
+    <input type="hidden" name="form-name" value="house-rules">
+    <input type="hidden" name="language" value="{{ lang.code }}">
+    <input type="hidden" name="rules-version" value="{{ legal.houseRules.updated }}">
+    <p class="visually-hidden"><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p>
+    <label>{{ t.houseRules.fullName }}<input type="text" name="full-name" autocomplete="name" required></label>
+    <div class="form__row">
+      <label>{{ t.houseRules.arrival }}<input type="date" name="arrival" required></label>
+      <label>{{ t.houseRules.departure }}<input type="date" name="departure" required></label>
+    </div>
+    <label>{{ t.houseRules.contact }}<input type="text" name="contact" required></label>
+    <label class="check"><input type="checkbox" name="accepted" value="yes" required><span>{{ t.houseRules.accept }}</span></label>
+    <label>{{ t.houseRules.signature }}<input type="text" name="signature" required></label>
+    <button class="btn" type="submit">{{ t.houseRules.submit }}</button>
+    <p class="form__result small" data-form-result role="status" hidden></p>
+  </form>
+</article>

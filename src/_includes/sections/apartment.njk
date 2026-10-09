@@ -1,0 +1,53 @@
+{#- L'appartement : galerie, caractéristiques, équipements, encadré prix. -#}
+<section class="section" id="apartment">
+  <div class="container">
+    <div class="gallery">
+      {%- set p = home.photos[1] %}
+      <div class="gallery__main">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 60vw, 100vw" %}</div>
+      <div class="gallery__grid">
+        {%- for p in home.photos.slice(2, 5) %}
+        <div>{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 20vw, 50vw" %}</div>
+        {%- endfor %}
+        <button class="gallery__all" type="button" data-gallery-open>{{ t.apartment.allPhotos }}<br>({{ home.photos.length }})</button>
+      </div>
+    </div>
+
+    <div class="apartment">
+      <div class="apartment__info">
+        <p class="label">{{ t.apartment.kicker }}</p>
+        <h2>{{ t.apartment.title }}</h2>
+        <p class="muted">{{ t.apartment.address | fill }}</p>
+        <ul class="amenities">
+          {%- for a in home.amenities %}
+          <li>{{ icons.icon(a.icon) }}<span>{{ a[lang.code] }}</span></li>
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <aside class="price-card">
+        <p class="price-card__price">
+          {{ t.apartment.from }}
+          <strong data-price='{{ site.prices.nightlyFrom | json }}'>{{ site.prices.nightlyFrom[site.currencies[0]] | money(site.currencies[0], lang.locale) }}</strong>
+          {{ t.apartment.perNight }}
+        </p>
+        <ul class="checks">
+          {%- for perk in t.apartment.perks %}
+          <li>{{ icons.icon("check", 16) }}{{ perk | fill }}</li>
+          {%- endfor %}
+        </ul>
+        <a class="btn btn--block" href="#book">{{ t.apartment.cta }}</a>
+        <p class="small muted">{{ t.apartment.note }}</p>
+      </aside>
+    </div>
+  </div>
+
+  {#- Galerie complète, ouverte par « Voir toutes les photos » -#}
+  <dialog class="lightbox" data-gallery>
+    <button class="lightbox__close" type="button" data-gallery-close aria-label="{{ t.nav.close }}">×</button>
+    <div class="lightbox__list">
+      {%- for p in home.photos %}
+      {% photo p.file, p.alt | loc(lang.code), "(min-width: 1100px) 1000px, 100vw" %}
+      {%- endfor %}
+    </div>
+  </dialog>
+</section>

@@ -1,0 +1,40 @@
+# Configuration Netlify : construction du site, fonctions et en-têtes de sécurité.
+
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+
+# Polices et photos (noms de fichiers uniques générés au build) : cache long côté navigateur.
+# CSS et JS gardent le cache par défaut de Netlify, pour que chaque mise à jour soit visible tout de suite.
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/assets/photos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Le règlement intérieur ne doit pas apparaître dans les moteurs de recherche.
+[[headers]]
+  for = "/house-rules/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+[[headers]]
+  for = "/fr/reglement-interieur/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
