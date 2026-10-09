@@ -39,28 +39,51 @@ export default {
     { icon: "kitchen", en: "Equipped kitchen · washing machine", fr: "Cuisine équipée · lave-linge" },
     { icon: "lock", en: "Self check-in, smart lock", fr: "Arrivée autonome, serrure connectée" },
     { icon: "shield", en: "Security 24/7 · backup generator", fr: "Sécurité 24 h/24 · groupe électrogène" },
-    { icon: "pool", en: "Rooftop pool · gym · pool table", fr: "Piscine sur le toit · salle de sport · billard" },
+    { icon: "pool", en: "Heated rooftop pool · gym · pool table", fr: "Piscine chauffée sur le toit · salle de sport · billard" },
     { icon: "car", en: "Free secured parking", fr: "Parking gratuit et surveillé" },
     { icon: "gift", en: "Welcome basket and essentials", fr: "Panier d'accueil et produits de première nécessité" },
   ],
 
-  // Lieux proches et temps de trajet INDICATIFS.
-  // TODO : chronométrer sur place (aéroport à 7 h, 12 h et 18 h) et ajuster.
+  // Liste complète des équipements, affichée dans « Voir tous les équipements ».
+  amenitiesAll: [
+    { title: { en: "Bedroom and bathroom", fr: "Chambre et salle de bain" }, items: {
+      en: ["Queen-size bed", "En-suite bathroom", "Hot water", "Towels and bed linen", "Wardrobe", "Iron", "Fan", "Toiletries: shampoo, shower gel, body lotion", "Slippers, toothbrushes and toothpaste", "Sanitary pads and tampons"],
+      fr: ["Lit queen size", "Salle de bain attenante", "Eau chaude", "Serviettes et linge de lit", "Armoire", "Fer à repasser", "Ventilateur", "Produits de toilette : shampoing, gel douche, crème pour le corps", "Chaussons, brosses à dents et dentifrice", "Serviettes hygiéniques et tampons"],
+    } },
+    { title: { en: "Kitchen", fr: "Cuisine" }, items: {
+      en: ["Refrigerator", "Cooker and oven", "Microwave", "Kettle", "Toaster", "Cooker hood", "Cookware and tableware", "Dining table", "Washing machine", "Bottled water, tea, coffee, oil, salt, sugar and pepper"],
+      fr: ["Réfrigérateur", "Cuisinière et four", "Micro-ondes", "Bouilloire", "Grille-pain", "Hotte", "Ustensiles de cuisine et vaisselle", "Table à manger", "Lave-linge", "Eau en bouteille, thé, café, huile, sel, sucre et poivre"],
+    } },
+    { title: { en: "Living and work", fr: "Séjour et travail" }, items: {
+      en: ["Fast Wi-Fi", "Smart TV with Netflix and YouTube (your own accounts)", "Sofa", "Private balcony with city view"],
+      fr: ["Wi-Fi rapide", "Smart TV avec Netflix et YouTube (vos propres comptes)", "Canapé", "Balcon privé avec vue sur la ville"],
+    } },
+    { title: { en: "Residence", fr: "Résidence" }, items: {
+      en: ["Heated rooftop pool", "Rooftop terrace", "Gym", "Pool table area", "Children's playroom", "Free secured parking", "Lifts with badge access", "Security 24/7", "Backup generator"],
+      fr: ["Piscine chauffée sur le toit", "Terrasse sur le toit", "Salle de sport", "Espace billard", "Salle de jeux pour enfants", "Parking gratuit et surveillé", "Ascenseurs avec badge", "Sécurité 24 h/24", "Groupe électrogène"],
+    } },
+    { title: { en: "Services", fr: "Services" }, items: {
+      en: ["Self check-in with smart lock", "Cleaning every 3 days, included", "Welcome basket", "Hosts reachable on WhatsApp"],
+      fr: ["Arrivée autonome, serrure connectée", "Ménage tous les 3 jours, inclus", "Panier d'accueil", "Hôtes joignables sur WhatsApp"],
+    } },
+  ],
+
+  // Lieux proches et temps de trajet, tels qu'indiqués dans l'annonce et le guide de bienvenue.
   places: [
-    { name: "GTC — Global Trade Centre", time: { en: "5 min walk", fr: "5 min à pied" } },
-    { name: "Eden Square", time: { en: "5–10 min walk", fr: "5–10 min à pied" } },
-    { name: "The Mall Westlands · Naivas", time: { en: "5 min by car", fr: "5 min en voiture" } },
-    { name: "Sarit Centre", time: { en: "5–10 min by car", fr: "5–10 min en voiture" } },
-    { name: "Westgate Mall", time: { en: "5–10 min by car", fr: "5–10 min en voiture" } },
-    { name: { en: "Nairobi CBD", fr: "Centre-ville (CBD)" }, time: { en: "10–20 min by car", fr: "10–20 min en voiture" } },
-    { name: { en: "JKIA airport", fr: "Aéroport JKIA" }, time: { en: "25–45 min via the Expressway", fr: "25–45 min via l'Expressway" } },
+    { name: "GTC — Global Trade Centre", time: { en: "Walking distance", fr: "À pied" } },
+    { name: "Eden Square", time: { en: "Walking distance", fr: "À pied" } },
+    { name: { en: "Cafés and restaurants", fr: "Cafés et restaurants" }, time: { en: "Walking distance", fr: "À pied" } },
+    { name: "The Mall Westlands · Naivas", time: { en: "A few minutes by car", fr: "Quelques minutes en voiture" } },
+    { name: "Sarit Centre", time: { en: "A few minutes by car", fr: "Quelques minutes en voiture" } },
+    { name: "Westgate Mall", time: { en: "A few minutes by car", fr: "Quelques minutes en voiture" } },
+    { name: { en: "JKIA airport", fr: "Aéroport JKIA" }, time: { en: "About 25 min via the Expressway", fr: "Environ 25 min via l'Expressway" } },
   ],
 
   // Repères courts affichés sous la photo d'accueil (3 maximum).
   highlights: [
-    { name: "GTC", time: { en: "5 min walk", fr: "5 min à pied" } },
-    { name: "Sarit Centre", time: { en: "5–10 min", fr: "5–10 min" } },
-    { name: { en: "Airport", fr: "Aéroport" }, time: { en: "25–45 min", fr: "25–45 min" } },
+    { name: "GTC", time: { en: "walking distance", fr: "à pied" } },
+    { name: "Sarit Centre", time: { en: "a few minutes", fr: "à quelques minutes" } },
+    { name: { en: "Airport", fr: "Aéroport" }, time: { en: "about 25 min", fr: "environ 25 min" } },
   ],
 
   // Avis voyageurs, avec leur accord. Texte d'origine, seules les fautes de frappe sont corrigées.

@@ -29,7 +29,7 @@ eleventyComputed:
 {{ {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
-  "name": site.name,
+  "name": site.name + " — " + site.apartmentName,
   "description": t.meta.description,
   "url": site.url + routes.home[lang.code],
   "image": site.url + "/assets/img/og-image.jpg",

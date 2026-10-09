@@ -32,6 +32,7 @@ export default {
     apartment: {
       kicker: "The apartment",
       title: "One bedroom, 8th floor, GTC view",
+      allAmenities: "See all amenities",
       address: "Misty Springs, Westlands Road · {size} m²",
       allPhotos: "See all photos",
       from: "From",
@@ -118,11 +119,11 @@ export default {
         },
         {
           q: "What's nearby?",
-          a: "The GTC and Eden Square are within walking distance. The Mall Westlands, Naivas supermarket, Sarit Centre and Westgate are 5 to 10 minutes away by car. Restaurants and cafés are close by.",
+          a: "The GTC and Eden Square are within walking distance. Cafés and restaurants are close by. The Mall Westlands, Naivas supermarket, Sarit Centre and Westgate are a few minutes away by car.",
         },
         {
           q: "How far is the airport?",
-          a: "JKIA is 25 to 45 minutes away by car via the Nairobi Expressway, depending on the time of day. We'll give you the real travel time for your arrival.",
+          a: "JKIA is about 25 minutes away by car via the Nairobi Expressway, depending on traffic. We'll give you the real travel time for your arrival.",
         },
         {
           q: "Is early check-in possible?",
@@ -217,6 +218,7 @@ export default {
     apartment: {
       kicker: "L'appartement",
       title: "Une chambre, 8e étage, vue sur le GTC",
+      allAmenities: "Voir tous les équipements",
       address: "Misty Springs, Westlands Road · {size} m²",
       allPhotos: "Voir toutes les photos",
       from: "À partir de",
@@ -303,11 +305,11 @@ export default {
         },
         {
           q: "Qu'y a-t-il à proximité ?",
-          a: "Le GTC et Eden Square sont accessibles à pied. The Mall Westlands, le supermarché Naivas, Sarit Centre et Westgate sont à 5 à 10 minutes en voiture. Restaurants et cafés sont tout proches.",
+          a: "Le GTC et Eden Square sont accessibles à pied. Cafés et restaurants sont tout proches. The Mall Westlands, le supermarché Naivas, Sarit Centre et Westgate sont à quelques minutes en voiture.",
         },
         {
           q: "À quelle distance est l'aéroport ?",
-          a: "L'aéroport JKIA est à 25 à 45 minutes en voiture par la Nairobi Expressway, selon l'heure. Nous vous donnons le temps de trajet réel pour votre arrivée.",
+          a: "L'aéroport JKIA est à environ 25 minutes en voiture par la Nairobi Expressway, selon la circulation. Nous vous donnons le temps de trajet réel pour votre arrivée.",
         },
         {
           q: "Peut-on arriver plus tôt ?",

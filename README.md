@@ -118,10 +118,8 @@ elle est enregistrée avec chaque signature.
 
 Rechercher `TODO` dans le code :
 
-- [ ] numéro WhatsApp, téléphone, e-mail (`site.js`)
+- [ ] numéro WhatsApp et téléphone (`site.js`)
 - [ ] prix en dollars et en shillings (`site.js`)
-- [ ] photos (`home.js` + `src/assets/photos/`)
-- [ ] piscine et salle de sport : à confirmer (`home.js`)
-- [ ] temps de trajet chronométrés (`home.js`)
-- [ ] règlement intérieur aligné sur le guide de bienvenue (`legal.js`)
+- [ ] photo de la salle de bain (`home.js`, 5e photo)
+- [ ] tabac : balcon autorisé ou non (`legal.js`, règlement intérieur)
 - [ ] relecture juridique des pages légales

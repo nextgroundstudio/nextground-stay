@@ -16,13 +16,26 @@
     <div class="apartment">
       <div class="apartment__info">
         <p class="label">{{ t.apartment.kicker }}</p>
-        <h2>{{ t.apartment.title }}</h2>
+        <h2>{{ site.apartmentName }}</h2>
+        <p class="apartment__subtitle">{{ t.apartment.title }}</p>
         <p class="muted">{{ t.apartment.address | fill }}</p>
         <ul class="amenities">
           {%- for a in home.amenities %}
           <li>{{ icons.icon(a.icon) }}<span>{{ a[lang.code] }}</span></li>
           {%- endfor %}
         </ul>
+        {#- Liste complète (home.amenitiesAll), repliée par défaut -#}
+        <details class="all-amenities">
+          <summary>{{ t.apartment.allAmenities }}</summary>
+          <div class="all-amenities__groups">
+            {%- for g in home.amenitiesAll %}
+            <div>
+              <p class="label">{{ g.title | loc(lang.code) }}</p>
+              <ul>{% for item in g.items[lang.code] %}<li>{{ item }}</li>{% endfor %}</ul>
+            </div>
+            {%- endfor %}
+          </div>
+        </details>
       </div>
 
       <aside class="price-card">
