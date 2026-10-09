@@ -118,7 +118,7 @@ export default {
         },
         {
           q: "What's nearby?",
-          a: "The GTC and Eden Square are within walking distance. Cafés and restaurants are close by. The Mall Westlands, Naivas supermarket, Sarit Centre and Westgate are a few minutes away by car.",
+          a: "The GTC and Eden Square are within walking distance. Cafés and restaurants are close by. The Mall Westlands, Naivas supermarket, Sarit Centre and Westgate are 5 to 10 minutes away by car.",
         },
         {
           q: "How far is the airport?",
@@ -291,7 +291,7 @@ export default {
         },
         {
           q: "Qu'y a-t-il à proximité ?",
-          a: "Le GTC et Eden Square sont accessibles à pied. Cafés et restaurants sont tout proches. The Mall Westlands, le supermarché Naivas, Sarit Centre et Westgate sont à quelques minutes en voiture.",
+          a: "Le GTC et Eden Square sont accessibles à pied. Cafés et restaurants sont tout proches. The Mall Westlands, le supermarché Naivas, Sarit Centre et Westgate sont à 5 à 10 minutes en voiture.",
         },
         {
           q: "À quelle distance est l'aéroport ?",
