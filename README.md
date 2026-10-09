@@ -81,7 +81,7 @@ netlify.toml        build, fonctions, en-têtes HTTP
 2. **Netlify** : *Add new site > Import an existing project > GitHub*, choisir le dépôt.
    Les réglages de build sont lus dans `netlify.toml`, rien à saisir.
 3. **Nom du site** : *Site configuration > Change site name* → `next-ground-stay`
-   (adresse : https://next-ground-stay.netlify.app). Si le nom est pris, mettre à jour `url` dans `src/_data/site.js`.
+   (adresse : https://nextground-stay.netlify.app). Si le nom est pris, mettre à jour `url` dans `src/_data/site.js`.
 4. **Calendriers** : *Site configuration > Environment variables > Add a variable*
    - Clé : `ICAL_URLS`
    - Valeur : le lien iCal Airbnb et le lien iCal Booking, séparés par une virgule.
@@ -104,8 +104,8 @@ Ensuite, chaque `git push` sur la branche principale met le site à jour en une 
 
 Page non référencée par les moteurs de recherche, à envoyer aux voyageurs avant l'arrivée :
 
-- anglais : https://next-ground-stay.netlify.app/house-rules/
-- français : https://next-ground-stay.netlify.app/fr/reglement-interieur/
+- anglais : https://nextground-stay.netlify.app/house-rules/
+- français : https://nextground-stay.netlify.app/fr/reglement-interieur/
 
 Le voyageur coche, signe en saisissant son nom, et la confirmation arrive dans Netlify Forms.
 Le code d'accès est ensuite envoyé par WhatsApp, jamais affiché sur le site.
@@ -119,5 +119,4 @@ elle est enregistrée avec chaque signature.
 Rechercher `TODO` dans le code :
 
 - [ ] numéro WhatsApp et téléphone (`site.js`)
-- [ ] prix en dollars et en shillings (`site.js`)
 - [ ] relecture juridique des pages légales

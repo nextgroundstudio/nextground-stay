@@ -73,7 +73,7 @@ export default {
 
   // Lieux proches et temps de trajet, tels qu'indiqués dans l'annonce et le guide de bienvenue.
   places: [
-    { name: "GTC — Global Trade Centre", time: { en: "Walking distance", fr: "À pied" } },
+    { name: "GTC — Global Trade Centre", time: { en: "5 min walk", fr: "5 min à pied" } },
     { name: "Eden Square", time: { en: "Walking distance", fr: "À pied" } },
     { name: { en: "Cafés and restaurants", fr: "Cafés et restaurants" }, time: { en: "Walking distance", fr: "À pied" } },
     { name: "The Mall Westlands · Naivas", time: { en: "A few minutes by car", fr: "Quelques minutes en voiture" } },
@@ -84,7 +84,7 @@ export default {
 
   // Repères courts affichés sous la photo d'accueil (3 maximum).
   highlights: [
-    { name: "GTC", time: { en: "walking distance", fr: "à pied" } },
+    { name: "GTC", time: { en: "5 min walk", fr: "5 min à pied" } },
     { name: "Sarit Centre", time: { en: "a few minutes", fr: "à quelques minutes" } },
     { name: { en: "Airport", fr: "Aéroport" }, time: { en: "about 25 min", fr: "environ 25 min" } },
   ],

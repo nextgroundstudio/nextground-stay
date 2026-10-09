@@ -7,7 +7,7 @@ export default {
   // Nom de l'appartement, affiché dans la section « L'appartement ».
   apartmentName: "Amani",
   // Adresse publique du site (sert aux liens de partage, au sitemap et au SEO).
-  url: "https://next-ground-stay.netlify.app",
+  url: "https://nextground-stay.netlify.app",
   company: "Djo & Don Management Limited",
 
   contact: {
@@ -52,7 +52,7 @@ export default {
   // Prix « à partir de » par nuit, saisis à la main dans chaque devise
   // (pas de conversion automatique : ce sont vos prix, arrondis comme vous le souhaitez).
   prices: {
-    nightlyFrom: { USD: 70, EUR: 60, KES: 9000 }, // TODO : valider USD et KES
+    nightlyFrom: { USD: 70, EUR: 60, KES: 8720 },
   },
 
   // Statistiques de visite Cloudflare Web Analytics (gratuit, sans cookies).
