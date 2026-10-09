@@ -6,6 +6,10 @@ export default {
   // Déposer les fichiers originaux (jpg/png) dans src/assets/photos/ et indiquer le nom ici.
   // Tant que « file » est vide, un emplacement neutre s'affiche à la place.
   // La première photo sert de grande image d'accueil.
+  // Photo d'accueil sur mobile (format vertical), différente de celle de l'ordinateur
+  // pour ne pas répéter la première photo de la galerie juste en dessous.
+  heroMobile: "city-view-night.jpg",
+
   photos: [
     // 0 : grande image d'accueil (format paysage de préférence)
     { file: "hero-living-room.jpg", alt: { en: "Bright living room with green sofa", fr: "Séjour lumineux avec canapé vert" } },
