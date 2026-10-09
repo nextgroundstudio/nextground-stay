@@ -10,12 +10,6 @@
         <h2>{{ t.book.title | safe }}</h2>
         <p class="on-dark">{{ t.book.text }}</p>
 
-        <ul class="team">
-          {%- for name in ["Amanda", "Lysiane"] %}
-          <li><span class="avatar avatar--large" aria-hidden="true">{{ name | first }}</span><span><strong>{{ name }}</strong><br><span class="label label--light">{{ t.book.role }}</span></span></li>
-          {%- endfor %}
-        </ul>
-
         <ol class="steps">
           {%- for s in t.book.steps %}<li><span>0{{ loop.index }}</span>{{ s }}</li>{% endfor %}
         </ol>

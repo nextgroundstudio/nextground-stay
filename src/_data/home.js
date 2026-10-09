@@ -108,7 +108,7 @@ export default {
         name: "Andreas",
         lang: "en",
         text: "Amanda and Lysiane were great hosts. Always responsive, helpful and friendly. The apartment is practical and beautifully decorated. It has everything you could wish for. I want to highlight how cozy the couch is. Thank you so much for hosting us!",
-        meta: { en: "Stayed more than a week · 2026", fr: "Séjour de plus d'une semaine · 2026" },
+        meta: { en: "Stayed 2 weeks · 2026", fr: "Séjour de 2 semaines · 2026" },
       },
     ],
   },

@@ -2,14 +2,15 @@
 <section class="section" id="apartment">
   <div class="container">
     <div class="gallery">
+      {#- Chaque photo s'ouvre en grand au clic (data-open-photo = sa position dans home.photos) -#}
       {%- set p = home.photos[1] %}
-      <div class="gallery__main">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 60vw, 100vw" %}</div>
+      <button class="gallery__main gallery__item" type="button" data-open-photo="1" aria-label="{{ p.alt | loc(lang.code) }}">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 60vw, 100vw" %}</button>
       <div class="gallery__grid">
         {%- for p in home.photos.slice(2, 6) %}
-        <div>{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 20vw, 50vw" %}</div>
+        <button class="gallery__item" type="button" data-open-photo="{{ loop.index + 1 }}" aria-label="{{ p.alt | loc(lang.code) }}">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 20vw, 50vw" %}</button>
         {%- endfor %}
         {#- Bouton posé sur la dernière vignette, comme sur les plateformes de location -#}
-        <button class="gallery__all" type="button" data-gallery-open>{{ t.apartment.allPhotos }} ({{ home.photos.length }})</button>
+        <button class="gallery__all" type="button" data-open-photo="1">{{ t.apartment.allPhotos }} ({{ home.photos.length }})</button>
       </div>
     </div>
 
@@ -55,13 +56,16 @@
     </div>
   </div>
 
-  {#- Galerie complète, ouverte par « Voir toutes les photos » -#}
-  <dialog class="lightbox" data-gallery>
-    <button class="lightbox__close" type="button" data-gallery-close aria-label="{{ t.nav.close }}">×</button>
-    <div class="lightbox__list">
+  {#- Visionneuse plein écran : une photo à la fois, flèches, clavier et glissement du doigt -#}
+  <dialog class="viewer" data-viewer aria-label="{{ t.apartment.allPhotos }}">
+    <button class="viewer__btn viewer__close" type="button" data-viewer-close aria-label="{{ t.nav.close }}">×</button>
+    <button class="viewer__btn viewer__prev" type="button" data-viewer-prev aria-label="{{ t.calendar.prev }}">{{ icons.icon("chevron-left", 22) }}</button>
+    <button class="viewer__btn viewer__next" type="button" data-viewer-next aria-label="{{ t.calendar.next }}">{{ icons.icon("chevron-right", 22) }}</button>
+    <div class="viewer__slides">
       {%- for p in home.photos %}
-      {% photo p.file, p.alt | loc(lang.code), "(min-width: 1100px) 1000px, 100vw" %}
+      <figure class="viewer__slide" data-slide hidden>{% photo p.file, p.alt | loc(lang.code), "100vw" %}<figcaption>{{ p.alt | loc(lang.code) }}</figcaption></figure>
       {%- endfor %}
     </div>
+    <p class="viewer__count" data-viewer-count></p>
   </dialog>
 </section>

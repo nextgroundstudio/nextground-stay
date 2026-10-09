@@ -46,12 +46,38 @@
     select.addEventListener("change", () => { store.set("ngs-currency", select.value); apply(select.value); });
   }
 
-  /* --- 3. Galerie complète (boîte de dialogue) ------------------------------ */
-  const gallery = $("[data-gallery]");
-  if (gallery && typeof gallery.showModal === "function") {
-    $("[data-gallery-open]")?.addEventListener("click", () => gallery.showModal());
-    $("[data-gallery-close]")?.addEventListener("click", () => gallery.close());
-    gallery.addEventListener("click", (e) => { if (e.target === gallery) gallery.close(); });
+  /* --- 3. Visionneuse de photos (plein écran) ------------------------------- */
+  const viewer = $("[data-viewer]");
+  if (viewer && typeof viewer.showModal === "function") {
+    const slides = $$("[data-slide]", viewer);
+    const count = $("[data-viewer-count]", viewer);
+    let current = 0;
+    const show = (i) => {
+      current = (i + slides.length) % slides.length; // boucle : après la dernière, la première
+      slides.forEach((s, n) => { s.hidden = n !== current; });
+      count.textContent = `${current + 1} / ${slides.length}`;
+    };
+    $$("[data-open-photo]").forEach((el) =>
+      el.addEventListener("click", () => { show(Number(el.dataset.openPhoto)); viewer.showModal(); })
+    );
+    $("[data-viewer-close]", viewer).addEventListener("click", () => viewer.close());
+    $("[data-viewer-prev]", viewer).addEventListener("click", () => show(current - 1));
+    $("[data-viewer-next]", viewer).addEventListener("click", () => show(current + 1));
+    viewer.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") show(current - 1);
+      if (e.key === "ArrowRight") show(current + 1);
+    });
+    // Clic sur le fond sombre : ferme la visionneuse.
+    viewer.addEventListener("click", (e) => { if (e.target === viewer || e.target.classList.contains("viewer__slides")) viewer.close(); });
+    // Glissement du doigt sur mobile.
+    let startX = null;
+    viewer.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    viewer.addEventListener("touchend", (e) => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+      startX = null;
+    });
   }
 
   /* --- 4. Carte Google chargée seulement au clic ---------------------------- */
