@@ -7,23 +7,41 @@ export default {
   // Tant que « file » est vide, un emplacement neutre s'affiche à la place.
   // La première photo sert de grande image d'accueil.
   photos: [
-    { file: "", alt: { en: "Living room and balcony overlooking Westlands", fr: "Séjour et balcon avec vue sur Westlands" } },
-    { file: "", alt: { en: "Bedroom with queen-size bed", fr: "Chambre avec lit queen size" } },
-    { file: "", alt: { en: "Equipped kitchen", fr: "Cuisine équipée" } },
-    { file: "", alt: { en: "En-suite bathroom", fr: "Salle de bain attenante" } },
-    { file: "", alt: { en: "Balcony view over GTC", fr: "Vue du balcon sur le GTC" } },
+    // 0 : grande image d'accueil (format paysage de préférence)
+    { file: "hero-living-room.jpg", alt: { en: "Bright living room with green sofa", fr: "Séjour lumineux avec canapé vert" } },
+    // 1 à 5 : mosaïque de la section « L'appartement » (même ordre que l'annonce)
+    { file: "living-room.jpg", alt: { en: "Living room", fr: "Séjour" } },
+    { file: "bedroom.jpg", alt: { en: "Bedroom with queen-size bed and balcony", fr: "Chambre avec lit queen size et balcon" } },
+    { file: "rooftop-pool.jpg", alt: { en: "Rooftop pool overlooking Nairobi", fr: "Piscine sur le toit avec vue sur Nairobi" } },
+    { file: "kitchen.jpg", alt: { en: "Equipped kitchen and dining table", fr: "Cuisine équipée et table à manger" } }, // TODO : remplacer par la photo de la salle de bain
+    { file: "balcony-night.jpg", alt: { en: "Balcony at night, city view", fr: "Balcon de nuit, vue sur la ville" } },
+    // Suite de la galerie complète
+    { file: "city-view-night.jpg", alt: { en: "Night view of Westlands from the living room", fr: "Vue de nuit sur Westlands depuis le séjour" } },
+    { file: "city-view-day.jpg", alt: { en: "Day view over Westlands", fr: "Vue de jour sur Westlands" } },
+    { file: "living-kitchen.jpg", alt: { en: "Open-plan living room and kitchen", fr: "Séjour et cuisine ouverte" } },
+    { file: "dining-kitchen.jpg", alt: { en: "Kitchen with washing machine", fr: "Cuisine avec lave-linge" } },
+    { file: "table-detail.jpg", alt: { en: "Table setting", fr: "Table dressée" } },
+    { file: "rooftop-terrace.jpg", alt: { en: "Rooftop terrace", fr: "Terrasse sur le toit" } },
+    { file: "pool-table.jpg", alt: { en: "Pool table area", fr: "Espace billard" } },
+    { file: "gym.jpg", alt: { en: "Residents' gym", fr: "Salle de sport de la résidence" } },
+    { file: "garden.jpg", alt: { en: "Garden and walkway of the residence", fr: "Jardin et allée de la résidence" } },
+    { file: "building.jpg", alt: { en: "Misty Springs building, Westlands Road", fr: "Immeuble Misty Springs, Westlands Road" } },
+    { file: "entrance.jpg", alt: { en: "Building entrance", fr: "Entrée de l'immeuble" } },
+    { file: "lobby-lounge.jpg", alt: { en: "Lobby lounge", fr: "Salon du hall d'entrée" } },
   ],
 
   // Équipements mis en avant (6 à 8 maximum). « icon » renvoie à src/_includes/partials/icons.njk.
   amenities: [
     { icon: "bed", en: "1 bedroom, en-suite · queen bed", fr: "1 chambre en-suite · lit queen size" },
-    { icon: "people", en: "Up to 2 guests", fr: "Jusqu'à 2 voyageurs" },
-    { icon: "view", en: "8th floor, balcony, GTC view", fr: "8e étage, balcon, vue sur le GTC" },
-    { icon: "wifi", en: "Fast Wi-Fi · smart TV", fr: "Wi-Fi rapide · smart TV" },
+    { icon: "people", en: "Up to 2 guests · 58 m²", fr: "Jusqu'à 2 voyageurs · 58 m²" },
+    { icon: "view", en: "8th floor, balcony, view over GTC", fr: "8e étage, balcon, vue sur le GTC" },
+    { icon: "wifi", en: "Fast Wi-Fi · smart TV (Netflix, YouTube)", fr: "Wi-Fi rapide · smart TV (Netflix, YouTube)" },
     { icon: "kitchen", en: "Equipped kitchen · washing machine", fr: "Cuisine équipée · lave-linge" },
     { icon: "lock", en: "Self check-in, smart lock", fr: "Arrivée autonome, serrure connectée" },
-    { icon: "shield", en: "Security & concierge 24/7", fr: "Sécurité et conciergerie 24 h/24, 7 j/7" },
-    { icon: "pool", en: "Rooftop pool & gym", fr: "Piscine sur le toit et salle de sport" }, // TODO : confirmer
+    { icon: "shield", en: "Security 24/7 · backup generator", fr: "Sécurité 24 h/24 · groupe électrogène" },
+    { icon: "pool", en: "Rooftop pool · gym · pool table", fr: "Piscine sur le toit · salle de sport · billard" },
+    { icon: "car", en: "Free secured parking", fr: "Parking gratuit et surveillé" },
+    { icon: "gift", en: "Welcome basket and essentials", fr: "Panier d'accueil et produits de première nécessité" },
   ],
 
   // Lieux proches et temps de trajet INDICATIFS.

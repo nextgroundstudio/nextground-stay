@@ -137,6 +137,10 @@ export default {
           a: "Check-in is self-service from 3 pm, with a secure smart lock. Your access code is sent before arrival. Security and concierge are on site 24/7.",
         },
         {
+          q: "Is there parking?",
+          a: "Yes, free secured parking in the residence.",
+        },
+        {
           q: "How do I pay?",
           a: "By bank transfer or M-Pesa. We confirm the total price in writing before you pay.",
         },
@@ -316,6 +320,10 @@ export default {
         {
           q: "Comment se passe l'arrivée ?",
           a: "L'arrivée se fait en autonomie dès 15 h, grâce à une serrure connectée sécurisée. Votre code d'accès vous est envoyé avant l'arrivée. Sécurité et conciergerie sur place 24 h/24, 7 j/7.",
+        },
+        {
+          q: "Y a-t-il un parking ?",
+          a: "Oui, un parking gratuit et surveillé dans la résidence.",
         },
         {
           q: "Comment payer ?",

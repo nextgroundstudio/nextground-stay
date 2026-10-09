@@ -133,12 +133,18 @@ picture { display: block; height: 100%; }
 .highlights strong { color: var(--charbon); }
 
 /* L'appartement */
-.gallery { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
-.gallery__main { flex: 2 1 360px; min-height: clamp(14rem, 30vw, 26rem); overflow: hidden; }
-.gallery__grid { flex: 1 1 260px; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.gallery__grid > div { min-height: 7rem; overflow: hidden; }
-.gallery__all { background: var(--charbon); color: var(--blanc); border: 0; min-height: 7rem; font-size: 10px; letter-spacing: .3em; text-transform: uppercase; cursor: pointer; }
-.gallery__all:hover { background: var(--olive); }
+.gallery { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+.gallery__main { height: 18rem; overflow: hidden; }
+.gallery__grid { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 10rem; gap: 1rem; position: relative; }
+.gallery__grid > div { overflow: hidden; min-height: 0; }
+/* À partir de la tablette : mosaïque une grande photo + quatre petites, hauteur fixe */
+@media (min-width: 760px) {
+  .gallery { grid-template-columns: 1.6fr 1fr; grid-template-rows: minmax(0, 1fr); height: clamp(24rem, 40vw, 34rem); }
+  .gallery__main { height: 100%; min-height: 0; }
+  .gallery__grid { grid-template-rows: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; min-height: 0; }
+}
+.gallery__all { position: absolute; right: .75rem; bottom: .75rem; background: var(--blanc); color: var(--charbon); border: 0; padding: 10px 14px; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; cursor: pointer; box-shadow: 0 2px 8px rgba(43, 40, 38, .2); }
+.gallery__all:hover { background: var(--olive); color: var(--blanc); }
 .apartment { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem 4rem; }
 .apartment__info { flex: 2 1 440px; min-width: 0; display: flex; flex-direction: column; gap: .6rem; }
 .amenities { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem 2rem; }

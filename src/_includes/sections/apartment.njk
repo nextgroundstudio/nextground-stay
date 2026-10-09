@@ -5,10 +5,11 @@
       {%- set p = home.photos[1] %}
       <div class="gallery__main">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 60vw, 100vw" %}</div>
       <div class="gallery__grid">
-        {%- for p in home.photos.slice(2, 5) %}
+        {%- for p in home.photos.slice(2, 6) %}
         <div>{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 20vw, 50vw" %}</div>
         {%- endfor %}
-        <button class="gallery__all" type="button" data-gallery-open>{{ t.apartment.allPhotos }}<br>({{ home.photos.length }})</button>
+        {#- Bouton posé sur la dernière vignette, comme sur les plateformes de location -#}
+        <button class="gallery__all" type="button" data-gallery-open>{{ t.apartment.allPhotos }} ({{ home.photos.length }})</button>
       </div>
     </div>
 

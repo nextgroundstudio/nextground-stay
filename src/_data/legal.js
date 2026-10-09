@@ -136,30 +136,68 @@ export default {
   },
 
   // ------------------------------------------------------------------ Règlement intérieur (page non référencée)
-  // TODO : aligner ces règles sur le guide de bienvenue. Ne JAMAIS écrire ici de code d'accès ni de mot de passe :
-  // cette page est publique pour quiconque connaît son adresse.
+  // Repris du guide de bienvenue. Ne JAMAIS écrire ici de code d'accès ni de mot de passe Wi-Fi :
+  // cette page est publique pour quiconque connaît son adresse. Ces informations sont envoyées sur WhatsApp.
   houseRules: {
     updated: "2026-10-09",
     en: {
       sections: [
-        { h: "Arrival and departure", p: ["Check-in from {checkIn}, check-out by {checkOut}. Early check-in or late check-out only with our prior written agreement."] },
-        { h: "Guests", p: ["Maximum {guests} guests. Only registered guests may stay overnight. Please tell us in advance about any visitor; the building's security team may ask for identification."] },
-        { h: "Respect for the building", p: ["No parties or events. Quiet hours from 10 pm to 7 am. Shared facilities (pool, gym, lifts) are used according to the building's own rules."] },
-        { h: "Smoking", p: ["Smoking is not allowed inside the apartment."] },
-        { h: "Care of the apartment", p: ["Please treat the apartment as your own. Report any damage or breakdown to us immediately on WhatsApp. Close the windows and balcony door when you go out."] },
-        { h: "Access", p: ["Your access code is personal: do not share it. It is deactivated at the end of your stay."] },
-        { h: "Departure", p: ["Before leaving, please put dishes away, take out the rubbish, switch off the lights and appliances, and close the door properly."] },
+        { h: "Arrival", p: [
+          "Check-in from {checkIn}. If you arrive late, please let us know by message.",
+          "Have your passport ready to register with the building's security guards. On your first entry, go to reception to access the lift. Your lift badge is in the apartment, on the shoe cabinet by the entrance.",
+        ] },
+        { h: "Guests and visitors", p: [
+          "Maximum {guests} guests. For any additional guest, please contact us first.",
+          "Outside visitors are welcome for occasional visits but may not stay overnight.",
+        ] },
+        { h: "In the apartment", p: [
+          "Smoking is allowed on the balcony only.", // TODO : la version française du guide dit « interdiction de fumer » : à trancher
+          "No parties or events. No pets.",
+          "Please do not walk on the rug with shoes.",
+          "Respect the neighbors and the building's common areas.",
+        ] },
+        { h: "Safety", p: [
+          "Before cooking, check that all cooker knobs are off, then turn the gas regulator (in the cupboard) to ON. Turn it back to OFF when you have finished.",
+          "If you smell gas: do not switch on the cooker or any electrical switch, turn the regulator to OFF, open the windows and contact us immediately.",
+          "Emergency numbers in Kenya: 999 or 112.",
+        ] },
+        { h: "Waste", p: ["Full rubbish bags are taken to the bins in the building's courtyard, except on cleaning days."] },
+        { h: "Damage", p: ["Please report any damage or breakdown to us immediately on WhatsApp."] },
+        { h: "Departure", p: [
+          "Check-out by {checkOut}. Late check-out is possible on request, for an additional fee.",
+          "Before leaving: close all windows, switch off all appliances, place used towels on the shower floor, close the rubbish bags and leave them in the kitchen bin, check you have all your belongings.",
+          "Return the lift badge to the first shelf of the shoe cabinet by the entrance, next to the vase.",
+        ] },
       ],
     },
     fr: {
       sections: [
-        { h: "Arrivée et départ", p: ["Arrivée dès {checkIn}, départ avant {checkOut}. Arrivée anticipée ou départ tardif uniquement avec notre accord écrit préalable."] },
-        { h: "Voyageurs", p: ["{guests} voyageurs au maximum. Seuls les voyageurs déclarés peuvent dormir sur place. Prévenez-nous de toute visite ; la sécurité de l'immeuble peut demander une pièce d'identité."] },
-        { h: "Respect de l'immeuble", p: ["Pas de fêtes ni d'événements. Calme de 22 h à 7 h. Les espaces communs (piscine, salle de sport, ascenseurs) s'utilisent selon le règlement de l'immeuble."] },
-        { h: "Tabac", p: ["Il est interdit de fumer à l'intérieur de l'appartement."] },
-        { h: "Soin de l'appartement", p: ["Merci de prendre soin de l'appartement comme du vôtre. Signalez-nous immédiatement sur WhatsApp toute casse ou panne. Fermez les fenêtres et la porte du balcon en sortant."] },
-        { h: "Accès", p: ["Votre code d'accès est personnel : ne le communiquez pas. Il est désactivé à la fin de votre séjour."] },
-        { h: "Départ", p: ["Avant de partir, merci de ranger la vaisselle, sortir les poubelles, éteindre les lumières et les appareils, et bien fermer la porte."] },
+        { h: "Arrivée", p: [
+          "Arrivée dès {checkIn}. En cas d'arrivée tardive, merci de nous prévenir par message.",
+          "Munissez-vous de votre passeport pour vous enregistrer auprès des gardes de la résidence. Lors du premier passage, présentez-vous à l'accueil pour accéder à l'ascenseur. Votre badge d'ascenseur se trouve dans l'appartement, sur le meuble à chaussures de l'entrée.",
+        ] },
+        { h: "Voyageurs et visiteurs", p: [
+          "{guests} voyageurs au maximum. Pour toute personne supplémentaire, contactez-nous au préalable.",
+          "Les visiteurs extérieurs sont acceptés pour une visite ponctuelle, mais ne peuvent pas dormir sur place.",
+        ] },
+        { h: "Dans l'appartement", p: [
+          "Il est interdit de fumer, sauf sur le balcon.", // TODO : à trancher avec la version française du guide (« interdiction de fumer »)
+          "Fêtes et événements interdits. Animaux non autorisés.",
+          "Pas de chaussures sur le tapis.",
+          "Merci de respecter le voisinage et les espaces communs de la résidence.",
+        ] },
+        { h: "Sécurité", p: [
+          "Avant de cuisiner, vérifiez que tous les boutons de la cuisinière sont sur arrêt, puis tournez le régulateur de gaz (dans le placard) sur « ON ». Remettez-le sur « OFF » une fois la cuisson terminée.",
+          "En cas d'odeur de gaz : n'allumez pas la cuisinière, n'actionnez aucun interrupteur, mettez le régulateur sur « OFF », ouvrez les fenêtres et contactez-nous immédiatement.",
+          "Numéros d'urgence au Kenya : 999 ou 112.",
+        ] },
+        { h: "Déchets", p: ["Les sacs pleins sont à déposer dans les poubelles de la cour de l'immeuble, sauf les jours de ménage."] },
+        { h: "Dommages", p: ["Merci de nous signaler immédiatement sur WhatsApp toute casse ou panne."] },
+        { h: "Départ", p: [
+          "Départ avant {checkOut}. Départ tardif possible sur demande, avec supplément.",
+          "Avant de partir : fermez toutes les fenêtres, éteignez tous les appareils, déposez les serviettes utilisées au sol de la douche, fermez les sacs poubelle et laissez-les dans la poubelle de la cuisine, vérifiez que vous n'oubliez rien.",
+          "Reposez le badge d'ascenseur sur la première étagère du meuble à chaussures de l'entrée, à côté du vase.",
+        ] },
       ],
     },
   },
