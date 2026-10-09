@@ -37,18 +37,18 @@ export default {
     { file: "lobby-lounge.jpg", alt: { en: "Lobby lounge", fr: "Salon du hall d'entrée" } },
   ],
 
-  // Équipements mis en avant. Sur mobile, seuls les 6 premiers s'affichent (les autres restent
+  // Équipements mis en avant. Sur mobile, seuls les 7 premiers s'affichent (les autres restent
   // dans « Voir tous les équipements ») : gardez les plus importants en tête de liste.
   amenities: [
     { icon: "bed", en: "1 bedroom, en-suite · queen bed", fr: "1 chambre en-suite · lit queen size" },
     { icon: "people", en: "Up to 2 guests · 58 m²", fr: "Jusqu'à 2 voyageurs · 58 m²" },
     { icon: "view", en: "8th floor, balcony, view over GTC", fr: "8e étage, balcon, vue sur le GTC" },
+    { icon: "shield", en: "Security 24/7 · backup generator", fr: "Sécurité 24 h/24 · groupe électrogène" },
     { icon: "wifi", en: "Fast Wi-Fi · smart TV (Netflix, YouTube)", fr: "Wi-Fi rapide · smart TV (Netflix, YouTube)" },
     { icon: "pool", en: "Heated rooftop pool · gym · pool table", fr: "Piscine chauffée sur le toit · salle de sport · billard" },
-    { icon: "shield", en: "Security 24/7 · backup generator", fr: "Sécurité 24 h/24 · groupe électrogène" },
+    { icon: "car", en: "Free secured parking", fr: "Parking gratuit et surveillé" },
     { icon: "kitchen", en: "Equipped kitchen · washing machine", fr: "Cuisine équipée · lave-linge" },
     { icon: "lock", en: "Self check-in, smart lock", fr: "Arrivée autonome, serrure connectée" },
-    { icon: "car", en: "Free secured parking", fr: "Parking gratuit et surveillé" },
     { icon: "gift", en: "Welcome basket and essentials", fr: "Panier d'accueil et produits de première nécessité" },
   ],
 

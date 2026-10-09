@@ -117,6 +117,10 @@ export default {
           a: "At Misty Springs, Westlands Road, in Westlands, Nairobi, on the 8th floor, overlooking the GTC. Access details are sent before your arrival.",
         },
         {
+          q: "Is the residence secure?",
+          a: "Yes. Security guards check everyone entering and leaving the residence, 24 hours a day, and the lifts are badge-access only. Reception is on site if you need help or have a question. We also stay reachable on WhatsApp throughout your stay.",
+        },
+        {
           q: "What's nearby?",
           a: "The GTC and Eden Square are within walking distance. Cafés and restaurants are close by. The Mall Westlands, Naivas supermarket, Sarit Centre and Westgate are 5 to 10 minutes away by car.",
         },
@@ -288,6 +292,10 @@ export default {
         {
           q: "Où se trouve exactement l'appartement ?",
           a: "À Misty Springs, Westlands Road, dans le quartier de Westlands à Nairobi, au 8e étage, avec vue sur le GTC. Les informations d'accès vous sont envoyées avant votre arrivée.",
+        },
+        {
+          q: "La résidence est-elle sécurisée ?",
+          a: "Oui. Des vigiles contrôlent les entrées et sorties de la résidence 24 h/24, et l'accès aux ascenseurs se fait par badge. La réception est sur place pour vous aider en cas de besoin ou de question. Nous restons aussi joignables sur WhatsApp pendant tout votre séjour.",
         },
         {
           q: "Qu'y a-t-il à proximité ?",
