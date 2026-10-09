@@ -151,7 +151,7 @@ export default {
           "Outside visitors are welcome for occasional visits but may not stay overnight.",
         ] },
         { h: "In the apartment", p: [
-          "Smoking is allowed on the balcony only.", // TODO : la version française du guide dit « interdiction de fumer » : à trancher
+          "Smoking is allowed on the balcony only, never inside the apartment. Please use the ashtray provided.",
           "No parties or events. No pets.",
           "Please do not walk on the rug with shoes.",
           "Respect the neighbors and the building's common areas.",
@@ -181,7 +181,7 @@ export default {
           "Les visiteurs extérieurs sont acceptés pour une visite ponctuelle, mais ne peuvent pas dormir sur place.",
         ] },
         { h: "Dans l'appartement", p: [
-          "Il est interdit de fumer, sauf sur le balcon.", // TODO : à trancher avec la version française du guide (« interdiction de fumer »)
+          "Il est permis de fumer uniquement sur le balcon, jamais dans l'appartement. Merci d'utiliser le cendrier mis à disposition.",
           "Fêtes et événements interdits. Animaux non autorisés.",
           "Pas de chaussures sur le tapis.",
           "Merci de respecter le voisinage et les espaces communs de la résidence.",

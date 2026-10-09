@@ -13,8 +13,11 @@ export default {
     { file: "living-room.jpg", alt: { en: "Living room", fr: "Séjour" } },
     { file: "bedroom.jpg", alt: { en: "Bedroom with queen-size bed and balcony", fr: "Chambre avec lit queen size et balcon" } },
     { file: "rooftop-pool.jpg", alt: { en: "Rooftop pool overlooking Nairobi", fr: "Piscine sur le toit avec vue sur Nairobi" } },
-    { file: "kitchen.jpg", alt: { en: "Equipped kitchen and dining table", fr: "Cuisine équipée et table à manger" } }, // TODO : remplacer par la photo de la salle de bain
+    { file: "bathroom.jpg", alt: { en: "En-suite bathroom with walk-in shower", fr: "Salle de bain attenante avec douche à l'italienne" } },
     { file: "balcony-night.jpg", alt: { en: "Balcony at night, city view", fr: "Balcon de nuit, vue sur la ville" } },
+    { file: "kitchen.jpg", alt: { en: "Equipped kitchen and dining table", fr: "Cuisine équipée et table à manger" } },
+    { file: "bathroom-wide.jpg", alt: { en: "Bathroom", fr: "Salle de bain" } },
+    { file: "bathroom-shower.jpg", alt: { en: "Walk-in shower", fr: "Douche à l'italienne" } },
     // Suite de la galerie complète
     { file: "city-view-night.jpg", alt: { en: "Night view of Westlands from the living room", fr: "Vue de nuit sur Westlands depuis le séjour" } },
     { file: "city-view-day.jpg", alt: { en: "Day view over Westlands", fr: "Vue de jour sur Westlands" } },

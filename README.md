@@ -120,6 +120,4 @@ Rechercher `TODO` dans le code :
 
 - [ ] numéro WhatsApp et téléphone (`site.js`)
 - [ ] prix en dollars et en shillings (`site.js`)
-- [ ] photo de la salle de bain (`home.js`, 5e photo)
-- [ ] tabac : balcon autorisé ou non (`legal.js`, règlement intérieur)
 - [ ] relecture juridique des pages légales
