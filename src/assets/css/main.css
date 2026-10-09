@@ -55,7 +55,9 @@ button, input, select { font: inherit; color: inherit; }
 
 /* 3. Composants communs ---------------------------------------------------- */
 
-.label { font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: var(--olive); font-weight: 400; }
+/* Petits titres en capitales (« Westlands · Nairobi », « L'appartement », « Avis »…) : une seule taille, 12 px. */
+
+.label { font-size: 12px; letter-spacing: .38em; text-transform: uppercase; color: var(--olive); font-weight: 400; }
 .label--light { color: var(--on-dark-muted); }
 .lead { font-size: 1.1rem; line-height: 1.6; color: var(--texte); }
 .small { font-size: 13px; }
@@ -129,7 +131,7 @@ picture { display: block; height: 100%; }
 .hero__side { flex: 1 1 300px; max-width: 25rem; display: flex; flex-direction: column; gap: 1.5rem; }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
 .hero__photo { height: clamp(16rem, 42vw, 34rem); overflow: hidden; }
-.highlights { list-style: none; margin: 0; padding: 1.25rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 2.5rem; align-items: baseline; font-size: 14px; color: var(--texte); }
+.highlights { list-style: none; margin: 0; padding: 1.25rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 2.5rem; align-items: baseline; font-size: 16px; color: var(--texte); }
 .highlights strong { color: var(--charbon); }
 
 /* L'appartement */
@@ -152,7 +154,7 @@ picture { display: block; height: 100%; }
 .amenities .icon { color: var(--olive); }
 .apartment__subtitle { font-size: 1.25rem; color: var(--texte); }
 .all-amenities { margin-top: 1rem; border-top: 1px solid var(--filet); }
-.all-amenities summary { cursor: pointer; padding: 1rem 0; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--olive); }
+.all-amenities summary { cursor: pointer; padding: 1rem 0; font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--olive); }
 .all-amenities__groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem 2rem; padding-bottom: 1rem; }
 .all-amenities ul { list-style: none; margin: .6rem 0 0; padding: 0; font-size: 14px; color: var(--texte); line-height: 1.9; }
 .price-card { flex: 1 1 300px; align-self: flex-start; border: 1.5px solid var(--sauge); padding: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
@@ -207,7 +209,7 @@ picture { display: block; height: 100%; }
 .divider { display: flex; align-items: center; gap: 1rem; font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
 .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--filet); }
 .practical { margin: 2.5rem 0 0; padding-top: 1.5rem; border-top: 1px solid #7a7e6c; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem 2rem; }
-.practical dt { font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--on-dark-muted); }
+.practical dt { font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--on-dark-muted); }
 .practical dd { margin: .25rem 0 0; color: var(--on-dark); }
 .practical a { color: var(--blanc); }
 
