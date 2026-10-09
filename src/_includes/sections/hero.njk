@@ -3,9 +3,11 @@
     Mobile : la photo occupe tout l'écran, bord à bord, avec la tagline posée dessus (voir main.css). -#}
 <section class="hero">
   <div class="container hero__grid">
-    <h1 class="hero__title">{{ t.hero.title | safe }}</h1>
+    {#- La tagline est un élément visuel ; le titre principal (h1), lu par Google, décrit l'offre
+        et s'affiche comme le début de la phrase d'accroche. -#}
+    <p class="hero__title">{{ t.hero.title | safe }}</p>
     <div class="hero__side">
-      <p class="lead">{{ t.hero.lead }}</p>
+      <div class="lead"><h1 class="hero__h1">{{ t.hero.h1 }}</h1> {{ t.hero.lead }}</div>
       <a class="btn hero__cta" href="https://wa.me/{{ site.contact.whatsapp }}" data-wa-link>{{ icons.icon("whatsapp", 16) }}{{ t.hero.whatsapp }}</a>
       <p class="small muted">{{ t.hero.response }}</p>
     </div>

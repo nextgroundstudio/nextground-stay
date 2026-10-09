@@ -138,6 +138,7 @@ picture { display: block; height: 100%; }
   align-items: end;
 }
 .hero__title { grid-area: title; font-size: clamp(2.6rem, 6vw, 5.4rem); letter-spacing: .02em; line-height: 1; padding-bottom: 1rem; }
+.hero__h1 { display: inline; font: inherit; letter-spacing: inherit; margin: 0; }
 .hero__side { grid-area: side; display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; padding-bottom: 1rem; }
 .hero__photo { grid-area: photo; height: clamp(16rem, 42vw, 34rem); overflow: hidden; position: relative; }
 .highlights { grid-area: strip; }

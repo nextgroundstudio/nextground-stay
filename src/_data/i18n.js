@@ -23,7 +23,9 @@ export default {
     },
     hero: {
       title: "The right place,<br>simply.",
-      lead: "A furnished one-bedroom apartment in Westlands, Nairobi. Book direct, with no service fees.",
+      // h1 : titre principal pour Google (affiché comme début de la phrase d'accroche).
+      h1: "A furnished one-bedroom apartment in Westlands, Nairobi.",
+      lead: "Book direct, with no service fees.",
       whatsapp: "Message us on WhatsApp",
       response: "We reply within the hour, 9 am to 10 pm, Nairobi time.",
       area: "Westlands · Nairobi",
@@ -195,7 +197,8 @@ export default {
     },
     hero: {
       title: "The right place,<br>simply.",
-      lead: "Un appartement meublé d'une chambre à Westlands, Nairobi. En direct, sans frais de service.",
+      h1: "Un appartement meublé d'une chambre à Westlands, Nairobi.",
+      lead: "En direct, sans frais de service.",
       whatsapp: "Écrire sur WhatsApp",
       response: "Réponse dans l'heure, de 9 h à 22 h, heure de Nairobi.",
       area: "Westlands · Nairobi",
