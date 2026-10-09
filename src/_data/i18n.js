@@ -125,12 +125,8 @@ export default {
           a: "The GTC and Eden Square are within walking distance. Cafés and restaurants are close by. The Mall Westlands, Naivas supermarket, Sarit Centre and Westgate are 5 to 10 minutes away by car.",
         },
         {
-          q: "How far is the airport?",
-          a: "JKIA is about 25 minutes away by car via the Nairobi Expressway, depending on traffic. We'll give you the real travel time for your arrival.",
-        },
-        {
-          q: "Is early check-in possible?",
-          a: "Yes, for an additional fee and subject to availability. Ask us on WhatsApp.",
+          q: "Early check-in or late check-out?",
+          a: "Both are possible for an additional fee, subject to availability. Ask us on WhatsApp.",
         },
         {
           q: "Is cleaning included?",
@@ -302,12 +298,8 @@ export default {
           a: "Le GTC et Eden Square sont accessibles à pied. Cafés et restaurants sont tout proches. The Mall Westlands, le supermarché Naivas, Sarit Centre et Westgate sont à 5 à 10 minutes en voiture.",
         },
         {
-          q: "À quelle distance est l'aéroport ?",
-          a: "L'aéroport JKIA est à environ 25 minutes en voiture par la Nairobi Expressway, selon la circulation. Nous vous donnons le temps de trajet réel pour votre arrivée.",
-        },
-        {
-          q: "Peut-on arriver plus tôt ?",
-          a: "Oui, moyennant un supplément et selon les disponibilités. Demandez-nous sur WhatsApp.",
+          q: "Arrivée anticipée ou départ tardif ?",
+          a: "Les deux sont possibles moyennant un supplément, selon les disponibilités. Demandez-nous sur WhatsApp.",
         },
         {
           q: "Le ménage est-il compris ?",
