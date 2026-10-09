@@ -90,7 +90,7 @@ picture { display: block; height: 100%; }
 .section--tint { background: var(--gris-clair); }
 .section--olive { background: var(--olive); color: var(--blanc); }
 .section__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1rem 2rem; margin-bottom: 2.5rem; }
-.section__head .label, .apartment__info .label, .neighborhood__info .label, .book__intro .label, .faq .label { margin-bottom: .75rem; display: block; }
+.section__head .label, .apartment__info .label, .neighborhood__info .label, .book__intro .label { margin-bottom: .75rem; display: block; }
 
 /* 4. En-tête et pied de page ----------------------------------------------- */
 
@@ -190,30 +190,33 @@ picture { display: block; height: 100%; }
 .places dd { margin: 0; color: var(--muted); text-align: right; }
 
 /* Réserver */
-.book { display: flex; flex-wrap: wrap; gap: 3rem 5rem; }
-.book__intro { flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 1.75rem; }
+.book { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+@media (min-width: 1000px) { .book { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 4rem; align-items: start; } }
+.book__intro { display: flex; flex-direction: column; gap: 1.5rem; }
 .on-dark { color: var(--on-dark); max-width: 32rem; }
-.team { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1.25rem 2.5rem; }
-.team li { display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; }
-.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; }
-.steps li { flex: 1 1 170px; border-top: 1px solid #7a7e6c; padding-top: 1rem; display: flex; gap: .8rem; line-height: 1.5; }
+.team { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem 2rem; }
+.team li { display: flex; align-items: center; gap: .9rem; font-size: 1.05rem; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.steps li { border-top: 1px solid #7a7e6c; padding: .7rem 0; display: flex; gap: .8rem; line-height: 1.5; }
 .steps span { font-size: 11px; letter-spacing: .2em; color: var(--on-dark-muted); padding-top: .2rem; }
-.practical { margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem 2rem; }
+.book__card { background: var(--blanc); color: var(--charbon); padding: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.book__card a { color: var(--olive); }
+.book__card .btn:not(.btn--outline) { color: var(--blanc); }
+.book__grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+@media (min-width: 700px) { .book__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 2rem; } }
+.divider { display: flex; align-items: center; gap: 1rem; font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--filet); }
+.practical { margin: 2.5rem 0 0; padding-top: 1.5rem; border-top: 1px solid #7a7e6c; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem 2rem; }
 .practical dt { font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--on-dark-muted); }
 .practical dd { margin: .25rem 0 0; color: var(--on-dark); }
 .practical a { color: var(--blanc); }
-.book__card { flex: 1 1 400px; min-width: 0; align-self: flex-start; background: var(--blanc); color: var(--charbon); padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
-.book__card a { color: var(--olive); }
-.book__card .btn:not(.btn--outline) { color: var(--blanc); }
-.divider { display: flex; align-items: center; gap: 1rem; font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
-.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--filet); }
 
 /* Calendrier */
 .calendar__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
 .calendar__nav { display: flex; gap: .25rem; }
 .calendar__nav button { width: 32px; height: 32px; border: 1px solid var(--filet); background: var(--blanc); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
 .calendar__nav button:disabled { opacity: .35; cursor: default; }
-.calendar__months { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.calendar__months { display: block; }
 .month__name { font-size: 13px; font-weight: 400; margin-bottom: .5rem; text-transform: capitalize; }
 .month__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; font-size: 12px; }
 .month__grid .dow { color: var(--muted); font-size: 10px; padding-bottom: .25rem; }
@@ -240,16 +243,16 @@ picture { display: block; height: 100%; }
 .form .check { flex-direction: row; align-items: flex-start; gap: .75rem; font-size: 14px; letter-spacing: normal; text-transform: none; color: var(--charbon); }
 .form .check input { width: 18px; height: 18px; margin-top: .2rem; flex-shrink: 0; accent-color: var(--olive); }
 
-/* FAQ */
-.faq { display: flex; flex-wrap: wrap; gap: 2rem 5rem; }
-.faq > div:first-child { flex: 1 1 280px; }
-.faq__list { flex: 2 1 520px; min-width: 0; border-top: 1px solid var(--filet); }
-.faq details { border-bottom: 1px solid var(--filet); }
-.faq summary { cursor: pointer; list-style: none; padding: 1.1rem 2rem 1.1rem 0; position: relative; font-weight: 400; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; position: absolute; right: .25rem; top: .9rem; font-size: 1.3rem; font-weight: 300; color: var(--olive); }
-.faq details[open] summary::after { content: "–"; }
-.faq details p { padding: 0 2rem 1.25rem 0; color: var(--texte); }
+/* FAQ : deux colonnes sur ordinateur */
+.section--compact { padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
+.faq__list { display: grid; grid-template-columns: 1fr; column-gap: 3rem; align-items: start; }
+@media (min-width: 860px) { .faq__list { grid-template-columns: 1fr 1fr; } }
+.faq__list details { border-top: 1px solid var(--filet); }
+.faq__list summary { cursor: pointer; list-style: none; padding: .9rem 2rem .9rem 0; position: relative; font-weight: 400; }
+.faq__list summary::-webkit-details-marker { display: none; }
+.faq__list summary::after { content: "+"; position: absolute; right: .25rem; top: .7rem; font-size: 1.3rem; font-weight: 300; color: var(--olive); }
+.faq__list details[open] summary::after { content: "–"; }
+.faq__list details p { padding: 0 2rem 1rem 0; color: var(--texte); }
 
 /* Bouton WhatsApp flottant */
 .wa-float { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 30; width: 54px; height: 54px; border-radius: 50%; background: var(--olive); color: var(--blanc); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(43, 40, 38, .25); }

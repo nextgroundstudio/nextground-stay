@@ -28,8 +28,10 @@ export default {
     country: "Kenya",
     countryCode: "KE",
     floor: 8,
-    // Recherche utilisée pour la carte Google Maps.
-    mapsQuery: "Misty Springs, Westlands Road, Westlands, Nairobi",
+    // Position exacte de l'immeuble, utilisée pour la carte et le lien Google Maps.
+    // Pour la modifier : clic droit sur le bâtiment dans Google Maps > copier les coordonnées.
+    lat: -1.267943,
+    lng: 36.80698,
   },
 
   stay: {

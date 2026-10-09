@@ -42,6 +42,7 @@ eleventyComputed:
     "addressRegion": site.address.district,
     "addressCountry": site.address.countryCode
   },
+  "geo": { "@type": "GeoCoordinates", "latitude": site.address.lat, "longitude": site.address.lng },
   "checkinTime": site.stay.checkIn,
   "checkoutTime": site.stay.checkOut,
   "petsAllowed": false,

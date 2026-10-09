@@ -1,8 +1,9 @@
 {#- Le quartier : carte (chargée au clic, pas de cookies Google avant), lieux proches et durées. -#}
-{%- set mapsUrl = "https://www.google.com/maps/search/?api=1&query=" + (site.address.mapsQuery | urlencode) -%}
+{%- set coords = site.address.lat + "," + site.address.lng -%}
+{%- set mapsUrl = "https://www.google.com/maps/search/?api=1&query=" + coords -%}
 <section class="section" id="neighborhood">
   <div class="container neighborhood">
-    <div class="map" data-map="https://www.google.com/maps?q={{ site.address.mapsQuery | urlencode }}&output=embed&hl={{ lang.code }}">
+    <div class="map" data-map="https://maps.google.com/maps?q={{ coords }}&z=16&output=embed&hl={{ lang.code }}">
       <div class="map__cover">
         {{ icons.icon("pin", 28) }}
         <p>{{ t.neighborhood.address }}</p>

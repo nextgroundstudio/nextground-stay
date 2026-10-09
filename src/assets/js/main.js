@@ -89,7 +89,7 @@
     const next = $("[data-cal-next]", cal);
     const now = new Date();
     let offset = 0; // décalage en mois par rapport au mois courant
-    const MAX_OFFSET = 10;
+    const MAX_OFFSET = 11;
 
     const dayNames = [...Array(7)].map((_, i) =>
       new Intl.DateTimeFormat(NGS.locale, { weekday: "narrow" }).format(new Date(2024, 0, 1 + i)) // 1er janv. 2024 = lundi
@@ -114,10 +114,10 @@
       return `<div class="month"><p class="month__name">${name}</p><div class="month__grid">${cells}</div></div>`;
     };
 
+    // Un mois affiché à la fois, les flèches font défiler.
     const render = () => {
-      const m1 = new Date(now.getFullYear(), now.getMonth() + offset, 1);
-      const m2 = new Date(now.getFullYear(), now.getMonth() + offset + 1, 1);
-      months.innerHTML = renderMonth(m1.getFullYear(), m1.getMonth()) + renderMonth(m2.getFullYear(), m2.getMonth());
+      const m = new Date(now.getFullYear(), now.getMonth() + offset, 1);
+      months.innerHTML = renderMonth(m.getFullYear(), m.getMonth());
       prev.disabled = offset === 0;
       next.disabled = offset >= MAX_OFFSET;
     };

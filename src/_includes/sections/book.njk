@@ -1,66 +1,74 @@
-{#- Réserver : l'équipe, les étapes, les infos pratiques, les disponibilités et le formulaire.
+{#- Réserver : l'équipe et les étapes à gauche ; à droite, WhatsApp puis disponibilités et formulaire
+    côte à côte (sur ordinateur) ; en bas, les infos pratiques sur une ligne.
     Le formulaire est géré par Netlify Forms (attribut data-netlify) : chaque demande arrive
     dans le tableau de bord Netlify et peut être envoyée par e-mail (voir README). -#}
 <section class="section section--olive" id="book">
-  <div class="container book">
-    <div class="book__intro">
-      <p class="label label--light">{{ t.book.kicker }}</p>
-      <h2>{{ t.book.title | safe }}</h2>
-      <p class="on-dark">{{ t.book.text }}</p>
+  <div class="container">
+    <div class="book">
+      <div class="book__intro">
+        <p class="label label--light">{{ t.book.kicker }}</p>
+        <h2>{{ t.book.title | safe }}</h2>
+        <p class="on-dark">{{ t.book.text }}</p>
 
-      <ul class="team">
-        {%- for name in ["Amanda", "Lysiane"] %}
-        <li><span class="avatar avatar--large" aria-hidden="true">{{ name | first }}</span><span><strong>{{ name }}</strong><br><span class="label label--light">{{ t.book.role }}</span></span></li>
-        {%- endfor %}
-      </ul>
+        <ul class="team">
+          {%- for name in ["Amanda", "Lysiane"] %}
+          <li><span class="avatar avatar--large" aria-hidden="true">{{ name | first }}</span><span><strong>{{ name }}</strong><br><span class="label label--light">{{ t.book.role }}</span></span></li>
+          {%- endfor %}
+        </ul>
 
-      <ol class="steps">
-        {%- for s in t.book.steps %}<li><span>0{{ loop.index }}</span>{{ s }}</li>{% endfor %}
-      </ol>
-
-      <dl class="practical">
-        <div><dt>{{ t.practical.checkIn }}</dt><dd>{{ t.practical.checkInValue }}</dd></div>
-        <div><dt>{{ t.practical.checkOut }}</dt><dd>{{ t.practical.checkOutValue }}</dd></div>
-        <div><dt>{{ t.practical.payment }}</dt><dd>{{ t.practical.paymentValue }}</dd></div>
-        <div><dt>{{ t.practical.cancellation }}</dt><dd>{{ t.practical.cancellationValue }} · <a href="{{ routes.terms[lang.code] }}">{{ t.practical.terms }}</a></dd></div>
-      </dl>
-    </div>
-
-    <div class="book__card">
-      <a class="btn btn--block" href="https://wa.me/{{ site.contact.whatsapp }}" data-wa-link>{{ icons.icon("whatsapp", 16) }}{{ t.book.whatsapp }}</a>
-      <p class="divider"><span>{{ t.book.or }}</span></p>
-
-      {#- Calendrier des disponibilités, rempli par main.js à partir de /api/availability -#}
-      <div class="calendar" data-calendar aria-live="polite">
-        <div class="calendar__head">
-          <p class="label">{{ t.calendar.title }}</p>
-          <div class="calendar__nav">
-            <button type="button" data-cal-prev aria-label="{{ t.calendar.prev }}">{{ icons.icon("chevron-left", 16) }}</button>
-            <button type="button" data-cal-next aria-label="{{ t.calendar.next }}">{{ icons.icon("chevron-right", 16) }}</button>
-          </div>
-        </div>
-        <div class="calendar__months" data-cal-months><p class="small muted">{{ t.calendar.loading }}</p></div>
-        <p class="calendar__legend small"><span class="dot dot--free"></span>{{ t.calendar.free }} <span class="dot dot--booked"></span>{{ t.calendar.booked }}</p>
+        <ol class="steps">
+          {%- for s in t.book.steps %}<li><span>0{{ loop.index }}</span>{{ s }}</li>{% endfor %}
+        </ol>
       </div>
 
-      <form class="form" name="booking" method="POST" data-netlify="true" netlify-honeypot="company" data-booking-form>
-        <input type="hidden" name="form-name" value="booking">
-        <input type="hidden" name="language" value="{{ lang.code }}">
-        <p class="visually-hidden"><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p>
-        <div class="form__row">
-          <label>{{ t.book.arrival }}<input type="date" name="arrival" required data-arrival></label>
-          <label>{{ t.book.departure }}<input type="date" name="departure" required data-departure></label>
-          <label class="form__narrow">{{ t.book.guests }}<select name="guests">{% for n in range(1, site.stay.maxGuests + 1) %}<option{% if n == 2 %} selected{% endif %}>{{ n }}</option>{% endfor %}</select></label>
-        </div>
-        <p class="form__status small" data-dates-status hidden></p>
-        <label>{{ t.book.name }}<input type="text" name="name" autocomplete="name" required></label>
-        <label>{{ t.book.contact }}<input type="text" name="contact" autocomplete="email" required></label>
-        <label>{{ t.book.message }}<input type="text" name="message" placeholder="{{ t.book.messagePlaceholder }}"></label>
-        <button class="btn btn--outline btn--block" type="submit">{{ t.book.send }}</button>
-        <p class="form__result small" data-form-result role="status" hidden></p>
-      </form>
+      <div class="book__card">
+        <a class="btn btn--block" href="https://wa.me/{{ site.contact.whatsapp }}" data-wa-link>{{ icons.icon("whatsapp", 16) }}{{ t.book.whatsapp }}</a>
+        <p class="divider"><span>{{ t.book.or }}</span></p>
 
-      <p class="small muted">{{ t.book.direct }} · <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a> &nbsp;·&nbsp; {{ t.book.phone }} · <a href="tel:{{ site.contact.phone | replace(' ', '') }}">{{ site.contact.phone }}</a></p>
+        <div class="book__grid">
+          {#- Calendrier des disponibilités, rempli par main.js à partir de /api/availability -#}
+          <div class="calendar" data-calendar aria-live="polite">
+            <div class="calendar__head">
+              <p class="label">{{ t.calendar.title }}</p>
+              <div class="calendar__nav">
+                <button type="button" data-cal-prev aria-label="{{ t.calendar.prev }}">{{ icons.icon("chevron-left", 16) }}</button>
+                <button type="button" data-cal-next aria-label="{{ t.calendar.next }}">{{ icons.icon("chevron-right", 16) }}</button>
+              </div>
+            </div>
+            <div class="calendar__months" data-cal-months><p class="small muted">{{ t.calendar.loading }}</p></div>
+            <p class="calendar__legend small"><span class="dot dot--free"></span>{{ t.calendar.free }} <span class="dot dot--booked"></span>{{ t.calendar.booked }}</p>
+          </div>
+
+          <form class="form" name="booking" method="POST" data-netlify="true" netlify-honeypot="company" data-booking-form>
+            <input type="hidden" name="form-name" value="booking">
+            <input type="hidden" name="language" value="{{ lang.code }}">
+            <p class="visually-hidden"><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p>
+            <div class="form__row">
+              <label>{{ t.book.arrival }}<input type="date" name="arrival" required data-arrival></label>
+              <label>{{ t.book.departure }}<input type="date" name="departure" required data-departure></label>
+            </div>
+            <p class="form__status small" data-dates-status hidden></p>
+            <div class="form__row">
+              <label>{{ t.book.name }}<input type="text" name="name" autocomplete="name" required></label>
+              <label class="form__narrow">{{ t.book.guests }}<select name="guests">{% for n in range(1, site.stay.maxGuests + 1) %}<option{% if n == 2 %} selected{% endif %}>{{ n }}</option>{% endfor %}</select></label>
+            </div>
+            <label>{{ t.book.contact }}<input type="text" name="contact" autocomplete="email" required></label>
+            <label>{{ t.book.message }}<input type="text" name="message" placeholder="{{ t.book.messagePlaceholder }}"></label>
+            <button class="btn btn--outline btn--block" type="submit">{{ t.book.send }}</button>
+            <p class="form__result small" data-form-result role="status" hidden></p>
+          </form>
+        </div>
+
+        <p class="small muted">{{ t.book.direct }} · <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a> &nbsp;·&nbsp; {{ t.book.phone }} · <a href="tel:{{ site.contact.phone | replace(' ', '') }}">{{ site.contact.phone }}</a></p>
+      </div>
     </div>
+
+    {#- Infos pratiques, sur une ligne sous le bloc -#}
+    <dl class="practical">
+      <div><dt>{{ t.practical.checkIn }}</dt><dd>{{ t.practical.checkInValue }}</dd></div>
+      <div><dt>{{ t.practical.checkOut }}</dt><dd>{{ t.practical.checkOutValue }}</dd></div>
+      <div><dt>{{ t.practical.payment }}</dt><dd>{{ t.practical.paymentValue }}</dd></div>
+      <div><dt>{{ t.practical.cancellation }}</dt><dd>{{ t.practical.cancellationValue }} · <a href="{{ routes.terms[lang.code] }}">{{ t.practical.terms }}</a></dd></div>
+    </dl>
   </div>
 </section>

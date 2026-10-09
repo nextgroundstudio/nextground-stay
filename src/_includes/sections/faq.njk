@@ -1,9 +1,12 @@
-{#- Questions fréquentes : liste dans i18n.js (faq.items), une question = { q, a }. -#}
-<section class="section" id="faq">
-  <div class="container faq">
-    <div>
-      <p class="label">{{ t.faq.kicker }}</p>
-      <h2>{{ t.faq.title }}</h2>
+{#- Questions fréquentes : liste dans i18n.js (faq.items), une question = { q, a }.
+    Sur ordinateur, les questions sont réparties sur deux colonnes. -#}
+<section class="section section--compact" id="faq">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="label">{{ t.faq.kicker }}</p>
+        <h2>{{ t.faq.title }}</h2>
+      </div>
     </div>
     <div class="faq__list">
       {%- for item in t.faq.items %}

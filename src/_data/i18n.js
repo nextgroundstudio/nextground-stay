@@ -134,16 +134,8 @@ export default {
           a: "Yes. The apartment is cleaned every 3 days, included in the price.",
         },
         {
-          q: "How do I check in?",
-          a: "Check-in is self-service from 3 pm, with a secure smart lock. Your access code is sent before arrival. Security and concierge are on site 24/7.",
-        },
-        {
-          q: "Is there parking?",
-          a: "Yes, free secured parking in the residence.",
-        },
-        {
           q: "How do I pay?",
-          a: "By bank transfer or M-Pesa. We confirm the total price in writing before you pay.",
+          a: "By bank transfer or M-Pesa, in US dollars, euros or Kenyan shillings. We confirm the total price in writing before you pay.",
         },
         {
           q: "What is the cancellation policy?",
@@ -152,10 +144,6 @@ export default {
         {
           q: "Do you offer long stays?",
           a: "Yes. The nightly rate is reduced from 15 nights. For stays of 30 nights or more, contact us for a tailored quote.",
-        },
-        {
-          q: "In which currency do I pay?",
-          a: "Prices are shown in US dollars, euros or Kenyan shillings. The currency and total amount are confirmed in writing with your booking.",
         },
       ],
     },
@@ -320,16 +308,8 @@ export default {
           a: "Oui. Le ménage est fait tous les 3 jours, compris dans le prix.",
         },
         {
-          q: "Comment se passe l'arrivée ?",
-          a: "L'arrivée se fait en autonomie dès 15 h, grâce à une serrure connectée sécurisée. Votre code d'accès vous est envoyé avant l'arrivée. Sécurité et conciergerie sur place 24 h/24, 7 j/7.",
-        },
-        {
-          q: "Y a-t-il un parking ?",
-          a: "Oui, un parking gratuit et surveillé dans la résidence.",
-        },
-        {
           q: "Comment payer ?",
-          a: "Par virement bancaire ou M-Pesa. Nous confirmons le prix total par écrit avant tout paiement.",
+          a: "Par virement bancaire ou M-Pesa, en dollars, en euros ou en shillings kényans. Nous confirmons le prix total par écrit avant tout paiement.",
         },
         {
           q: "Quelles sont les conditions d'annulation ?",
@@ -338,10 +318,6 @@ export default {
         {
           q: "Proposez-vous des séjours longs ?",
           a: "Oui. Le tarif à la nuit est dégressif à partir de 15 nuits. Pour 30 nuits ou plus, contactez-nous pour une proposition sur mesure.",
-        },
-        {
-          q: "Dans quelle devise payer ?",
-          a: "Les prix sont affichés en dollars américains, en euros ou en shillings kényans. La devise et le montant total sont confirmés par écrit avec votre réservation.",
         },
       ],
     },
