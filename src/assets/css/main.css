@@ -118,7 +118,7 @@ picture { display: block; height: 100%; }
 .footer { background: var(--olive-dark); color: var(--on-dark); padding: 4rem 0 2.5rem; font-size: 13px; }
 .footer__sign { display: flex; align-items: center; color: var(--blanc); padding-left: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter))); }
 .footer__sign svg { flex-shrink: 0; }
-.footer__line { flex: 1; height: 1.3px; background: currentColor; margin-left: -2px; }
+.footer__line { flex: 1; height: 1.2px; background: currentColor; margin-left: -31px; } /* le filet EST la barre du G : il démarre dans la lettre (98/160 × 80 px), même épaisseur que le tracé */
 .footer__stay { font-size: 12px; letter-spacing: .6em; padding: 0 max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter))) 0 18px; }
 .footer__cols { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem 3rem; padding-top: 2.5rem; line-height: 2; }
 .footer__cols > div { display: flex; flex-direction: column; }
