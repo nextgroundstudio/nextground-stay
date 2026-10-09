@@ -185,7 +185,7 @@
   const form = $("[data-booking-form]");
   const updateWhatsApp = () => {
     const B = NGS.t.book;
-    const lines = [B.waIntro];
+    const lines = [B.waIntro.replace("{name}", NGS.apartmentName)];
     if (form) {
       const f = new FormData(form);
       if (f.get("arrival") && f.get("departure")) lines.push(`${B.waDates}: ${f.get("arrival")} → ${f.get("departure")}`);
