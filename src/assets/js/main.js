@@ -15,6 +15,14 @@
     set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* ignoré */ } },
   };
 
+  /* --- 0. En-tête translucide une fois la page défilée ---------------------- */
+  const header = $(".header");
+  if (header) {
+    const onScroll = () => header.classList.toggle("is-scrolled", scrollY > 8);
+    addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
   /* --- 1. Trait du logo qui s'allonge avec le défilement ------------------- */
   const line = $("[data-scroll-line]");
   if (line) {

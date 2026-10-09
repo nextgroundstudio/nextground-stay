@@ -96,7 +96,12 @@ picture { display: block; height: 100%; }
 
 /* 4. En-tête et pied de page ----------------------------------------------- */
 
-.header { position: sticky; top: 0; z-index: 20; background: var(--blanc); border-bottom: 1px solid var(--filet); }
+.header { position: sticky; top: 0; z-index: 20; background: var(--blanc); border-bottom: 1px solid var(--filet); transition: background-color .25s ease, border-color .25s ease; }
+/* Une fois la page défilée : fond blanc translucide et flou de ce qui passe dessous (classe posée par main.js).
+   Les navigateurs qui ne gèrent pas le flou gardent le fond blanc plein. */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .header.is-scrolled { background: rgba(255, 255, 255, .8); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); border-bottom-color: rgba(230, 228, 223, .6); }
+}
 .header__inner { max-width: var(--container); margin: 0 auto; padding: .8rem var(--gutter); display: flex; align-items: center; gap: 1.5rem; min-height: var(--header-h); }
 .brand { flex: 1 1 140px; min-width: 110px; display: flex; align-items: center; color: var(--olive); text-decoration: none; }
 .brand__mark { flex-shrink: 0; }
