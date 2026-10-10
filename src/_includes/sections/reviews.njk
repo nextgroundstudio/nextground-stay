@@ -6,9 +6,10 @@
         <p class="label">{{ t.reviews.kicker }}</p>
         <h2>{{ t.reviews.title }}</h2>
       </div>
-      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> {{ t.reviews.summary | fill({ rating: home.reviews.rating, count: home.reviews.count }) }}</p>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> {{ t.reviews.summary | fill({ rating: home.reviews.rating, count: home.reviews.items.length }) }}</p>
     </div>
-    <div class="reviews">
+    {%- set n = home.reviews.items | length %}
+    <div class="reviews{% if n > 2 %} reviews--many-m{% endif %}{% if n > 3 %} reviews--many-d{% endif %}" data-reviews tabindex="0" aria-label="{{ t.reviews.kicker }}">
       {%- for r in home.reviews.items %}
       <figure class="review">
         <div>
@@ -22,5 +23,11 @@
       </figure>
       {%- endfor %}
     </div>
+    {%- if n > 2 %}
+    <div class="reviews__nav">
+      <button type="button" data-reviews-prev aria-label="{{ t.reviews.prev }}">{{ icons.icon("chevron-left", 16) }}</button>
+      <button type="button" data-reviews-next aria-label="{{ t.reviews.next }}">{{ icons.icon("chevron-right", 16) }}</button>
+    </div>
+    {%- endif %}
   </div>
 </section>

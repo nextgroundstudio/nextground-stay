@@ -223,6 +223,21 @@ picture { display: block; height: 100%; }
 .review blockquote { margin: 1rem 0 0; font-size: 1.1rem; line-height: 1.6; }
 .review figcaption { display: flex; align-items: center; gap: .9rem; font-size: 13px; color: var(--muted); }
 .review figcaption strong { color: var(--charbon); font-size: 15px; }
+/* Plus de 2 avis sur mobile, plus de 3 sur ordinateur : une rangée qui défile, la carte suivante dépasse
+   pour montrer qu'il y en a d'autres. Pas de défilement automatique : chacun lit à son rythme. */
+.reviews__nav { display: none; gap: .25rem; justify-content: flex-end; margin-top: 1rem; }
+.reviews__nav button { width: 40px; height: 40px; border: 1px solid var(--filet); background: var(--blanc); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+@media (max-width: 759px) {
+  .reviews--many-m { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(-1 * var(--gutter)); padding: 0 var(--gutter); scroll-padding: 0 var(--gutter); }
+  .reviews--many-m .review { flex: 0 0 85%; scroll-snap-align: start; }
+  .reviews--many-m + .reviews__nav { display: flex; }
+}
+@media (min-width: 760px) {
+  .reviews--many-d { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .reviews--many-d .review { flex: 0 0 calc((100% - 3rem) / 3); scroll-snap-align: start; }
+  .reviews--many-d + .reviews__nav { display: flex; }
+}
+.reviews::-webkit-scrollbar { display: none; }
 
 /* Quartier */
 .neighborhood { display: flex; flex-wrap: wrap; gap: 2.5rem 4rem; }
@@ -267,12 +282,16 @@ picture { display: block; height: 100%; }
 .month__name { font-size: 13px; font-weight: 400; margin-bottom: .5rem; text-transform: capitalize; }
 .month__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; font-size: 12px; }
 .month__grid .dow { color: var(--muted); font-size: 10px; padding-bottom: .25rem; }
-.month__grid .day { padding: .35rem 0; }
+.month__grid .day { padding: .35rem 0; font: inherit; color: inherit; background: none; border: 0; }
+.month__grid button.day { cursor: pointer; }
+@media (hover: hover) { .month__grid button.day:not(.day--selected):hover { background: var(--sauge); } }
+.month__grid .day--end { box-shadow: inset 0 0 0 1.5px var(--olive); } /* jour de départ */
+.calendar__hint { margin-top: .75rem; color: var(--olive); }
 .month__grid .day--past { color: #c4c4be; }
 .month__grid .day--booked { color: #b3b3ad; text-decoration: line-through; background: var(--gris-clair); }
 .month__grid .day--selected { background: var(--olive); color: var(--blanc); text-decoration: none; }
 .month__grid .day--booked.day--selected { background: #8a5a2b; text-decoration: line-through; } /* nuit déjà prise dans la sélection */
-.calendar__legend { display: flex; align-items: center; gap: .4rem; margin-top: .75rem; color: var(--muted); }
+.calendar__legend { display: flex; align-items: center; gap: .4rem; margin-top: .4rem; color: var(--muted); }
 .dot { width: 10px; height: 10px; display: inline-block; border: 1px solid var(--filet); }
 .dot--booked { background: var(--gris-clair); margin-left: 1rem; }
 
@@ -317,3 +336,16 @@ picture { display: block; height: 100%; }
 .rules h2 { margin-top: 1.5rem; }
 .form--sign { margin-top: 3rem; padding: 2rem; border: 1.5px solid var(--sauge); }
 .form--sign h2 { margin: 0 0 .5rem; }
+
+/* Mobile : bouton WhatsApp flottant retiré (il cachait du contenu et doublait « Réserver » de l'en-tête),
+   petits textes agrandis, carte placée après la liste des lieux et moins haute. */
+@media (max-width: 759px) {
+  .wa-float { display: none; }
+  .small { font-size: 14px; }
+  .divider { font-size: 12px; }
+  .month__grid { font-size: 15px; }
+  .month__grid .dow { font-size: 12px; }
+  .month__grid .day { padding: .55rem 0; }
+  .review figcaption { font-size: 14px; }
+  .map { order: 2; min-height: 16rem; }
+}

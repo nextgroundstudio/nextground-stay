@@ -100,7 +100,7 @@ export default {
   // Avis voyageurs, avec leur accord. Texte d'origine, seules les fautes de frappe sont corrigées.
   reviews: {
     rating: "5.0",
-    count: 2,
+    // Au-delà de 2 avis sur mobile et de 3 sur ordinateur, ils défilent au doigt ou avec les flèches.
     items: [
       {
         name: "Nancy",

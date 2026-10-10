@@ -99,12 +99,21 @@
     map.replaceChildren(iframe);
   });
 
+  /* --- 4 bis. Avis : défilement avec les flèches (au doigt, c'est natif) ------ */
+  const reviews = $("[data-reviews]");
+  if (reviews) {
+    const step = () => (reviews.firstElementChild?.getBoundingClientRect().width || 300) + 24;
+    $("[data-reviews-prev]")?.addEventListener("click", () => reviews.scrollBy({ left: -step(), behavior: "smooth" }));
+    $("[data-reviews-next]")?.addEventListener("click", () => reviews.scrollBy({ left: step(), behavior: "smooth" }));
+  }
+
   /* --- 5. Dates : outils communs --------------------------------------------- */
   // Les dates sont manipulées en texte « AAAA-MM-JJ » (pas de fuseau horaire à gérer).
   const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   const today = iso(new Date());
   const arrival = $("[data-arrival]");
   const departure = $("[data-departure]");
+  const form = $("[data-booking-form]");
   if (arrival) arrival.min = today;
   if (departure) departure.min = today;
 
@@ -143,7 +152,13 @@
         if (day < today) cls.push("day--past");
         else if (isBooked(day)) cls.push("day--booked");
         if (a && d && day >= a && day < d) cls.push("day--selected");
-        cells += `<span class="${cls.join(" ")}">${i}</span>`;
+        if (a && !d && day === a) cls.push("day--selected");
+        if (d && day === d) cls.push("day--end");
+        // Jours à venir : boutons (1er toucher = arrivée, 2e = départ). Les nuits réservées
+        // ne peuvent pas servir d'arrivée, mais peuvent servir de départ (le voyageur part le matin).
+        const choosingArrival = !a || d || day <= a;
+        if (day < today || (choosingArrival && isBooked(day))) cells += `<span class="${cls.join(" ")}">${i}</span>`;
+        else cells += `<button type="button" class="${cls.join(" ")}" data-day="${day}" aria-pressed="${cls.includes("day--selected") || cls.includes("day--end")}">${i}</button>`;
       }
       return `<div class="month"><p class="month__name">${name}</p><div class="month__grid">${cells}</div></div>`;
     };
@@ -155,6 +170,19 @@
       prev.disabled = offset === 0;
       next.disabled = offset >= MAX_OFFSET;
     };
+
+    // Toucher un jour remplit les champs Arrivée puis Départ du formulaire.
+    const hint = $("[data-cal-hint]", cal);
+    months.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-day]");
+      if (!btn || !arrival || !departure) return;
+      const day = btn.dataset.day;
+      if (!arrival.value || departure.value || day <= arrival.value) { arrival.value = day; departure.value = ""; }
+      else departure.value = day;
+      if (hint) hint.textContent = arrival.value && !departure.value ? T.hintDeparture : T.hintArrival;
+      form?.dispatchEvent(new Event("input"));
+      $(`[data-day="${day}"]`, months)?.focus();
+    });
 
     prev.addEventListener("click", () => { offset = Math.max(0, offset - 1); render(); });
     next.addEventListener("click", () => { offset = Math.min(MAX_OFFSET, offset + 1); render(); });
@@ -182,7 +210,6 @@
   }
 
   /* --- 7. Liens WhatsApp pré-remplis avec les dates saisies ------------------- */
-  const form = $("[data-booking-form]");
   const updateWhatsApp = () => {
     const B = NGS.t.book;
     const lines = [B.waIntro.replace("{name}", NGS.apartmentName)];
