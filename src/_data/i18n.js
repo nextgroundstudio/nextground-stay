@@ -39,9 +39,8 @@ export default {
       from: "From",
       perNight: "/ night",
       perks: [
-        "Direct rate, no service fees",
+        "Direct rate, reduced from {reduced} nights",
         "Cleaning every {cleaning} days, included",
-        "Reduced rate from {reduced} nights",
       ],
       cta: "Book",
       fast: "Confirmation within 1 hour",
@@ -218,9 +217,8 @@ export default {
       from: "À partir de",
       perNight: "/ nuit",
       perks: [
-        "Tarif direct, sans frais de service",
+        "Tarif direct, dégressif dès {reduced} nuits",
         "Ménage tous les {cleaning} jours, inclus",
-        "Tarif dégressif dès {reduced} nuits",
       ],
       cta: "Réserver",
       fast: "Confirmation sous 1 h",

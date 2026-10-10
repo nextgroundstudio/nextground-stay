@@ -358,3 +358,16 @@ picture { display: block; height: 100%; }
 .fast--center { display: block; margin: .9rem 0 .4rem; text-align: center; }
 .fast--center svg { display: inline-block; vertical-align: -3px; margin-right: .4rem; }
 .fast--center span { display: inline; }
+
+/* Mobile : l'encadré prix remonte juste sous le nom et l'adresse de l'appartement, avant les équipements
+   (display: contents laisse les éléments de .apartment__info se ranger avec l'encadré). */
+@media (max-width: 759px) {
+  .apartment { flex-direction: column; flex-wrap: nowrap; gap: .6rem; }
+  .apartment__info { display: contents; }
+  .price-card { order: 1; align-self: stretch; margin: 1.25rem 0 1.5rem; }
+  .apartment__info .amenities, .apartment__info .all-amenities { order: 2; }
+}
+
+/* Accueil : prix « à partir de » juste au-dessus du bouton */
+.hero__price { margin: 0; font-size: 1.1rem; color: var(--charbon); }
+.hero__price strong { font-weight: 400; }

@@ -96,7 +96,7 @@ export default {
   highlights: [
     { name: "GTC", time: { en: "5 min walk", fr: "5 min à pied" } },
     { name: "Sarit Centre", time: { en: "5–10 min by car", fr: "5–10 min en voiture" } },
-    { name: { en: "Airport", fr: "Aéroport" }, time: { en: "about 25 min", fr: "environ 25 min" } },
+    { name: { en: "JKIA airport", fr: "Aéroport JKIA" }, time: { en: "about 25 min", fr: "environ 25 min" } },
   ],
 
   // Avis voyageurs, avec leur accord. Texte d'origine, seules les fautes de frappe sont corrigées.
