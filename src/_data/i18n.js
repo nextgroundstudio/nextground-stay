@@ -24,8 +24,9 @@ export default {
     hero: {
       title: "The right place,<br>simply.",
       // h1 : titre principal pour Google (affiché comme début de la phrase d'accroche).
-      h1: "A furnished one-bedroom apartment in Westlands, Nairobi.",
-      lead: "Book direct, with no service fees.",
+      h1: "A one-bedroom apartment on the 8th floor, in Westlands, Nairobi.",
+      lead: "",
+      priceNote: "no service fees",
       whatsapp: "Message us on WhatsApp",
       response: "We reply within the hour, 9 am to 10 pm, Nairobi time.",
       area: "Westlands · Nairobi",
@@ -41,6 +42,7 @@ export default {
       perks: [
         "Direct rate, reduced from {reduced} nights",
         "Cleaning every {cleaning} days, included",
+        "Confirmation within 1 hour, 9 am – 10 pm",
       ],
       cta: "Book",
       fast: "Confirmation within 1 hour",
@@ -202,8 +204,9 @@ export default {
     },
     hero: {
       title: "The right place,<br>simply.",
-      h1: "Un appartement meublé d'une chambre à Westlands, Nairobi.",
-      lead: "En direct, sans frais de service.",
+      h1: "Un appartement d'une chambre au 8e étage, à Westlands, Nairobi.",
+      lead: "",
+      priceNote: "sans frais de service",
       whatsapp: "Écrire sur WhatsApp",
       response: "Réponse dans l'heure, de 9 h à 22 h, heure de Nairobi.",
       area: "Westlands · Nairobi",
@@ -219,6 +222,7 @@ export default {
       perks: [
         "Tarif direct, dégressif dès {reduced} nuits",
         "Ménage tous les {cleaning} jours, inclus",
+        "Confirmation sous 1 h, de 9 h à 22 h",
       ],
       cta: "Réserver",
       fast: "Confirmation sous 1 h",

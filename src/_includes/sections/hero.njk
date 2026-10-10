@@ -7,9 +7,9 @@
         et s'affiche comme le début de la phrase d'accroche. -#}
     <p class="hero__title">{{ t.hero.title | safe }}</p>
     <div class="hero__side">
-      <div class="lead"><h1 class="hero__h1">{{ t.hero.h1 }}</h1> {{ t.hero.lead }}</div>
+      <div class="lead"><h1 class="hero__h1">{{ t.hero.h1 }}</h1>{% if t.hero.lead %} {{ t.hero.lead }}{% endif %}</div>
       {#- Prix « à partir de », visible dès l'accueil (la devise suit le sélecteur de l'en-tête) -#}
-      <p class="hero__price">{{ t.apartment.from }} <strong data-price='{{ site.prices.nightlyFrom | json }}'>{{ site.prices.nightlyFrom[site.currencies[0]] | money(site.currencies[0], lang.locale) }}</strong> {{ t.apartment.perNight }}</p>
+      <p class="hero__price">{{ t.apartment.from }} <strong data-price='{{ site.prices.nightlyFrom | json }}'>{{ site.prices.nightlyFrom[site.currencies[0]] | money(site.currencies[0], lang.locale) }}</strong> {{ t.apartment.perNight }} <span class="muted">· {{ t.hero.priceNote }}</span></p>
       <a class="btn hero__cta" href="https://wa.me/{{ site.contact.whatsapp }}" data-wa-link>{{ icons.icon("whatsapp", 16) }}{{ t.hero.whatsapp }}</a>
       <p class="small muted">{{ t.hero.response }}</p>
     </div>
