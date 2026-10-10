@@ -24,7 +24,7 @@ export default {
     hero: {
       title: "The right place,<br>simply.",
       // h1 : titre principal pour Google (affiché comme début de la phrase d'accroche).
-      h1: "A one-bedroom apartment on the 8th floor, in Westlands, Nairobi.",
+      h1: "A bright one-bedroom apartment on the 8th floor, in Westlands, Nairobi.",
       lead: "",
       priceNote: "no service fees",
       whatsapp: "Message us on WhatsApp",
@@ -204,7 +204,7 @@ export default {
     },
     hero: {
       title: "The right place,<br>simply.",
-      h1: "Un appartement d'une chambre au 8e étage, à Westlands, Nairobi.",
+      h1: "Un appartement lumineux d'une chambre au 8e étage, à Westlands, Nairobi.",
       lead: "",
       priceNote: "sans frais de service",
       whatsapp: "Écrire sur WhatsApp",
