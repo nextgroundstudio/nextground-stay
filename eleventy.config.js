@@ -91,6 +91,22 @@ export default function (eleventyConfig) {
     </picture>`;
   });
 
+  // Grande photo de la galerie : la photo du séjour sur ordinateur ; sur mobile, où cette photo
+  // sert déjà d'accueil, la vue d'ensemble en paysage (pas de doublon en haut de page).
+  eleventyConfig.addShortcode("galleryPhoto", async function (desktopFile, mobileFile, alt) {
+    const opts = { formats: ["webp", "jpeg"], outputDir: "_site/assets/photos/", urlPath: "/assets/photos/", widths: [480, 960, 1440] };
+    const desk = await Image(path.join("src/assets/photos", desktopFile), opts);
+    const mob = await Image(path.join("src/assets/photos", mobileFile), opts);
+    const srcset = (meta, fmt) => meta[fmt].map((i) => i.srcset).join(", ");
+    const fallback = desk.jpeg[1] || desk.jpeg[0];
+    return `<picture>
+      <source media="(max-width: 759px)" type="image/webp" srcset="${srcset(mob, "webp")}" sizes="100vw">
+      <source media="(max-width: 759px)" type="image/jpeg" srcset="${srcset(mob, "jpeg")}" sizes="100vw">
+      <source type="image/webp" srcset="${srcset(desk, "webp")}" sizes="60vw">
+      <img class="photo" src="${fallback.url}" width="${fallback.width}" height="${fallback.height}" alt="${alt}" loading="lazy" decoding="async">
+    </picture>`;
+  });
+
   return {
     dir: { input: "src", includes: "_includes", data: "_data", output: "_site" },
     templateFormats: ["njk"],

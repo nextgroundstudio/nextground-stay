@@ -66,7 +66,11 @@
       count.textContent = `${current + 1} / ${slides.length}`;
     };
     $$("[data-open-photo]").forEach((el) =>
-      el.addEventListener("click", () => { show(Number(el.dataset.openPhoto)); viewer.showModal(); })
+      el.addEventListener("click", () => {
+        // Sur mobile, la grande photo de la galerie est la vue d'ensemble (photo n° 0)
+        const mobile = el.dataset.openPhotoMobile && matchMedia("(max-width: 759px)").matches;
+        show(Number(mobile ? el.dataset.openPhotoMobile : el.dataset.openPhoto)); viewer.showModal();
+      })
     );
     $("[data-viewer-close]", viewer).addEventListener("click", () => viewer.close());
     $("[data-viewer-prev]", viewer).addEventListener("click", () => show(current - 1));

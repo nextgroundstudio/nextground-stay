@@ -12,7 +12,7 @@
       <p class="small muted">{{ t.hero.response }}</p>
     </div>
     {%- set p = home.photos[0] %}
-    <div class="hero__photo"{% if p.position %} style="--pos: {{ p.position }}"{% endif %}>{% heroPhoto p.file, home.heroMobile, p.alt | loc(lang.code) %}</div>
+    <div class="hero__photo" style="--pos: {{ p.position or 'center' }}; --pos-m: {{ home.heroMobilePosition or 'center' }}">{% heroPhoto p.file, home.heroMobile, p.alt | loc(lang.code) %}</div>
     <ul class="highlights">
       <li class="label">{{ t.hero.area }}</li>
       {%- for h in home.highlights %}

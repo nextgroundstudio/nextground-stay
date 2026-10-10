@@ -8,7 +8,9 @@ export default {
   // La première photo sert de grande image d'accueil.
   // Photo d'accueil sur mobile (format vertical), différente de celle de l'ordinateur
   // pour ne pas répéter la première photo de la galerie juste en dessous.
-  heroMobile: "city-view-night.jpg",
+  // Accueil sur mobile : le salon en entier, de face (photo verticale), cadré pour écarter la chaise du coin.
+  heroMobile: "living-room.jpg",
+  heroMobilePosition: "68% 50%",
 
   // position (facultatif) : cadrage de la photo quand elle est rognée (axe X puis axe Y),
   // par ex. "50% 85%" pour descendre vers le canapé.
