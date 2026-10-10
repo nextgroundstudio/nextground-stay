@@ -18,7 +18,7 @@
         </div>
         <figcaption>
           <span class="avatar" aria-hidden="true">{{ r.name | first }}</span>
-          <span><strong>{{ r.name }}</strong> · {{ r.meta | loc(lang.code) }}</span>
+          <span class="review__who"><strong>{{ r.name }}</strong><span>{{ r.meta | loc(lang.code) }}</span></span>
         </figcaption>
       </figure>
       {%- endfor %}

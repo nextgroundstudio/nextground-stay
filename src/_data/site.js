@@ -12,9 +12,9 @@ export default {
 
   contact: {
     // Numéro WhatsApp au format international, chiffres uniquement (sans +, sans espaces).
-    whatsapp: "254700000000", // TODO : vrai numéro WhatsApp
-    whatsappDisplay: "+254 700 000 000", // TODO
-    phone: "+254 700 000 000", // TODO
+    whatsapp: "254723642373", // WhatsApp Business Next Ground Stay
+    whatsappDisplay: "+254 723 642 373",
+    phone: "+254 723 642 373",
     email: "nextground.corp@gmail.com",
     instagram: "https://www.instagram.com/nextgroundstay/",
     // Les horaires de réponse (9 h – 22 h, heure de Nairobi) sont écrits dans i18n.js.

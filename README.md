@@ -118,5 +118,5 @@ elle est enregistrée avec chaque signature.
 
 Rechercher `TODO` dans le code :
 
-- [ ] numéro WhatsApp et téléphone (`site.js`)
+- [x] numéro WhatsApp et téléphone (`site.js`) : +254 723 642 373
 - [ ] relecture juridique des pages légales
