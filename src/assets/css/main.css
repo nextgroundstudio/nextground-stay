@@ -116,7 +116,9 @@ picture { display: block; height: 100%; }
 .menu a { text-decoration: none; }
 .menu__link a:hover { color: var(--olive); }
 .menu__lang { color: var(--muted); }
-.currency { border: 1px solid var(--filet); background: var(--blanc); padding: 6px 8px; font-size: 11px; letter-spacing: .12em; cursor: pointer; }
+/* Devise : sans cadre ni coins arrondis du système, comme un lien du menu, avec un petit chevron */
+.currency { -webkit-appearance: none; appearance: none; border: 0; border-radius: 0; margin: 0; padding: 6px 16px 6px 2px; background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'%3E%3Cpath d='M.5.5 4 4 7.5.5' fill='none' stroke='%232B2826' stroke-width='1'/%3E%3C/svg%3E") no-repeat right 2px center; font: inherit; font-size: 11px; letter-spacing: .2em; color: var(--charbon); cursor: pointer; }
+.currency::-ms-expand { display: none; }
 @media (max-width: 860px) { .menu__link { display: none; } .menu { gap: .9rem; } }
 
 .footer { background: var(--olive-dark); color: var(--on-dark); padding: 4rem 0 2.5rem; font-size: 13px; }
