@@ -108,7 +108,7 @@ export default {
         name: "Nancy",
         lang: "en",
         text: "I had a lovely stay at Amanda's. The home is exactly as pictured, with many thoughtful touches and provisions for guests.",
-        meta: { en: "2026", fr: "2026" },
+        meta: { en: "Stayed 3 nights · 2026", fr: "Séjour de 3 nuits · 2026" },
       },
       {
         name: "Andreas",
