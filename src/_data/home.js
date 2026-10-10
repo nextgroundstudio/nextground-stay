@@ -48,9 +48,9 @@ export default {
     { icon: "shield", en: "Security 24/7 · backup generator", fr: "Sécurité 24 h/24 · groupe électrogène" },
     { icon: "wifi", en: "Fast Wi-Fi · smart TV (Netflix, YouTube)", fr: "Wi-Fi rapide · smart TV (Netflix, YouTube)" },
     { icon: "pool", en: "Heated rooftop pool · gym · pool table", fr: "Piscine chauffée sur le toit · salle de sport · billard" },
+    { icon: "lock", en: "Self check-in, smart lock", fr: "Arrivée autonome, serrure connectée" },
     { icon: "car", en: "Free secured parking", fr: "Parking gratuit et surveillé" },
     { icon: "kitchen", en: "Equipped kitchen · washing machine", fr: "Cuisine équipée · lave-linge" },
-    { icon: "lock", en: "Self check-in, smart lock", fr: "Arrivée autonome, serrure connectée" },
     { icon: "gift", en: "Welcome basket and essentials", fr: "Panier d'accueil et produits de première nécessité" },
   ],
 
