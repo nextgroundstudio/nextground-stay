@@ -10,11 +10,13 @@ export default {
   // pour ne pas répéter la première photo de la galerie juste en dessous.
   heroMobile: "city-view-night.jpg",
 
+  // position (facultatif) : cadrage de la photo quand elle est rognée (axe X puis axe Y),
+  // par ex. "50% 85%" pour descendre vers le canapé.
   photos: [
     // 0 : grande image d'accueil (format paysage de préférence)
-    { file: "hero-living-room.jpg", alt: { en: "Bright living room with green sofa", fr: "Séjour lumineux avec canapé vert" } },
+    { file: "hero-living-room.jpg", position: "50% 85%", alt: { en: "Bright living room with green sofa", fr: "Séjour lumineux avec canapé vert" } },
     // 1 à 5 : mosaïque de la section « L'appartement » (même ordre que l'annonce)
-    { file: "living-room.jpg", alt: { en: "Living room", fr: "Séjour" } },
+    { file: "living-room.jpg", position: "50% 80%", alt: { en: "Living room", fr: "Séjour" } },
     { file: "bedroom.jpg", alt: { en: "Bedroom with queen-size bed and balcony", fr: "Chambre avec lit queen size et balcon" } },
     { file: "rooftop-pool.jpg", alt: { en: "Rooftop pool overlooking Nairobi", fr: "Piscine sur le toit avec vue sur Nairobi" } },
     { file: "bathroom.jpg", alt: { en: "En-suite bathroom with walk-in shower", fr: "Salle de bain attenante avec douche à l'italienne" } },

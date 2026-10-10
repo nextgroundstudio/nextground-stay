@@ -80,6 +80,9 @@ button, input, select { font: inherit; color: inherit; }
 .link-inline { text-underline-offset: 3px; }
 
 .photo { width: 100%; height: 100%; object-fit: cover; }
+/* Cadrage réglé photo par photo (champ position de home.js), pour montrer le canapé quand la photo est rognée */
+.gallery__main .photo { object-position: var(--pos, center); }
+@media (min-width: 760px) { .hero__photo .photo { object-position: var(--pos, center); } }
 .photo--empty { background: var(--placeholder); display: flex; align-items: flex-end; padding: 1rem; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: #5c604f; }
 picture { display: block; height: 100%; }
 

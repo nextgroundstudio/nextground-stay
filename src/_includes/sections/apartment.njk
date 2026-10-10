@@ -4,7 +4,7 @@
     <div class="gallery">
       {#- Chaque photo s'ouvre en grand au clic (data-open-photo = sa position dans home.photos) -#}
       {%- set p = home.photos[1] %}
-      <button class="gallery__main gallery__item" type="button" data-open-photo="1" aria-label="{{ p.alt | loc(lang.code) }}">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 60vw, 100vw" %}</button>
+      <button class="gallery__main gallery__item" type="button"{% if p.position %} style="--pos: {{ p.position }}"{% endif %} data-open-photo="1" aria-label="{{ p.alt | loc(lang.code) }}">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 60vw, 100vw" %}</button>
       <div class="gallery__grid">
         {%- for p in home.photos.slice(2, 6) %}
         <button class="gallery__item" type="button" data-open-photo="{{ loop.index + 1 }}" aria-label="{{ p.alt | loc(lang.code) }}">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 20vw, 50vw" %}</button>
