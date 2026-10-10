@@ -136,7 +136,7 @@ export default {
         },
         {
           q: "Early check-in or late check-out?",
-          a: "Both are possible for an additional fee, subject to availability. Ask us on WhatsApp.",
+          a: "Check-in is from 3 pm and check-out by 11 am. An earlier arrival or a later departure is possible for an additional fee, subject to availability. Ask us on WhatsApp.",
         },
         {
           q: "Is cleaning included?",
@@ -319,7 +319,7 @@ export default {
         },
         {
           q: "Arrivée anticipée ou départ tardif ?",
-          a: "Les deux sont possibles moyennant un supplément, selon les disponibilités. Demandez-nous sur WhatsApp.",
+          a: "L'arrivée se fait à partir de 15 h et le départ avant 11 h. Une arrivée plus tôt ou un départ plus tard sont possibles moyennant un supplément, selon les disponibilités. Demandez-nous sur WhatsApp.",
         },
         {
           q: "Le ménage est-il compris ?",
