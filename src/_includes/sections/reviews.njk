@@ -14,7 +14,9 @@
       <figure class="review">
         <div>
           <p class="stars" aria-label="{{ t.reviews.stars }}">★★★★★</p>
-          <blockquote lang="{{ r.lang }}">{{ "« " if lang.code == "fr" else "“" }}{{ r.text }}{{ " »" if lang.code == "fr" else "”" }}</blockquote>
+          {%- set translated = lang.code == "fr" and r.textFr and r.lang != "fr" %}
+          <blockquote lang="{{ 'fr' if translated else r.lang }}">{{ "« " if lang.code == "fr" else "“" }}{{ r.textFr if translated else r.text }}{{ " »" if lang.code == "fr" else "”" }}</blockquote>
+          {%- if translated %}<p class="review__translated">{{ t.reviews.translated }}</p>{% endif %}
         </div>
         <figcaption>
           <span class="avatar" aria-hidden="true">{{ r.name | first }}</span>

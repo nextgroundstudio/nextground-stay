@@ -99,7 +99,8 @@ export default {
     { name: { en: "JKIA airport", fr: "Aéroport JKIA" }, time: { en: "about 25 min", fr: "environ 25 min" } },
   ],
 
-  // Avis voyageurs, avec leur accord. Texte d'origine, seules les fautes de frappe sont corrigées.
+  // Avis voyageurs, avec leur accord. Texte d'origine (seules les fautes de frappe sont corrigées) ;
+  // textFr : traduction affichée sur la version française, avec la mention « Traduit de l'anglais ».
   reviews: {
     rating: "5.0",
     // Au-delà de 2 avis sur mobile et de 3 sur ordinateur, ils défilent au doigt ou avec les flèches.
@@ -108,12 +109,14 @@ export default {
         name: "Nancy",
         lang: "en",
         text: "I had a lovely stay at Amanda's. The home is exactly as pictured, with many thoughtful touches and provisions for guests.",
+        textFr: "J'ai passé un très bon séjour chez Amanda. Le logement est exactement comme sur les photos, avec beaucoup d'attentions et tout le nécessaire pour les voyageurs.",
         meta: { en: "Stayed 3 nights · Sept. 2026", fr: "Séjour de 3 nuits · sept. 2026" },
       },
       {
         name: "Andreas",
         lang: "en",
         text: "Amanda and Lysiane were great hosts. Always responsive, helpful and friendly. The apartment is practical and beautifully decorated. It has everything you could wish for. I want to highlight how cozy the couch is. Thank you so much for hosting us!",
+        textFr: "Amanda et Lysiane ont été des hôtes formidables. Toujours réactives, serviables et chaleureuses. L'appartement est pratique et joliment décoré. Il a tout ce qu'on peut souhaiter. Je tiens à souligner à quel point le canapé est confortable. Merci beaucoup de nous avoir accueillis\u00a0!",
         meta: { en: "Stayed 2 weeks · Sept. 2026", fr: "Séjour de 2 semaines · sept. 2026" },
       },
     ],

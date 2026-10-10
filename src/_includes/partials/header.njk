@@ -23,7 +23,7 @@
       <li>
         <label class="visually-hidden" for="currency">{{ t.nav.currency }}</label>
         <select class="currency" id="currency" data-currency-select>
-          {%- for c in site.currencies %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+          {%- for c in site.currencies %}<option value="{{ c }}"{% if c == lang.currency %} selected{% endif %}>{{ c }}</option>{% endfor %}
         </select>
       </li>
       {%- endif %}

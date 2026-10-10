@@ -236,6 +236,7 @@ export default {
       title: "Ils ont séjourné chez nous.",
       summary: "{rating} · {count} avis",
       stars: "5 étoiles sur 5",
+      translated: "Traduit de l'anglais",
       prev: "Avis précédents",
       next: "Avis suivants",
     },

@@ -42,7 +42,7 @@
       <aside class="price-card">
         <p class="price-card__price">
           {{ t.apartment.from }}
-          <strong data-price='{{ site.prices.nightlyFrom | json }}'>{{ site.prices.nightlyFrom[site.currencies[0]] | money(site.currencies[0], lang.locale) }}</strong>
+          <strong data-price='{{ site.prices.nightlyFrom | json }}'>{{ site.prices.nightlyFrom[lang.currency] | money(lang.currency, lang.locale) }}</strong>
           {{ t.apartment.perNight }}
         </p>
         <ul class="checks">

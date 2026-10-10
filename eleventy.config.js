@@ -39,7 +39,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("money", (amount, currency, locale) => {
     const n = new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(amount);
     const s = site.currencySymbols[currency];
-    return currency === "EUR" && locale.startsWith("fr") ? `${n} €` : `${s}${n}`;
+    // En français, le symbole se place après le montant : « 60 € », « 70 $ », « 8 720 KSh ».
+    return locale.startsWith("fr") ? `${n}\u00a0${s.trim()}` : `${s}${n}`;
   });
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));

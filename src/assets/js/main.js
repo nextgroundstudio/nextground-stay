@@ -41,7 +41,7 @@
   if (select) {
     const format = (amount, cur) => {
       const n = new Intl.NumberFormat(NGS.locale, { maximumFractionDigits: 0 }).format(amount);
-      return cur === "EUR" && NGS.lang === "fr" ? `${n} €` : `${NGS.symbols[cur]}${n}`;
+      return NGS.lang === "fr" ? `${n}\u00a0${NGS.symbols[cur].trim()}` : `${NGS.symbols[cur]}${n}`;
     };
     const apply = (cur) => {
       $$("[data-price]").forEach((el) => {
