@@ -40,7 +40,7 @@ export default {
       from: "From",
       perNight: "/ night",
       perks: [
-        "Direct rate, reduced from {reduced} nights",
+        "Direct rate, reduced from {reducedWeeks} weeks",
         "Cleaning every {cleaning} days, included",
         "Confirmation within 1 hour, 9 am – 10 pm",
       ],
@@ -152,7 +152,7 @@ export default {
         },
         {
           q: "Do you offer long stays?",
-          a: "Yes. The nightly rate is reduced from 15 nights. For stays of 30 nights or more, contact us for a tailored quote.",
+          a: "Yes. The nightly rate is reduced from {reducedWeeks} weeks ({reduced} nights). For stays of 30 nights or more, contact us for a tailored quote.",
         },
       ],
     },
@@ -222,7 +222,7 @@ export default {
       from: "À partir de",
       perNight: "/ nuit",
       perks: [
-        "Tarif direct, dégressif dès {reduced} nuits",
+        "Tarif direct, dégressif dès {reducedWeeks} semaines",
         "Ménage tous les {cleaning} jours, inclus",
         "Confirmation sous 1 h, de 9 h à 22 h",
       ],
@@ -335,7 +335,7 @@ export default {
         },
         {
           q: "Proposez-vous des séjours longs ?",
-          a: "Oui. Le tarif à la nuit est dégressif à partir de 15 nuits. Pour 30 nuits ou plus, contactez-nous pour une proposition sur mesure.",
+          a: "Oui. Le tarif à la nuit est dégressif à partir de {reducedWeeks} semaines ({reduced} nuits). Pour 30 nuits ou plus, contactez-nous pour une proposition sur mesure.",
         },
       ],
     },

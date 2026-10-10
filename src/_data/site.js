@@ -42,7 +42,7 @@ export default {
     checkOutLabel: { en: "11 am", fr: "11 h" },
     maxGuests: 2,
     sizeM2: 58,
-    reducedRateFromNights: 15,
+    reducedRateFromNights: 21, // tarif dégressif à partir de 3 semaines
     longStayFromNights: 30,
     cleaningEveryDays: 3,
   },

@@ -12,7 +12,7 @@
       {%- for item in t.faq.items %}
       <details>
         <summary>{{ item.q }}</summary>
-        <p>{{ item.a }}</p>
+        <p>{{ item.a | fill }}</p>
       </details>
       {%- endfor %}
     </div>

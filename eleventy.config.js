@@ -16,6 +16,7 @@ const placeholders = {
   checkOut: site.stay.checkOut,
   cleaning: site.stay.cleaningEveryDays,
   reduced: site.stay.reducedRateFromNights,
+  reducedWeeks: site.stay.reducedRateFromNights / 7,
   long: site.stay.longStayFromNights,
 };
 

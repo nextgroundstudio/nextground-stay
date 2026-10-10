@@ -121,7 +121,7 @@ picture { display: block; height: 100%; }
 .currency::-ms-expand { display: none; }
 @media (max-width: 860px) { .menu__link { display: none; } .menu { gap: .9rem; } }
 
-.footer { background: var(--olive-dark); color: var(--on-dark); padding: 4rem 0 2.5rem; font-size: 13px; }
+.footer { background: var(--olive-dark); color: var(--on-dark); padding: 4rem 0 2.5rem; font-size: 15px; }
 .footer__sign { display: flex; align-items: center; color: var(--blanc); padding-left: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter))); }
 .footer__sign svg { flex-shrink: 0; }
 /* Le filet EST la barre du G : il démarre dans la lettre (98/160 × 80 px), même épaisseur que le tracé.

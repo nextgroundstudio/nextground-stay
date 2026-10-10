@@ -96,7 +96,7 @@ export default {
         ] },
         { h: "Price and payment", p: [
           "The price shown is a starting nightly rate. The total price confirmed in writing includes cleaning every {cleaning} days. There are no service fees.",
-          "Payment by M-Pesa or bank transfer. The nightly rate is reduced from {reduced} nights; stays of {long} nights or more are quoted on request.",
+          "Payment by M-Pesa or bank transfer. The nightly rate is reduced from {reducedWeeks} weeks ({reduced} nights); stays of {long} nights or more are quoted on request.",
         ] },
         { h: "Cancellation", p: [
           "More than 72 hours before arrival: free cancellation, full refund.",
@@ -119,7 +119,7 @@ export default {
         ] },
         { h: "Prix et paiement", p: [
           "Le prix affiché est un tarif de départ par nuit. Le prix total confirmé par écrit comprend le ménage tous les {cleaning} jours. Aucun frais de service n'est ajouté.",
-          "Paiement par M-Pesa ou virement bancaire. Tarif dégressif à partir de {reduced} nuits ; séjours de {long} nuits ou plus sur devis.",
+          "Paiement par M-Pesa ou virement bancaire. Tarif dégressif à partir de {reducedWeeks} semaines ({reduced} nuits) ; séjours de {long} nuits ou plus sur devis.",
         ] },
         { h: "Annulation", p: [
           "Plus de 72 heures avant l'arrivée : annulation gratuite, remboursement intégral.",
