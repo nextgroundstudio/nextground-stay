@@ -148,14 +148,15 @@ picture { display: block; height: 100%; }
 .hero__title { grid-area: title; font-size: clamp(2.6rem, 6vw, 5.4rem); letter-spacing: .02em; line-height: 1; padding-bottom: 1rem; }
 .hero__h1 { display: inline; font: inherit; letter-spacing: inherit; margin: 0; }
 .hero__side { grid-area: side; display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; padding-bottom: 1rem; }
-.hero__photo { grid-area: photo; height: clamp(16rem, 42vw, 34rem); overflow: hidden; position: relative; }
+/* Ordinateur : photo d'accueil au format 3:2 (le salon presque entier), plafonnée à la hauteur de l'écran */
+.hero__photo { grid-area: photo; aspect-ratio: 3 / 2; max-height: calc(100svh - var(--header-h) - 3rem); width: 100%; overflow: hidden; position: relative; }
 .highlights { grid-area: strip; }
 
 /* Mobile : photo plein écran en premier, tagline en blanc posée en bas de la photo. */
 @media (max-width: 759px) {
   .hero__grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "photo" "strip" "side"; padding-top: 0; gap: 1.5rem; }
   .highlights { padding-top: 0; }
-  .hero__photo { height: calc(100svh - var(--header-h) - 4rem); min-height: 26rem; margin: 0 calc(-1 * var(--gutter)); }
+  .hero__photo { aspect-ratio: auto; max-height: none; width: auto; height: calc(100svh - var(--header-h) - 4rem); min-height: 26rem; margin: 0 calc(-1 * var(--gutter)); }
   .hero__photo::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(to bottom, rgba(43, 40, 38, 0), rgba(43, 40, 38, .55)); pointer-events: none; }
   .hero__title { grid-area: photo; align-self: end; position: relative; z-index: 1; color: var(--blanc); font-size: 2.6rem; padding: 0 0 1.75rem; }
   .hero__side { padding-bottom: 0; }
