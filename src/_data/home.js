@@ -43,8 +43,8 @@ export default {
   // dans « Voir tous les équipements ») : gardez les plus importants en tête de liste.
   amenities: [
     { icon: "bed", en: "1 bedroom, en-suite · queen bed", fr: "1 chambre en-suite · lit queen size" },
-    { icon: "people", en: "Up to 2 guests · 58 m²", fr: "Jusqu'à 2 voyageurs · 58 m²" },
-    { icon: "view", en: "8th floor, balcony, view over GTC", fr: "8e étage, balcon, vue sur le GTC" },
+    { icon: "people", en: "Up to 2 guests · 58 m² · 8th floor", fr: "Jusqu'à 2 voyageurs · 58 m² · 8e étage" },
+    { icon: "view", en: "Private balcony, city view", fr: "Balcon privé, vue sur la ville" },
     { icon: "shield", en: "Security 24/7 · backup generator", fr: "Sécurité 24 h/24 · groupe électrogène" },
     { icon: "wifi", en: "Fast Wi-Fi · smart TV (Netflix, YouTube)", fr: "Wi-Fi rapide · smart TV (Netflix, YouTube)" },
     { icon: "pool", en: "Heated rooftop pool · gym · pool table", fr: "Piscine chauffée sur le toit · salle de sport · billard" },

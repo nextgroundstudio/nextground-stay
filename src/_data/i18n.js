@@ -32,7 +32,7 @@ export default {
     },
     apartment: {
       kicker: "The apartment",
-      title: "One bedroom, 8th floor, GTC view",
+      title: "One bedroom, private balcony, GTC view",
       allAmenities: "See all amenities",
       address: "Misty Springs, Westlands Road",
       allPhotos: "See all photos",
@@ -209,7 +209,7 @@ export default {
     },
     apartment: {
       kicker: "L'appartement",
-      title: "Une chambre, 8e étage, vue sur le GTC",
+      title: "Une chambre, balcon privé, vue sur le\u00a0GTC",
       allAmenities: "Voir tous les équipements",
       address: "Misty Springs, Westlands Road",
       allPhotos: "Voir toutes les photos",
