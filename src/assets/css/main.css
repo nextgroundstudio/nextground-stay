@@ -389,7 +389,3 @@ picture { display: block; height: 100%; }
   .month__grid .dow { font-size: 11px; }
 }
 .form label { font-size: 11px; }
-/* Mobile : pied de page en une seule colonne, tout aligné à gauche */
-@media (max-width: 759px) {
-  .footer__cols { flex-direction: column; justify-content: flex-start; gap: 2rem; }
-}
