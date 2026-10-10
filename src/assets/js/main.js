@@ -168,7 +168,18 @@
     };
 
     // Un mois affiché à la fois, les flèches font défiler.
+    // Texte sous le calendrier : arrivée à choisir, puis départ, puis rappel du nombre de nuits.
+    const hint = $("[data-cal-hint]", cal);
+    const updateHint = () => {
+      if (!hint) return;
+      const a = arrival?.value, d = departure?.value;
+      if (a && d && d > a) {
+        const n = Math.round((new Date(d + "T12:00") - new Date(a + "T12:00")) / 864e5);
+        hint.textContent = n === 1 ? T.hintDoneOne : T.hintDone.replace("{n}", n);
+      } else hint.textContent = a ? T.hintDeparture : T.hintArrival;
+    };
     const render = () => {
+      updateHint();
       const m = new Date(now.getFullYear(), now.getMonth() + offset, 1);
       months.innerHTML = renderMonth(m.getFullYear(), m.getMonth());
       prev.disabled = offset === 0;
@@ -176,14 +187,12 @@
     };
 
     // Toucher un jour remplit les champs Arrivée puis Départ du formulaire.
-    const hint = $("[data-cal-hint]", cal);
     months.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-day]");
       if (!btn || !arrival || !departure) return;
       const day = btn.dataset.day;
       if (!arrival.value || departure.value || day <= arrival.value) { arrival.value = day; departure.value = ""; }
       else departure.value = day;
-      if (hint) hint.textContent = arrival.value && !departure.value ? T.hintDeparture : T.hintArrival;
       form?.dispatchEvent(new Event("input"));
       $(`[data-day="${day}"]`, months)?.focus();
     });

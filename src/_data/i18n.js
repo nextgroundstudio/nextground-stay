@@ -97,6 +97,8 @@ export default {
       free: "Available",
       hintArrival: "Select your arrival date.",
       hintDeparture: "Now select your departure date.",
+      hintDone: "{n} nights selected. Select a date to change.",
+      hintDoneOne: "1 night selected. Select a date to change.",
       prev: "Previous month",
       next: "Next month",
       loading: "Loading availability…",
@@ -111,7 +113,7 @@ export default {
       checkOut: "Check-out",
       checkOutValue: "By 11 am",
       payment: "Payment",
-      paymentValue: "Bank transfer or M-Pesa",
+      paymentValue: "M-Pesa or bank transfer",
       cancellation: "Cancellation",
       cancellationValue: "Free up to 72 hours before arrival",
       terms: "Booking terms",
@@ -142,7 +144,7 @@ export default {
         },
         {
           q: "How do I pay?",
-          a: "By bank transfer or M-Pesa, in US dollars, euros or Kenyan shillings. We confirm the total price in writing before you pay.",
+          a: "By M-Pesa or bank transfer, in US dollars, euros or Kenyan shillings. We confirm the total price in writing before you pay.",
         },
         {
           q: "What is the cancellation policy?",
@@ -277,6 +279,8 @@ export default {
       free: "Disponible",
       hintArrival: "Choisissez votre date d'arrivée.",
       hintDeparture: "Choisissez maintenant votre date de départ.",
+      hintDone: "{n} nuits sélectionnées. Choisissez une date pour modifier.",
+      hintDoneOne: "1 nuit sélectionnée. Choisissez une date pour modifier.",
       prev: "Mois précédent",
       next: "Mois suivant",
       loading: "Chargement des disponibilités…",
@@ -291,7 +295,7 @@ export default {
       checkOut: "Départ",
       checkOutValue: "Avant 11 h",
       payment: "Paiement",
-      paymentValue: "Virement bancaire ou M-Pesa",
+      paymentValue: "M-Pesa ou virement bancaire",
       cancellation: "Annulation",
       cancellationValue: "Gratuite jusqu'à 72 h avant l'arrivée",
       terms: "Conditions de réservation",
@@ -322,7 +326,7 @@ export default {
         },
         {
           q: "Comment payer ?",
-          a: "Par virement bancaire ou M-Pesa, en dollars, en euros ou en shillings kényans. Nous confirmons le prix total par écrit avant tout paiement.",
+          a: "Par M-Pesa ou virement bancaire, en dollars, en euros ou en shillings kényans. Nous confirmons le prix total par écrit avant tout paiement.",
         },
         {
           q: "Quelles sont les conditions d'annulation ?",
