@@ -44,6 +44,8 @@ export default {
         "Reduced rate from {reduced} nights",
       ],
       cta: "Book",
+      fast: "Confirmation within 1 hour",
+      fastHours: "9 am – 10 pm, Nairobi time",
       note: "Total price confirmed in writing before you pay.",
     },
     reviews: {
@@ -221,6 +223,8 @@ export default {
         "Tarif dégressif dès {reduced} nuits",
       ],
       cta: "Réserver",
+      fast: "Confirmation sous 1 h",
+      fastHours: "de 9 h à 22 h, heure de Nairobi",
       note: "Prix total confirmé par écrit avant tout paiement.",
     },
     reviews: {
