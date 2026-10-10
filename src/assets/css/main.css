@@ -150,6 +150,12 @@ picture { display: block; height: 100%; }
 .hero__side { grid-area: side; display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; padding-bottom: 1rem; }
 /* Ordinateur : photo d'accueil au format 3:2 (le salon presque entier), plafonnée à la hauteur de l'écran */
 .hero__photo { grid-area: photo; aspect-ratio: 3 / 2; max-height: calc(100svh - var(--header-h) - 3rem); width: 100%; overflow: hidden; position: relative; }
+/* Ordinateur : les repères du quartier passent au-dessus de la photo, pour que toutes les infos clés
+   tiennent dans le premier écran ; la grande photo se découvre au premier défilement. */
+@media (min-width: 760px) {
+  .hero__grid { grid-template-areas: "title side" "strip strip" "photo photo"; }
+  .highlights { padding: 0 0 .25rem; }
+}
 .highlights { grid-area: strip; }
 
 /* Mobile : photo plein écran en premier, tagline en blanc posée en bas de la photo. */
