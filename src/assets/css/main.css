@@ -389,3 +389,10 @@ picture { display: block; height: 100%; }
   .month__grid .dow { font-size: 11px; }
 }
 .form label { font-size: 11px; }
+/* Champs du formulaire : même hauteur partout (iPhone compris), sans l'apparence imposée par le système,
+   pour que les traits de soulignement soient alignés sur une même ligne (Nom / Voyageurs, Arrivée / Départ). */
+.form input:not([type="checkbox"]), .form select { -webkit-appearance: none; appearance: none; box-sizing: border-box; height: 46px; line-height: 24px; display: block; width: 100%; }
+.form input[type="date"] { text-align: left; }
+.form input[type="date"]::-webkit-date-and-time-value { text-align: left; }
+.form select { padding-right: 22px; background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M.5.5 5 5 9.5.5' fill='none' stroke='%232B2826' stroke-width='1.2'/%3E%3C/svg%3E") no-repeat right 4px center; cursor: pointer; }
+.form__row { align-items: flex-end; }
