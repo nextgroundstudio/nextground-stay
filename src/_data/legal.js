@@ -86,7 +86,7 @@ export default {
 
   // ------------------------------------------------------------------ Conditions de réservation
   terms: {
-    updated: "2026-10-09",
+    updated: "2026-10-11",
     en: {
       title: "Booking terms",
       sections: [
@@ -97,6 +97,8 @@ export default {
         { h: "Price and payment", p: [
           "The price shown is a starting nightly rate. The total price confirmed in writing includes cleaning every {cleaning} days. There are no service fees.",
           "Payment by M-Pesa or bank transfer. The nightly rate is reduced from {reduced} nights; long stays are quoted on request.",
+          "Stay of less than a month: a deposit of 50% of the stay amount is required at booking; the balance is paid no later than the day before arrival.",
+          "Stay of 30 days or more: a deposit of 50% of one month's price is required at booking; each month is then paid in two instalments: 50% at the start of the month, the balance no later than the 28th of the month.",
         ] },
         { h: "Cancellation", p: [
           "More than 72 hours before arrival: free cancellation, full refund.",
@@ -120,6 +122,8 @@ export default {
         { h: "Prix et paiement", p: [
           "Le prix affiché est un tarif de départ par nuit. Le prix total confirmé par écrit comprend le ménage tous les {cleaning} jours. Aucun frais de service n'est ajouté.",
           "Paiement par M-Pesa ou virement bancaire. Tarif dégressif à partir de {reduced} nuits ; séjours longs sur devis.",
+          "Séjour de moins d'un mois : un acompte de 50 % du montant du séjour est demandé à la réservation ; le solde est réglé au plus tard la veille de l'arrivée.",
+          "Séjour de 30 jours ou plus : un acompte de 50 % du prix d'un mois est demandé à la réservation, puis chaque mois est réglé en deux fois : 50 % en début de mois, le solde au plus tard le 28 du mois.",
         ] },
         { h: "Annulation", p: [
           "Plus de 72 heures avant l'arrivée : annulation gratuite, remboursement intégral.",

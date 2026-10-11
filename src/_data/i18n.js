@@ -144,7 +144,7 @@ export default {
         },
         {
           q: "How do I pay?",
-          a: "By M-Pesa or bank transfer, in US dollars, euros or Kenyan shillings. We confirm the total price in writing before you pay.",
+          a: "By M-Pesa or bank transfer, in US dollars, euros or Kenyan shillings. We confirm the total price in writing before you pay. A 50% deposit secures the booking; the balance is due the day before arrival.",
         },
         {
           q: "What is the cancellation policy?",
@@ -327,7 +327,7 @@ export default {
         },
         {
           q: "Comment payer ?",
-          a: "Par M-Pesa ou virement bancaire, en dollars, en euros ou en shillings kényans. Nous confirmons le prix total par écrit avant tout paiement.",
+          a: "Par M-Pesa ou virement bancaire, en dollars, en euros ou en shillings kényans. Nous confirmons le prix total par écrit avant tout paiement. Un acompte de 50 % confirme la réservation ; le solde est réglé la veille de l'arrivée.",
         },
         {
           q: "Quelles sont les conditions d'annulation ?",
