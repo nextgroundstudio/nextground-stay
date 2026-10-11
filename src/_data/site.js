@@ -17,6 +17,7 @@ export default {
     phone: "+254 723 642 373",
     email: "nextground.corp@gmail.com",
     instagram: "https://www.instagram.com/nextgroundstay/",
+    tiktok: "https://www.tiktok.com/@nextgroundstay",
     // Les horaires de réponse (9 h – 22 h, heure de Nairobi) sont écrits dans i18n.js.
   },
 

@@ -396,3 +396,6 @@ picture { display: block; height: 100%; }
 .form input[type="date"]::-webkit-date-and-time-value { text-align: left; }
 .form select { padding-right: 22px; background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M.5.5 5 5 9.5.5' fill='none' stroke='%232B2826' stroke-width='1.2'/%3E%3C/svg%3E") no-repeat right 4px center; cursor: pointer; }
 .form__row { align-items: flex-end; }
+
+/* Règlement intérieur : intertitres dans une section (Gaz, Électricité, Eau) */
+.rules__sub { font-size: 13px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); margin: 1.1rem 0 .3rem; }

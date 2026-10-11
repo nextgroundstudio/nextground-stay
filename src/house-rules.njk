@@ -20,7 +20,7 @@ const eleventyComputed = {
   <p class="lead">{{ t.houseRules.intro }}</p>
   <ol class="rules">
     {%- for s in doc.sections %}
-    <li><h2>{{ s.h }}</h2>{% for para in s.p %}<p>{{ para | fill({ checkIn: site.stay.checkInLabel[lang.code], checkOut: site.stay.checkOutLabel[lang.code] }) }}</p>{% endfor %}</li>
+    <li><h2>{{ s.h }}</h2>{% for para in s.p %}{% if para.heading %}<h3 class="rules__sub">{{ para.heading }}</h3>{% else %}<p>{{ para | fill({ checkIn: site.stay.checkInLabel[lang.code], checkOut: site.stay.checkOutLabel[lang.code] }) }}</p>{% endif %}{% endfor %}</li>
     {%- endfor %}
   </ol>
 
