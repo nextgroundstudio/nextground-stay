@@ -60,17 +60,22 @@
     const slides = $$("[data-slide]", viewer);
     const count = $("[data-viewer-count]", viewer);
     let current = 0;
+    // Ordre de défilement. Sur mobile, la grande photo de la galerie est la vue d'ensemble
+    // (6e photo de la liste) : on l'échange avec la 1re pour que la visionneuse suive la galerie affichée.
+    let order = slides.map((_, n) => n);
+    const setOrder = () => {
+      order = slides.map((_, n) => n);
+      const swap = Number(viewer.dataset.mobileFirst);
+      if (swap && matchMedia("(max-width: 759px)").matches) [order[0], order[swap]] = [order[swap], order[0]];
+    };
     const show = (i) => {
       current = (i + slides.length) % slides.length; // boucle : après la dernière, la première
-      slides.forEach((s, n) => { s.hidden = n !== current; });
+      slides.forEach((s) => { s.hidden = true; });
+      slides[order[current]].hidden = false;
       count.textContent = `${current + 1} / ${slides.length}`;
     };
     $$("[data-open-photo]").forEach((el) =>
-      el.addEventListener("click", () => {
-        // Sur mobile, la grande photo de la galerie est la vue d'ensemble (photo n° 0)
-        const mobile = el.dataset.openPhotoMobile && matchMedia("(max-width: 759px)").matches;
-        show(Number(mobile ? el.dataset.openPhotoMobile : el.dataset.openPhoto)); viewer.showModal();
-      })
+      el.addEventListener("click", () => { setOrder(); show(Number(el.dataset.openPhoto)); viewer.showModal(); })
     );
     $("[data-viewer-close]", viewer).addEventListener("click", () => viewer.close());
     $("[data-viewer-prev]", viewer).addEventListener("click", () => show(current - 1));
