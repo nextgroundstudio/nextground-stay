@@ -16,7 +16,7 @@
       {#- Page séparée (ordinateur uniquement, comme les autres liens) -#}
       <li class="menu__link"><a href="{{ routes.houseRules[lang.code] }}"{% if pageKey == "houseRules" %} aria-current="page"{% endif %}>{{ t.nav.houseRules }}</a></li>
       <li class="menu__langitem">
-        {#- Lien vers la même page dans l'autre langue (sur mobile : dans le menu) -#}
+        {#- Lien vers la même page dans l'autre langue  -#}
         {%- for l in langs %}{% if l.code != lang.code %}
         <a class="menu__lang" href="{{ route[l.code] }}" hreflang="{{ l.code }}" lang="{{ l.code }}" aria-label="{{ t.nav.language }} : {{ l.label }}">{{ l.label }}</a>
         {%- endif %}{% endfor %}
@@ -47,11 +47,5 @@
       <li><a href="{{ anchor }}#faq">{{ t.nav.faq }}</a></li>
       <li><a href="{{ routes.houseRules[lang.code] }}"{% if pageKey == "houseRules" %} aria-current="page"{% endif %}>{{ t.nav.houseRules }}</a></li>
     </ul>
-    <p class="drawer__lang"><span class="visually-hidden">{{ t.nav.language }} :</span>
-      {%- for l in langs %}
-      {%- if l.code == lang.code %}<span aria-current="true">{{ l.label }}</span>
-      {%- else %}<a href="{{ route[l.code] }}" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.label }}</a>{% endif %}
-      {%- endfor %}
-    </p>
   </div>
 </header>
