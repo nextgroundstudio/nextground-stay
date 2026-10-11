@@ -22,15 +22,16 @@ export default {
     { file: "rooftop-pool.jpg", alt: { en: "Rooftop pool overlooking Nairobi", fr: "Piscine sur le toit avec vue sur Nairobi" } },
     { file: "bathroom.jpg", alt: { en: "En-suite bathroom with walk-in shower", fr: "Salle de bain attenante avec douche à l'italienne" } },
     { file: "balcony-night.jpg", alt: { en: "Balcony at night, city view", fr: "Balcon de nuit, vue sur la ville" } },
-    { file: "kitchen.jpg", alt: { en: "Equipped kitchen and dining table", fr: "Cuisine équipée et table à manger" } },
-    { file: "bathroom-wide.jpg", alt: { en: "Bathroom", fr: "Salle de bain" } },
-    { file: "bathroom-shower.jpg", alt: { en: "Walk-in shower", fr: "Douche à l'italienne" } },
-    // Suite de la galerie complète
-    { file: "city-view-night.jpg", alt: { en: "Night view of Westlands from the living room", fr: "Vue de nuit sur Westlands depuis le séjour" } },
-    { file: "city-view-day.jpg", alt: { en: "Day view over Westlands", fr: "Vue de jour sur Westlands" } },
+    // Suite de la visionneuse, après les 5 photos de la mosaïque et la photo d'accueil :
+    // d'abord le séjour et la cuisine, puis la salle de bain, puis la résidence.
     { file: "living-kitchen.jpg", alt: { en: "Open-plan living room and kitchen", fr: "Séjour et cuisine ouverte" } },
     { file: "dining-kitchen.jpg", alt: { en: "Kitchen with washing machine", fr: "Cuisine avec lave-linge" } },
+    { file: "kitchen.jpg", alt: { en: "Equipped kitchen and dining table", fr: "Cuisine équipée et table à manger" } },
     { file: "table-detail.jpg", alt: { en: "Table setting", fr: "Table dressée" } },
+    { file: "city-view-night.jpg", alt: { en: "Night view of Westlands from the living room", fr: "Vue de nuit sur Westlands depuis le séjour" } },
+    { file: "city-view-day.jpg", alt: { en: "Day view over Westlands", fr: "Vue de jour sur Westlands" } },
+    { file: "bathroom-wide.jpg", alt: { en: "Bathroom", fr: "Salle de bain" } },
+    { file: "bathroom-shower.jpg", alt: { en: "Walk-in shower", fr: "Douche à l'italienne" } },
     { file: "rooftop-terrace.jpg", alt: { en: "Rooftop terrace", fr: "Terrasse sur le toit" } },
     { file: "pool-table.jpg", alt: { en: "Pool table area", fr: "Espace billard" } },
     { file: "gym.jpg", alt: { en: "Residents' gym", fr: "Salle de sport de la résidence" } },
