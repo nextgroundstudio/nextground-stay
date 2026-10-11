@@ -13,6 +13,8 @@
       <li class="menu__link"><a href="{{ anchor }}#reviews">{{ t.nav.reviews }}</a></li>
       <li class="menu__link"><a href="{{ anchor }}#neighborhood">{{ t.nav.neighborhood }}</a></li>
       <li class="menu__link"><a href="{{ anchor }}#faq">{{ t.nav.faq }}</a></li>
+      {#- Page séparée (ordinateur uniquement, comme les autres liens) -#}
+      <li class="menu__link"><a href="{{ routes.houseRules[lang.code] }}"{% if pageKey == "houseRules" %} aria-current="page"{% endif %}>{{ t.nav.houseRules }}</a></li>
       <li>
         {#- Lien vers la même page dans l'autre langue -#}
         {%- for l in langs %}{% if l.code != lang.code %}
