@@ -242,9 +242,12 @@
   /* --- 7. Liens WhatsApp pré-remplis avec les dates saisies ------------------- */
   const updateWhatsApp = () => {
     const B = NGS.t.book;
-    const lines = [B.waIntro.replace("{name}", NGS.apartmentName)];
-    if (form) {
-      const f = new FormData(form);
+    const f = form ? new FormData(form) : null;
+    // Nom du voyageur, s'il l'a saisi : intégré à la phrase d'accueil du message.
+    const guest = String(f?.get("name") || "").trim();
+    const intro = guest ? B.waIntroNamed.replace("{guest}", guest) : B.waIntro;
+    const lines = [intro.replace("{name}", NGS.apartmentName)];
+    if (f) {
       if (f.get("arrival") && f.get("departure")) lines.push(`${B.waDates}: ${f.get("arrival")} → ${f.get("departure")}`);
       if (f.get("guests")) lines.push(`${B.waGuests}: ${f.get("guests")}`);
       if (f.get("message")) lines.push(f.get("message"));
