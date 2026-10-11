@@ -402,3 +402,5 @@ picture { display: block; height: 100%; }
 
 /* Calendrier : jours trop proches de l'arrivée pour un départ (séjour minimum) */
 .month__grid .day--tooclose { color: #c4c4be; }
+/* Carte de réservation : renvoi vers le règlement intérieur, juste au-dessus du bouton d'envoi */
+.form__rules { margin: 0; }

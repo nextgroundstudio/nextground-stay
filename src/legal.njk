@@ -19,7 +19,11 @@ const eleventyComputed = {
   {%- for s in doc.sections %}
   <h2>{{ s.h }}</h2>
   {%- for para in s.p %}
+  {%- if para.link %}
+  <p>{{ para.text }} <a class="link-inline" href="{{ routes[para.link][lang.code] }}">{{ para.label }}</a>{{ para.after }}</p>
+  {%- else %}
   <p>{{ para | fill({ checkIn: site.stay.checkInLabel[lang.code], checkOut: site.stay.checkOutLabel[lang.code] }) }}</p>
+  {%- endif %}
   {%- endfor %}
   {%- endfor %}
 </article>

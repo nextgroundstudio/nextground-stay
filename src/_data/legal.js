@@ -109,7 +109,7 @@ export default {
           "Check-in from {checkIn} (self check-in with a smart lock), check-out by {checkOut}. Early check-in is possible for an additional fee, subject to availability.",
           "Minimum stay: {minNights} nights. The apartment hosts a maximum of {guests} guests.",
         ] },
-        { h: "During your stay", p: ["Guests agree to follow the house rules, sent before arrival. Any damage must be reported to us without delay."] },
+        { h: "During your stay", p: [{ text: "Guests agree to follow the", link: "houseRules", label: "house rules", after: ", which they sign before arrival. Any damage must be reported to us without delay." }] },
       ],
     },
     fr: {
@@ -134,7 +134,7 @@ export default {
           "Arrivée dès {checkIn} (en autonomie, serrure connectée), départ avant {checkOut}. Arrivée anticipée possible moyennant un supplément, selon les disponibilités.",
           "Séjour de {minNights} nuits minimum. L'appartement accueille {guests} voyageurs au maximum.",
         ] },
-        { h: "Pendant le séjour", p: ["Les voyageurs s'engagent à respecter le règlement intérieur, envoyé avant l'arrivée. Tout dommage doit nous être signalé sans délai."] },
+        { h: "Pendant le séjour", p: [{ text: "Les voyageurs s'engagent à respecter le", link: "houseRules", label: "règlement intérieur", after: ", qu'ils signent avant l'arrivée. Tout dommage doit nous être signalé sans délai." }] },
       ],
     },
   },

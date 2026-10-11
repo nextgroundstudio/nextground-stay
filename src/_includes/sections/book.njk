@@ -51,6 +51,7 @@
             </div>
             <label>{{ t.book.contact }}<input type="text" name="contact" autocomplete="email" required></label>
             <label>{{ t.book.message }}<input type="text" name="message" placeholder="{{ t.book.messagePlaceholder }}"></label>
+            <p class="small muted form__rules">{{ t.houseRules.notice }} <a class="link-inline" href="{{ routes.houseRules[lang.code] }}">{{ t.houseRules.link }}</a>.</p>
             <button class="btn btn--outline btn--block" type="submit">{{ t.book.send }}</button>
             <p class="form__result small" data-form-result role="status" hidden></p>
           </form>

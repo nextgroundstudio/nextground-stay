@@ -29,12 +29,13 @@
     X-Frame-Options = "SAMEORIGIN"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-# Le règlement intérieur ne doit pas apparaître dans les moteurs de recherche.
+# La page de signature du règlement intérieur ne doit pas apparaître dans les moteurs de recherche
+# (la version de lecture, elle, est publique).
 [[headers]]
-  for = "/house-rules/*"
+  for = "/house-rules/sign/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
 [[headers]]
-  for = "/fr/reglement-interieur/*"
+  for = "/fr/reglement-interieur/signer/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"

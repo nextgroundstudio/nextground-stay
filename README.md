@@ -102,15 +102,19 @@ Ensuite, chaque `git push` sur la branche principale met le site à jour en une 
 
 ## Règlement intérieur
 
-Page non référencée par les moteurs de recherche, à envoyer aux voyageurs avant l'arrivée :
+Deux pages, avec exactement le même texte (tiré de `legal.js`) :
 
-- anglais : https://nextground-stay.netlify.app/house-rules/
-- français : https://nextground-stay.netlify.app/fr/reglement-interieur/
+- **Version de lecture, publique** : liée dans le pied de page, dans la carte de réservation (« En réservant, vous acceptez notre règlement intérieur ») et dans les conditions de réservation. Les voyageurs la lisent avant toute demande.
+  - anglais : https://nextground-stay.netlify.app/house-rules/
+  - français : https://nextground-stay.netlify.app/fr/reglement-interieur/
+- **Version à signer, cachée** (non référencée, aucun lien sur le site) : à envoyer aux voyageurs après leur demande de réservation.
+  - anglais : https://nextground-stay.netlify.app/house-rules/sign/
+  - français : https://nextground-stay.netlify.app/fr/reglement-interieur/signer/
 
-Le voyageur coche, signe en saisissant son nom, et la confirmation arrive dans Netlify Forms.
+Le voyageur coche, signe en saisissant son nom, et la confirmation arrive dans Netlify Forms (formulaire `house-rules`).
 Le code d'accès est ensuite envoyé par WhatsApp, jamais affiché sur le site.
 En cas de modification du règlement, changer aussi la date `updated` dans `legal.js` :
-elle est enregistrée avec chaque signature.
+elle est affichée sur la page publique et enregistrée avec chaque signature.
 
 ---
 

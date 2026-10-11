@@ -6,5 +6,8 @@ export default {
   legal: { en: "/legal/", fr: "/fr/mentions-legales/" },
   privacy: { en: "/privacy/", fr: "/fr/confidentialite/" },
   terms: { en: "/booking-terms/", fr: "/fr/conditions-de-reservation/" },
-  houseRules: { en: "/house-rules/", fr: "/fr/reglement-interieur/", hidden: true },
+  // Règlement intérieur : version publique (lecture avant réservation) et version à signer
+  // (lien envoyé aux voyageurs après leur demande, non référencée).
+  houseRules: { en: "/house-rules/", fr: "/fr/reglement-interieur/" },
+  houseRulesSign: { en: "/house-rules/sign/", fr: "/fr/reglement-interieur/signer/", hidden: true },
 };
