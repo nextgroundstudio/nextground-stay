@@ -42,6 +42,7 @@ export default {
     checkInLabel: { en: "3 pm", fr: "15 h" },
     checkOutLabel: { en: "11 am", fr: "11 h" },
     maxGuests: 2,
+    minNights: 2, // séjour minimum (le calendrier et le formulaire l'imposent)
     sizeM2: 58,
     reducedRateFromNights: 30, // tarif dégressif à partir de 30 nuits…
     longStayDiscount: 20, // …avec cette remise, en %

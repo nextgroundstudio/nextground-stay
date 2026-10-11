@@ -12,6 +12,7 @@ const placeholders = {
   phone: site.contact.phone,
   size: site.stay.sizeM2,
   guests: site.stay.maxGuests,
+  minNights: site.stay.minNights,
   checkIn: site.stay.checkIn,
   checkOut: site.stay.checkOut,
   cleaning: site.stay.cleaningEveryDays,

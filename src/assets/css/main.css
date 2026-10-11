@@ -399,3 +399,6 @@ picture { display: block; height: 100%; }
 
 /* Règlement intérieur : intertitres dans une section (Gaz, Électricité, Eau) */
 .rules__sub { font-size: 13px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); margin: 1.1rem 0 .3rem; }
+
+/* Calendrier : jours trop proches de l'arrivée pour un départ (séjour minimum) */
+.month__grid .day--tooclose { color: #c4c4be; }

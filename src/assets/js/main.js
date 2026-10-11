@@ -120,6 +120,10 @@
   // Les dates sont manipulées en texte « AAAA-MM-JJ » (pas de fuseau horaire à gérer).
   const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   const today = iso(new Date());
+  // Ajoute n jours à une date « AAAA-MM-JJ ».
+  const addDays = (day, n) => { const d = new Date(day + "T12:00"); d.setDate(d.getDate() + n); return iso(d); };
+  const MIN = NGS.minNights || 1; // séjour minimum en nuits
+  if (NGS.t?.calendar) for (const k of Object.keys(NGS.t.calendar)) NGS.t.calendar[k] = String(NGS.t.calendar[k]).replace("{min}", MIN);
   const arrival = $("[data-arrival]");
   const departure = $("[data-departure]");
   const form = $("[data-booking-form]");
@@ -166,7 +170,10 @@
         // Jours à venir : boutons (1er toucher = arrivée, 2e = départ). Les nuits réservées
         // ne peuvent pas servir d'arrivée, mais peuvent servir de départ (le voyageur part le matin).
         const choosingArrival = !a || d || day <= a;
-        if (day < today || (choosingArrival && isBooked(day))) cells += `<span class="${cls.join(" ")}">${i}</span>`;
+        // Pendant le choix du départ, les jours trop proches de l'arrivée (séjour minimum) ne sont pas proposés.
+        const tooClose = !choosingArrival && day < addDays(a, MIN);
+        if (tooClose) cls.push("day--tooclose");
+        if (day < today || tooClose || (choosingArrival && isBooked(day))) cells += `<span class="${cls.join(" ")}">${i}</span>`;
         else cells += `<button type="button" class="${cls.join(" ")}" data-day="${day}" aria-pressed="${cls.includes("day--selected") || cls.includes("day--end")}">${i}</button>`;
       }
       return `<div class="month"><p class="month__name">${name}</p><div class="month__grid">${cells}</div></div>`;
@@ -216,15 +223,19 @@
   // Message sous les dates : disponibles ou en conflit avec une réservation.
   const status = $("[data-dates-status]");
   function checkDates() {
+    departure?.setCustomValidity("");
     if (!status || !arrival?.value || !departure?.value) { if (status) status.hidden = true; return; }
     if (departure.value <= arrival.value) { status.hidden = true; return; }
     let conflict = false;
     for (let d = new Date(arrival.value + "T12:00"); iso(d) < departure.value; d.setDate(d.getDate() + 1)) {
       if (isBooked(iso(d))) { conflict = true; break; }
     }
+    // Séjour trop court : message, et le formulaire refuse l'envoi (validation du navigateur).
+    const tooShort = departure.value < addDays(arrival.value, MIN);
+    departure.setCustomValidity(tooShort ? NGS.t.calendar.tooShort : "");
     status.hidden = false;
-    status.textContent = conflict ? NGS.t.calendar.conflict : NGS.t.calendar.ok;
-    status.classList.toggle("is-warning", conflict);
+    status.textContent = tooShort ? NGS.t.calendar.tooShort : conflict ? NGS.t.calendar.conflict : NGS.t.calendar.ok;
+    status.classList.toggle("is-warning", tooShort || conflict);
   }
 
   /* --- 7. Liens WhatsApp pré-remplis avec les dates saisies ------------------- */
@@ -242,7 +253,7 @@
   };
   updateWhatsApp();
   form?.addEventListener("input", () => {
-    if (arrival?.value) departure.min = arrival.value;
+    if (arrival?.value) departure.min = addDays(arrival.value, MIN);
     updateWhatsApp();
     checkDates();
     cal?.render?.();
