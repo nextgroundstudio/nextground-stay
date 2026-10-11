@@ -43,7 +43,8 @@ export default {
     checkOutLabel: { en: "11 am", fr: "11 h" },
     maxGuests: 2,
     sizeM2: 58,
-    reducedRateFromNights: 30, // tarif dégressif à partir de 30 nuits
+    reducedRateFromNights: 30, // tarif dégressif à partir de 30 nuits…
+    longStayDiscount: 20, // …avec cette remise, en %
     longStayFromNights: 30,
     cleaningEveryDays: 3,
   },

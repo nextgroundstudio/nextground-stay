@@ -40,7 +40,7 @@ export default {
       from: "From",
       perNight: "/ night",
       perks: [
-        "Direct rate, reduced from {reduced} nights",
+        "Direct rate, −{discount}% from {reduced} nights",
         "Cleaning every {cleaning} days, included",
         "Confirmation within 1 hour, 9 am – 10 pm",
       ],
@@ -152,7 +152,7 @@ export default {
         },
         {
           q: "Do you offer long stays?",
-          a: "Yes. The nightly rate is reduced from {reduced} nights. Contact us on WhatsApp for a tailored quote.",
+          a: "Yes. From {reduced} nights, the nightly rate is reduced by {discount}%. Contact us on WhatsApp for a tailored quote.",
         },
       ],
     },
@@ -222,7 +222,7 @@ export default {
       from: "À partir de",
       perNight: "/ nuit",
       perks: [
-        "Tarif direct, dégressif dès {reduced} nuits",
+        "Tarif direct, −{discount}\u00a0% dès {reduced} nuits",
         "Ménage tous les {cleaning} jours, inclus",
         "Confirmation sous 1 h, de 9 h à 22 h",
       ],
@@ -335,7 +335,7 @@ export default {
         },
         {
           q: "Proposez-vous des séjours longs ?",
-          a: "Oui. Le tarif à la nuit est dégressif à partir de {reduced} nuits. Contactez-nous sur WhatsApp pour une proposition sur mesure.",
+          a: "Oui. À partir de {reduced} nuits, le tarif à la nuit est réduit de {discount}\u00a0%. Contactez-nous sur WhatsApp pour une proposition sur mesure.",
         },
       ],
     },
