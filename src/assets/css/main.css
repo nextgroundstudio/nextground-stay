@@ -109,8 +109,10 @@ picture { display: block; height: 100%; }
 .header__inner { max-width: var(--container); margin: 0 auto; padding: .8rem var(--gutter); display: flex; align-items: center; gap: 1.5rem; min-height: var(--header-h); }
 .brand { flex: 1 1 140px; min-width: 110px; display: flex; align-items: center; color: var(--olive); text-decoration: none; }
 .brand__mark { flex-shrink: 0; }
-.brand__line { flex: 1; padding-right: 12px; }
-.brand__line span { display: block; height: 1.2px; width: 6%; background: currentColor; transition: width 140ms linear; }
+/* Prolongement de la ligne d'horizon du G : même hauteur, même épaisseur et même lissage que le trait du SVG
+   (48,3 % → 51,7 % de la hauteur du monogramme), dessiné par transformation pour ne pas être arrondi au pixel. */
+.brand__line { flex: 1; align-self: stretch; position: relative; margin-right: 12px; }
+.brand__line span { position: absolute; left: -0.5px; top: 0; height: 100%; width: 6%; background: currentColor; transform-origin: 0 0; transform: translateY(48.3%) scaleY(.034); transition: width 140ms linear; }
 .brand__stay { font-size: 10px; letter-spacing: .6em; }
 .menu { display: flex; align-items: center; gap: .5rem 1.6rem; list-style: none; margin: 0; padding: 0; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; }
 .menu a { text-decoration: none; white-space: nowrap; }
