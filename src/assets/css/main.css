@@ -119,7 +119,34 @@ picture { display: block; height: 100%; }
 /* Devise : sans cadre ni coins arrondis du système, comme un lien du menu, avec un petit chevron */
 .currency { -webkit-appearance: none; appearance: none; border: 0; border-radius: 0; margin: 0; padding: 6px 16px 6px 2px; background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'%3E%3Cpath d='M.5.5 4 4 7.5.5' fill='none' stroke='%232B2826' stroke-width='1'/%3E%3C/svg%3E") no-repeat right 2px center; font: inherit; font-size: 11px; letter-spacing: .2em; color: var(--charbon); cursor: pointer; }
 .currency::-ms-expand { display: none; }
-@media (max-width: 1000px) { .menu__link { display: none; } .menu { gap: .9rem; } }
+@media (max-width: 1000px) { .menu__link, .menu__langitem { display: none; } .menu { gap: .9rem; } }
+
+/* Menu mobile et tablette : deux traits fins (comme la ligne du logo), qui se croisent une fois ouvert */
+.menu__toggle { display: none; }
+@media (max-width: 1000px) { .menu__toggle { display: block; } }
+.burger { display: flex; flex-direction: column; justify-content: center; gap: 6px; width: 32px; height: 32px; margin-right: -5px; padding: 0 5px; background: none; border: 0; cursor: pointer; color: var(--charbon); }
+.burger__bar { display: block; height: 1.2px; background: currentColor; transition: transform .25s ease; }
+.burger[aria-expanded="true"] .burger__bar:first-of-type { transform: translateY(3.6px) rotate(45deg); }
+.burger[aria-expanded="true"] .burger__bar:last-of-type { transform: translateY(-3.6px) rotate(-45deg); }
+.drawer { position: absolute; top: 100%; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid var(--filet); padding: .5rem var(--gutter) 1.75rem; box-shadow: 0 18px 30px -24px rgba(43, 40, 38, .35); animation: drawer-in .2s ease; }
+.drawer[hidden] { display: none; }
+@keyframes drawer-in { from { opacity: 0; transform: translateY(-6px); } }
+.drawer__links { list-style: none; margin: 0 auto; padding: 0; max-width: var(--container); }
+.drawer__links a { display: block; padding: 1.05rem 0; border-bottom: 1px solid var(--filet); font-size: 12px; letter-spacing: .24em; text-transform: uppercase; text-decoration: none; }
+.drawer__links a[aria-current="page"] { color: var(--olive); }
+.drawer__lang { display: flex; gap: 1.5rem; margin: 1.5rem auto 0; max-width: var(--container); font-size: 11px; letter-spacing: .24em; }
+.drawer__lang a { color: var(--muted); text-decoration: none; }
+.drawer__lang [aria-current] { color: var(--charbon); border-bottom: 1px solid var(--olive); padding-bottom: 2px; }
+@media (min-width: 1001px) { .drawer { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { .drawer { animation: none; } .burger__bar { transition: none; } }
+/* Petits téléphones : en-tête resserré pour garder logo, devise, Réserver et menu sur une ligne */
+@media (max-width: 400px) {
+  .header__inner { gap: .9rem; padding-inline: 20px; }
+  .brand { min-width: 104px; }
+  .menu { gap: .7rem; }
+  .header .btn--small { padding-inline: 12px; }
+}
+@media (max-width: 350px) { .brand { min-width: 60px; } .brand__stay { display: none; } }
 
 .footer { background: var(--olive-dark); color: var(--on-dark); padding: 4rem 0 2.5rem; font-size: 15px; }
 .footer__sign { display: flex; align-items: center; color: var(--blanc); padding-left: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter))); }
@@ -417,7 +444,7 @@ picture { display: block; height: 100%; }
 .receipt__accept { margin: 0 0 1.5rem; font-size: 14px; }
 .receipt [data-print] { display: block; margin-inline: auto; }
 @media print {
-  .header, .footer, .wa-float, .skip, .form--sign, [data-print], .menu { display: none !important; }
+  .header, .footer, .wa-float, .skip, .form--sign, [data-print], .menu, .drawer { display: none !important; }
   body { font-size: 11pt; color: #000; }
   .receipt { border: 1px solid #999; break-inside: avoid; }
   a { color: inherit; text-decoration: none; }

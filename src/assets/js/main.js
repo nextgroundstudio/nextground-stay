@@ -27,6 +27,22 @@
     }
   }
 
+  /* --- 0b. Menu mobile ------------------------------------------------------ */
+  const menuBtn = $("[data-menu-toggle]");
+  const menuPanel = $("[data-menu]");
+  if (menuBtn && menuPanel) {
+    const setMenu = (open) => {
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.setAttribute("aria-label", open ? menuBtn.dataset.close : menuBtn.dataset.open);
+      menuPanel.hidden = !open;
+    };
+    menuBtn.addEventListener("click", () => setMenu(menuPanel.hidden));
+    menuPanel.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); }); // lien choisi
+    document.addEventListener("click", (e) => { if (!menuPanel.hidden && !e.target.closest(".header")) setMenu(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menuPanel.hidden) { setMenu(false); menuBtn.focus(); } });
+    matchMedia("(min-width: 1001px)").addEventListener?.("change", (e) => { if (e.matches) setMenu(false); });
+  }
+
   /* --- 0. En-tête translucide une fois la page défilée ---------------------- */
   const header = $(".header");
   if (header) {

@@ -15,8 +15,8 @@
       <li class="menu__link"><a href="{{ anchor }}#faq">{{ t.nav.faq }}</a></li>
       {#- Page séparée (ordinateur uniquement, comme les autres liens) -#}
       <li class="menu__link"><a href="{{ routes.houseRules[lang.code] }}"{% if pageKey == "houseRules" %} aria-current="page"{% endif %}>{{ t.nav.houseRules }}</a></li>
-      <li>
-        {#- Lien vers la même page dans l'autre langue -#}
+      <li class="menu__langitem">
+        {#- Lien vers la même page dans l'autre langue (sur mobile : dans le menu) -#}
         {%- for l in langs %}{% if l.code != lang.code %}
         <a class="menu__lang" href="{{ route[l.code] }}" hreflang="{{ l.code }}" lang="{{ l.code }}" aria-label="{{ t.nav.language }} : {{ l.label }}">{{ l.label }}</a>
         {%- endif %}{% endfor %}
@@ -30,6 +30,27 @@
       </li>
       {%- endif %}
       <li><a class="btn btn--small" href="{{ anchor }}#booking">{{ t.nav.book }}</a></li>
+      {#- Mobile et tablette : bouton du menu (deux traits fins, croix une fois ouvert) -#}
+      <li class="menu__toggle">
+        <button class="burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="{{ t.nav.menu }}" data-open="{{ t.nav.menu }}" data-close="{{ t.nav.close }}" data-menu-toggle>
+          <span class="burger__bar" aria-hidden="true"></span><span class="burger__bar" aria-hidden="true"></span>
+        </button>
+      </li>
     </ul>
   </nav>
+  <div class="drawer" id="site-menu" hidden data-menu>
+    <ul class="drawer__links">
+      <li><a href="{{ anchor }}#apartment">{{ t.nav.apartment }}</a></li>
+      <li><a href="{{ anchor }}#reviews">{{ t.nav.reviews }}</a></li>
+      <li><a href="{{ anchor }}#neighborhood">{{ t.nav.neighborhood }}</a></li>
+      <li><a href="{{ anchor }}#faq">{{ t.nav.faq }}</a></li>
+      <li><a href="{{ routes.houseRules[lang.code] }}"{% if pageKey == "houseRules" %} aria-current="page"{% endif %}>{{ t.nav.houseRules }}</a></li>
+    </ul>
+    <p class="drawer__lang"><span class="visually-hidden">{{ t.nav.language }} :</span>
+      {%- for l in langs %}
+      {%- if l.code == lang.code %}<span aria-current="true">{{ l.label }}</span>
+      {%- else %}<a href="{{ route[l.code] }}" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.label }}</a>{% endif %}
+      {%- endfor %}
+    </p>
+  </div>
 </header>
