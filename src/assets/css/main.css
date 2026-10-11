@@ -408,7 +408,7 @@ picture { display: block; height: 100%; }
 /* Règlement intérieur signé : récapitulatif, puis impression / PDF (sans en-tête, pied de page ni formulaire) */
 .receipt { margin-top: 2.5rem; padding: 1.75rem; border: 1.5px solid var(--sauge); }
 .receipt { scroll-margin-top: calc(var(--header-h) + 1rem); }
-.receipt h2 { margin: 0 0 .5rem; }
+.receipt h2 { margin: 0 0 .5rem; text-align: center; }
 .receipt__sent { margin: 0 0 1.25rem; color: var(--olive); }
 .receipt__list { margin: 0 0 1.5rem; display: grid; gap: .5rem; }
 .receipt__list div { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
