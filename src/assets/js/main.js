@@ -15,6 +15,18 @@
     set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* ignoré */ } },
   };
 
+  /* --- 0a. Arrivée sur une page : en haut, sauf ancre valide ------------------ */
+  // Une ancre héritée de la page précédente (#faq, #booking…) sans section correspondante ici
+  // est retirée de l'adresse, et la page s'ouvre en haut. Le retour arrière garde sa position.
+  const nav = performance.getEntriesByType?.("navigation")?.[0];
+  if (!nav || nav.type === "navigate") {
+    const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!target) {
+      if (location.hash) try { history.replaceState(null, "", location.pathname + location.search); } catch { /* aperçu */ }
+      scrollTo(0, 0);
+    }
+  }
+
   /* --- 0. En-tête translucide une fois la page défilée ---------------------- */
   const header = $(".header");
   if (header) {
