@@ -43,6 +43,7 @@ const eleventyComputed = {
   {#- Après la signature : récapitulatif + copie à garder (impression / PDF du navigateur). -#}
   <section class="receipt" data-receipt hidden>
     <h2>{{ t.houseRules.receiptTitle }}</h2>
+    <p class="receipt__sent">{{ t.houseRules.sent }}</p>
     <dl class="receipt__list">
       <div><dt>{{ t.houseRules.fullName }}</dt><dd data-r="full-name"></dd></div>
       <div><dt>{{ t.houseRules.arrival }}</dt><dd data-r="arrival"></dd></div>

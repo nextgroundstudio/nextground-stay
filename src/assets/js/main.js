@@ -252,19 +252,50 @@
     $$("[data-wa-link]").forEach((a) => { a.href = href; a.target = "_blank"; a.rel = "noopener"; });
   };
   updateWhatsApp();
-  form?.addEventListener("input", () => {
+  const onDatesChange = () => {
     if (arrival?.value) departure.min = addDays(arrival.value, MIN);
+    const result = $("[data-form-result]", form);
+    if (result) result.hidden = true; // l'ancien message (envoi ou erreur) ne vaut plus pour les nouvelles dates
     updateWhatsApp();
     checkDates();
     cal?.render?.();
-  });
+  };
+  // Seuls les champs de date recalculent le calendrier et le message : sinon, quitter un autre champ
+  // (événement « change ») au moment de toucher le bouton décalait la mise en page et le clic se perdait.
+  const onFormEdit = (e) => (e.target === arrival || e.target === departure ? onDatesChange() : updateWhatsApp());
+  form?.addEventListener("input", onFormEdit);
+  form?.addEventListener("change", onFormEdit); // sélecteurs de date sur iPhone : « change » seulement
 
   /* --- 8. Envoi des formulaires sans quitter la page (Netlify Forms) --------- */
+  // Dates d'un formulaire : départ après l'arrivée et séjour minimum respecté.
+  const datesOk = (el) => {
+    const a = $("[name=arrival]", el)?.value, d = $("[name=departure]", el)?.value;
+    return !a || !d || d >= addDays(a, MIN);
+  };
   const sendForm = (el, texts, onSent) => {
+    // Validation faite ici (et non par le navigateur seul) pour que la règle des nuits minimum
+    // s'applique partout, y compris sur iPhone où les sélecteurs de date se comportent autrement.
+    el.noValidate = true;
     el.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const button = $("button[type=submit]", el);
+      const dep = $("[name=departure]", el);
+      dep?.setCustomValidity("");
+      const arr = $("[name=arrival]", el);
+      if (dep && arr?.value) dep.min = addDays(arr.value, MIN);
+      if (el === form) checkDates();
       const result = $("[data-form-result]", el);
+      // Séjour trop court = pas d'envoi, avec le message sous le bouton.
+      if (!datesOk(el)) {
+        dep?.setCustomValidity(NGS.t.calendar.tooShort);
+        result.textContent = NGS.t.calendar.tooShort;
+        result.hidden = false;
+        dep?.focus();
+        return;
+      }
+      dep?.setCustomValidity("");
+      // Autres champs obligatoires : message natif du navigateur.
+      if (!el.checkValidity()) { result.hidden = true; el.reportValidity(); return; }
+      const button = $("button[type=submit]", el);
       const label = button.textContent;
       button.disabled = true;
       button.textContent = NGS.t.book.sending;
@@ -288,7 +319,7 @@
   };
   if (form) sendForm(form, NGS.t.book);
   const signForm = $("[data-sign-form]");
-  // Après la signature : récapitulatif affiché sous le formulaire, imprimable / enregistrable en PDF.
+  // Après la signature : le formulaire est remplacé par un récapitulatif, imprimable / enregistrable en PDF.
   const receipt = $("[data-receipt]");
   if (signForm) sendForm(signForm, NGS.t.houseRules, (data) => {
     if (!receipt) return;
@@ -299,7 +330,11 @@
     set("departure", date(data.get("departure")));
     set("signature", data.get("signature"));
     set("signed-at", new Intl.DateTimeFormat(NGS.locale, { dateStyle: "long", timeStyle: "short" }).format(new Date()));
+    // Le formulaire laisse place à l'encadré de confirmation.
+    signForm.hidden = true;
+    signForm.style.display = "none";
     receipt.hidden = false;
+    receipt.scrollIntoView({ behavior: "smooth", block: "start" });
     document.body.classList.add("is-signed");
   });
   $("[data-print]")?.addEventListener("click", () => window.print());
