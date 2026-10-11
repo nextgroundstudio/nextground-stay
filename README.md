@@ -119,6 +119,16 @@ Le code d'accès est ensuite envoyé par WhatsApp, jamais affiché sur le site.
 En cas de modification du règlement, changer aussi la date `updated` dans `legal.js` :
 elle est affichée sur la page publique et enregistrée avec chaque signature.
 
+**Retrouver le texte exact signé par un voyageur**
+1. Netlify > Forms > `house-rules` : relever `rules-version`, `rules-fingerprint` et `language` de la soumission.
+2. `git log --oneline -- src/_data/legal.js` pour repérer les commits du règlement, puis `git checkout <sha>`.
+3. Recalculer l'empreinte (SHA-256 de `JSON.stringify(legal.houseRules[lang])`, 16 premiers caractères) :
+   ```
+   node --input-type=module -e 'import legal from "./src/_data/legal.js"; import {createHash} from "node:crypto"; for (const l of ["en","fr"]) console.log(l, createHash("sha256").update(JSON.stringify(legal.houseRules[l])).digest("hex").slice(0,16))'
+   ```
+   Si elle correspond, c'est le texte signé. Le déploiement Netlify de l'époque (Deploys) le montre tel qu'il était affiché.
+   À noter : changer la structure de `houseRules` sans toucher au texte change aussi l'empreinte.
+
 ---
 
 ## À compléter avant la mise en ligne

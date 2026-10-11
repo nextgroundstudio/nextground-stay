@@ -415,6 +415,7 @@ picture { display: block; height: 100%; }
 .receipt__list dt { min-width: 12rem; color: var(--muted); }
 .receipt__list dd { margin: 0; }
 .receipt__accept { margin: 0 0 1.5rem; font-size: 14px; }
+.receipt [data-print] { display: block; margin-inline: auto; }
 @media print {
   .header, .footer, .wa-float, .skip, .form--sign, [data-print], .menu { display: none !important; }
   body { font-size: 11pt; color: #000; }
