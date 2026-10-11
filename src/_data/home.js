@@ -15,7 +15,7 @@ export default {
   // par ex. "50% 85%" pour descendre vers le canapé.
   photos: [
     // 0 : image d'accueil (même photo sur ordinateur et mobile)
-    { file: "living-room.jpg", position: "50% 60%", alt: { en: "Bright living room with green sofa", fr: "Séjour lumineux avec canapé vert" } },
+    { file: "living-room.jpg", position: "50% 76%", alt: { en: "Bright living room with green sofa", fr: "Séjour lumineux avec canapé vert" } },
     // 1 à 5 : mosaïque de la section « L'appartement » (même ordre que l'annonce)
     { file: "hero-living-room.jpg", alt: { en: "Living room, overall view", fr: "Séjour, vue d'ensemble" } },
     { file: "bedroom.jpg", alt: { en: "Bedroom with queen-size bed and balcony", fr: "Chambre avec lit queen size et balcon" } },
