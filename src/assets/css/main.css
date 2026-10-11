@@ -338,7 +338,7 @@ picture { display: block; height: 100%; }
 .rules li::marker { color: var(--olive); font-size: .9rem; }
 .rules h2 { margin-top: 1.5rem; }
 .form--sign { margin-top: 3rem; padding: 2rem; border: 1.5px solid var(--sauge); }
-.form--sign h2 { margin: 0 0 .5rem; }
+.form--sign h2 { margin: 0 0 .5rem; text-align: center; }
 
 /* Mobile : bouton WhatsApp flottant retiré (il cachait du contenu et doublait « Réserver » de l'en-tête),
    petits textes agrandis, carte placée après la liste des lieux et moins haute. */
