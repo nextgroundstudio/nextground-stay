@@ -124,10 +124,10 @@ picture { display: block; height: 100%; }
 /* Menu mobile et tablette : deux traits fins (comme la ligne du logo), qui se croisent une fois ouvert */
 .menu__toggle { display: none; }
 @media (max-width: 1000px) { .menu__toggle { display: block; } }
-.burger { display: flex; flex-direction: column; justify-content: center; gap: 6px; width: 32px; height: 32px; margin-right: -5px; padding: 0 5px; background: none; border: 0; cursor: pointer; color: var(--charbon); }
-.burger__bar { display: block; height: 1.2px; background: currentColor; transition: transform .25s ease; }
-.burger[aria-expanded="true"] .burger__bar:first-of-type { transform: translateY(3.6px) rotate(45deg); }
-.burger[aria-expanded="true"] .burger__bar:last-of-type { transform: translateY(-3.6px) rotate(-45deg); }
+.burger { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: -7px; padding: 0; background: none; border: 0; border-radius: 0; -webkit-appearance: none; appearance: none; cursor: pointer; color: var(--charbon); }
+.burger svg { display: block; width: 22px; height: 22px; flex-shrink: 0; }
+.burger .burger__close, .burger[aria-expanded="true"] .burger__open { display: none; }
+.burger[aria-expanded="true"] .burger__close { display: block; }
 .drawer { position: absolute; top: 100%; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid var(--filet); padding: .5rem var(--gutter) 1.75rem; box-shadow: 0 18px 30px -24px rgba(43, 40, 38, .35); animation: drawer-in .2s ease; }
 .drawer[hidden] { display: none; }
 @keyframes drawer-in { from { opacity: 0; transform: translateY(-6px); } }
@@ -138,7 +138,7 @@ picture { display: block; height: 100%; }
 .drawer__lang a { color: var(--muted); text-decoration: none; }
 .drawer__lang [aria-current] { color: var(--charbon); border-bottom: 1px solid var(--olive); padding-bottom: 2px; }
 @media (min-width: 1001px) { .drawer { display: none !important; } }
-@media (prefers-reduced-motion: reduce) { .drawer { animation: none; } .burger__bar { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .drawer { animation: none; } }
 /* Petits téléphones : en-tête resserré pour garder logo, devise, Réserver et menu sur une ligne */
 @media (max-width: 400px) {
   .header__inner { gap: .9rem; padding-inline: 20px; }

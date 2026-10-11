@@ -33,7 +33,8 @@
       {#- Mobile et tablette : bouton du menu (deux traits fins, croix une fois ouvert) -#}
       <li class="menu__toggle">
         <button class="burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="{{ t.nav.menu }}" data-open="{{ t.nav.menu }}" data-close="{{ t.nav.close }}" data-menu-toggle>
-          <span class="burger__bar" aria-hidden="true"></span><span class="burger__bar" aria-hidden="true"></span>
+          <svg class="burger__open" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><path d="M0 8h22M0 14h22" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          <svg class="burger__close" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><path d="M3 3l16 16M19 3L3 19" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
         </button>
       </li>
     </ul>
