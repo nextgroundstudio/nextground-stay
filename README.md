@@ -108,10 +108,13 @@ Deux pages, avec exactement le même texte (tiré de `legal.js`) :
   - anglais : https://nextground-stay.netlify.app/house-rules/
   - français : https://nextground-stay.netlify.app/fr/reglement-interieur/
 - **Version à signer, cachée** (non référencée, aucun lien sur le site) : à envoyer aux voyageurs après leur demande de réservation.
+  - **lien unique à envoyer : https://nextground-stay.netlify.app/sign** (ouvre la version française si le téléphone est en français, l'anglaise sinon)
   - anglais : https://nextground-stay.netlify.app/house-rules/sign/
   - français : https://nextground-stay.netlify.app/fr/reglement-interieur/signer/
 
-Le voyageur coche, signe en saisissant son nom, et la confirmation arrive dans Netlify Forms (formulaire `house-rules`).
+Le voyageur coche, signe en saisissant son nom, et la confirmation arrive dans Netlify Forms (formulaire `house-rules`)
+avec la date de la version et l'empreinte du texte exact accepté (`rules-fingerprint`). Après l'envoi, il voit un récapitulatif
+et un bouton « Télécharger ma copie (PDF) » pour garder son exemplaire. Pensez à exporter régulièrement les signatures (CSV).
 Le code d'accès est ensuite envoyé par WhatsApp, jamais affiché sur le site.
 En cas de modification du règlement, changer aussi la date `updated` dans `legal.js` :
 elle est affichée sur la page publique et enregistrée avec chaque signature.

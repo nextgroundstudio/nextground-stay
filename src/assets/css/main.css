@@ -404,3 +404,18 @@ picture { display: block; height: 100%; }
 .month__grid .day--tooclose { color: #c4c4be; }
 /* Carte de réservation : renvoi vers le règlement intérieur, juste au-dessus du bouton d'envoi */
 .form__rules { margin: 0; }
+
+/* Règlement intérieur signé : récapitulatif, puis impression / PDF (sans en-tête, pied de page ni formulaire) */
+.receipt { margin-top: 2.5rem; padding: 1.75rem; border: 1.5px solid var(--sauge); }
+.receipt h2 { margin: 0 0 1rem; }
+.receipt__list { margin: 0 0 1.5rem; display: grid; gap: .5rem; }
+.receipt__list div { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+.receipt__list dt { min-width: 12rem; color: var(--muted); }
+.receipt__list dd { margin: 0; }
+.receipt__accept { margin: 0 0 1.5rem; font-size: 14px; }
+@media print {
+  .header, .footer, .wa-float, .skip, .form--sign, [data-print], .menu { display: none !important; }
+  body { font-size: 11pt; color: #000; }
+  .receipt { border: 1px solid #999; break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+}

@@ -39,3 +39,15 @@
   for = "/fr/reglement-interieur/signer/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+# Lien unique à envoyer aux voyageurs pour signer le règlement intérieur : /sign
+# ouvre la version française si le navigateur est en français, l'anglaise sinon.
+[[redirects]]
+  from = "/sign"
+  to = "/fr/reglement-interieur/signer/"
+  status = 302
+  conditions = { Language = ["fr"] }
+[[redirects]]
+  from = "/sign"
+  to = "/house-rules/sign/"
+  status = 302

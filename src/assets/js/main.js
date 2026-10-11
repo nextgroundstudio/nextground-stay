@@ -260,7 +260,7 @@
   });
 
   /* --- 8. Envoi des formulaires sans quitter la page (Netlify Forms) --------- */
-  const sendForm = (el, texts) => {
+  const sendForm = (el, texts, onSent) => {
     el.addEventListener("submit", async (e) => {
       e.preventDefault();
       const button = $("button[type=submit]", el);
@@ -275,6 +275,7 @@
           body: new URLSearchParams(new FormData(el)).toString(),
         });
         if (!res.ok) throw new Error(res.status);
+        onSent?.(new FormData(el));
         el.reset();
         result.textContent = texts.sent;
       } catch {
@@ -287,5 +288,19 @@
   };
   if (form) sendForm(form, NGS.t.book);
   const signForm = $("[data-sign-form]");
-  if (signForm) sendForm(signForm, NGS.t.houseRules);
+  // Après la signature : récapitulatif affiché sous le formulaire, imprimable / enregistrable en PDF.
+  const receipt = $("[data-receipt]");
+  if (signForm) sendForm(signForm, NGS.t.houseRules, (data) => {
+    if (!receipt) return;
+    const date = (v) => v ? new Intl.DateTimeFormat(NGS.locale, { dateStyle: "long" }).format(new Date(v + "T12:00")) : "";
+    const set = (k, v) => { const el = $(`[data-r="${k}"]`, receipt); if (el) el.textContent = v; };
+    set("full-name", data.get("full-name"));
+    set("arrival", date(data.get("arrival")));
+    set("departure", date(data.get("departure")));
+    set("signature", data.get("signature"));
+    set("signed-at", new Intl.DateTimeFormat(NGS.locale, { dateStyle: "long", timeStyle: "short" }).format(new Date()));
+    receipt.hidden = false;
+    document.body.classList.add("is-signed");
+  });
+  $("[data-print]")?.addEventListener("click", () => window.print());
 })();

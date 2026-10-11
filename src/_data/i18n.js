@@ -183,6 +183,11 @@ export default {
       signature: "Signature (type your full name)",
       submit: "Confirm and sign",
       sent: "Thank you, your confirmation has been recorded. We'll send your access details before arrival.",
+      receiptTitle: "Your signed copy",
+      signatureShort: "Signature",
+      signedAt: "Signed on",
+      version: "House rules version",
+      download: "Download my copy (PDF)",
       error: "The confirmation could not be sent. Please message us on WhatsApp.",
     },
     notFound: {
@@ -371,6 +376,11 @@ export default {
       signature: "Signature (saisissez votre nom complet)",
       submit: "Confirmer et signer",
       sent: "Merci, votre confirmation est enregistrée. Nous vous envoyons vos informations d'accès avant l'arrivée.",
+      receiptTitle: "Votre exemplaire signé",
+      signatureShort: "Signature",
+      signedAt: "Signé le",
+      version: "Version du règlement",
+      download: "Télécharger ma copie (PDF)",
       error: "La confirmation n'a pas pu être envoyée. Écrivez-nous sur WhatsApp.",
     },
     notFound: {

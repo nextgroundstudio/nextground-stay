@@ -26,6 +26,7 @@ const eleventyComputed = {
     <input type="hidden" name="form-name" value="house-rules">
     <input type="hidden" name="language" value="{{ lang.code }}">
     <input type="hidden" name="rules-version" value="{{ legal.houseRules.updated }}">
+    <input type="hidden" name="rules-fingerprint" value="{{ legal.houseRules[lang.code] | fingerprint }}">
     <p class="visually-hidden"><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p>
     <label>{{ t.houseRules.fullName }}<input type="text" name="full-name" autocomplete="name" required></label>
     <div class="form__row">
@@ -38,4 +39,19 @@ const eleventyComputed = {
     <button class="btn" type="submit">{{ t.houseRules.submit }}</button>
     <p class="form__result small" data-form-result role="status" hidden></p>
   </form>
+
+  {#- Après la signature : récapitulatif + copie à garder (impression / PDF du navigateur). -#}
+  <section class="receipt" data-receipt hidden>
+    <h2>{{ t.houseRules.receiptTitle }}</h2>
+    <dl class="receipt__list">
+      <div><dt>{{ t.houseRules.fullName }}</dt><dd data-r="full-name"></dd></div>
+      <div><dt>{{ t.houseRules.arrival }}</dt><dd data-r="arrival"></dd></div>
+      <div><dt>{{ t.houseRules.departure }}</dt><dd data-r="departure"></dd></div>
+      <div><dt>{{ t.houseRules.signatureShort }}</dt><dd data-r="signature"></dd></div>
+      <div><dt>{{ t.houseRules.signedAt }}</dt><dd data-r="signed-at"></dd></div>
+      <div><dt>{{ t.houseRules.version }}</dt><dd>{{ legal.houseRules.updated }} · {{ legal.houseRules[lang.code] | fingerprint }}</dd></div>
+    </dl>
+    <p class="receipt__accept">✓ {{ t.houseRules.accept }}</p>
+    <button class="btn btn--outline" type="button" data-print>{{ t.houseRules.download }}</button>
+  </section>
 </article>

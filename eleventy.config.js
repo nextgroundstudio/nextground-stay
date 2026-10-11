@@ -1,6 +1,7 @@
 // Configuration Eleventy (générateur de site statique).
 // Doc : https://www.11ty.dev/docs/
 import path from "node:path";
+import crypto from "node:crypto";
 import fs from "node:fs";
 import Image from "@11ty/eleventy-img";
 import site from "./src/_data/site.js";
@@ -47,6 +48,12 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
+
+  // Empreinte (SHA-256, 16 premiers caractères) d'un contenu : jointe à chaque signature du règlement
+  // intérieur, elle prouve quel texte exact a été accepté.
+  eleventyConfig.addFilter("fingerprint", (value) =>
+    crypto.createHash("sha256").update(JSON.stringify(value)).digest("hex").slice(0, 16)
+  );
 
   // Année courante (pied de page).
   eleventyConfig.addShortcode("year", () => String(new Date().getFullYear()));
