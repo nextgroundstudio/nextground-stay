@@ -2,10 +2,11 @@
 <section class="section" id="apartment">
   <div class="container">
     <div class="gallery">
-      {#- Ordre de la visionneuse : les 5 photos de la mosaïque, puis la photo d'accueil (le salon de face),
-          puis la suite de home.photos. data-open-photo = position dans cette liste. -#}
+      {#- Ordre de la visionneuse : les 5 photos de la mosaïque, puis la photo d'accueil (vue d'ensemble),
+          puis la suite de home.photos. data-open-photo = position dans cette liste.
+          Sur mobile, la grande photo est la vue d'ensemble (position 5 de la liste). -#}
       {%- set p = home.photos[1] %}
-      <button class="gallery__main gallery__item" type="button"{% if p.position %} style="--pos: {{ p.position }}"{% endif %} data-open-photo="0" aria-label="{{ p.alt | loc(lang.code) }}">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 60vw, 100vw" %}</button>
+      <button class="gallery__main gallery__item" type="button"{% if p.position %} style="--pos: {{ p.position }}"{% endif %} data-open-photo="0" data-open-photo-mobile="5" aria-label="{{ p.alt | loc(lang.code) }}">{% galleryPhoto p.file, home.photos[0].file, p.alt | loc(lang.code) %}</button>
       <div class="gallery__grid">
         {%- for p in home.photos.slice(2, 6) %}
         <button class="gallery__item" type="button" data-open-photo="{{ loop.index }}" aria-label="{{ p.alt | loc(lang.code) }}">{% photo p.file, p.alt | loc(lang.code), "(min-width: 900px) 20vw, 50vw" %}</button>

@@ -6,18 +6,19 @@ export default {
   // Déposer les fichiers originaux (jpg/png) dans src/assets/photos/ et indiquer le nom ici.
   // Tant que « file » est vide, un emplacement neutre s'affiche à la place.
   // La première photo sert de grande image d'accueil.
-  // Accueil (ordinateur et mobile) : le salon de face, la meilleure vue (photos[0]).
-  // Sur mobile, cadrage décalé pour écarter la chaise du coin.
+  // Photo d'accueil sur mobile (format vertical), différente de celle de l'ordinateur
+  // pour ne pas répéter la première photo de la galerie juste en dessous.
+  // Accueil sur mobile : le salon en entier, de face (photo verticale), cadré pour écarter la chaise du coin.
   heroMobile: "living-room.jpg",
   heroMobilePosition: "68% 50%",
 
   // position (facultatif) : cadrage de la photo quand elle est rognée (axe X puis axe Y),
   // par ex. "50% 85%" pour descendre vers le canapé.
   photos: [
-    // 0 : image d'accueil (même photo sur ordinateur et mobile)
-    { file: "living-room.jpg", position: "50% 76%", alt: { en: "Bright living room with green sofa", fr: "Séjour lumineux avec canapé vert" } },
+    // 0 : grande image d'accueil (format paysage de préférence)
+    { file: "hero-living-room.jpg", position: "50% 85%", alt: { en: "Bright living room with green sofa", fr: "Séjour lumineux avec canapé vert" } },
     // 1 à 5 : mosaïque de la section « L'appartement » (même ordre que l'annonce)
-    { file: "hero-living-room.jpg", alt: { en: "Living room, overall view", fr: "Séjour, vue d'ensemble" } },
+    { file: "living-room.jpg", position: "50% 70%", alt: { en: "Living room", fr: "Séjour" } },
     { file: "bedroom.jpg", alt: { en: "Bedroom with queen-size bed and balcony", fr: "Chambre avec lit queen size et balcon" } },
     { file: "rooftop-pool.jpg", alt: { en: "Rooftop pool overlooking Nairobi", fr: "Piscine sur le toit avec vue sur Nairobi" } },
     { file: "bathroom.jpg", alt: { en: "En-suite bathroom with walk-in shower", fr: "Salle de bain attenante avec douche à l'italienne" } },
