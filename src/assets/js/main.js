@@ -190,10 +190,11 @@
         hint.textContent = n === 1 ? T.hintDoneOne : T.hintDone.replace("{n}", n);
       } else hint.textContent = a ? T.hintDeparture : T.hintArrival;
     };
+    let loadFailed = false; // message conservé quand on change de mois ou de dates
     const render = () => {
       updateHint();
       const m = new Date(now.getFullYear(), now.getMonth() + offset, 1);
-      months.innerHTML = renderMonth(m.getFullYear(), m.getMonth());
+      months.innerHTML = (loadFailed ? `<p class="small muted">${T.unavailable}</p>` : "") + renderMonth(m.getFullYear(), m.getMonth());
       prev.disabled = offset === 0;
       next.disabled = offset >= MAX_OFFSET;
     };
@@ -205,7 +206,7 @@
       const day = btn.dataset.day;
       if (!arrival.value || departure.value || day <= arrival.value) { arrival.value = day; departure.value = ""; }
       else departure.value = day;
-      form?.dispatchEvent(new Event("input"));
+      (departure.value ? departure : arrival).dispatchEvent(new Event("input", { bubbles: true }));
       $(`[data-day="${day}"]`, months)?.focus();
     });
 
@@ -215,7 +216,7 @@
     fetch("/api/availability")
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((data) => { booked = data.booked || []; render(); checkDates(); })
-      .catch(() => { render(); months.insertAdjacentHTML("afterbegin", `<p class="small muted">${T.unavailable}</p>`); });
+      .catch(() => { loadFailed = true; render(); });
 
     cal.render = render;
   }
