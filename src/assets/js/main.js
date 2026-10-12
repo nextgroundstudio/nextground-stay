@@ -140,8 +140,12 @@
   const reviews = $("[data-reviews]");
   if (reviews) {
     const step = () => (reviews.firstElementChild?.getBoundingClientRect().width || 300) + 24;
-    $("[data-reviews-prev]")?.addEventListener("click", () => reviews.scrollBy({ left: -step(), behavior: "smooth" }));
-    $("[data-reviews-next]")?.addEventListener("click", () => reviews.scrollBy({ left: step(), behavior: "smooth" }));
+    // Défilement en boucle : après le dernier avis on revient au premier, et inversement.
+    const max = () => reviews.scrollWidth - reviews.clientWidth;
+    $("[data-reviews-prev]")?.addEventListener("click", () =>
+      reviews.scrollLeft <= 2 ? reviews.scrollTo({ left: max(), behavior: "smooth" }) : reviews.scrollBy({ left: -step(), behavior: "smooth" }));
+    $("[data-reviews-next]")?.addEventListener("click", () =>
+      reviews.scrollLeft >= max() - 2 ? reviews.scrollTo({ left: 0, behavior: "smooth" }) : reviews.scrollBy({ left: step(), behavior: "smooth" }));
   }
 
   /* --- 5. Dates : outils communs --------------------------------------------- */
