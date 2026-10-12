@@ -97,6 +97,7 @@ picture { display: block; height: 100%; }
 .section--olive { background: var(--olive); color: var(--blanc); }
 .section__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1rem 2rem; margin-bottom: 2.5rem; }
 .section__head .label, .apartment__info .label, .neighborhood__info .label, .book__intro .label { margin-bottom: .75rem; display: block; }
+.apartment__kicker { margin: 0 0 1.25rem; }
 
 /* 4. En-tête et pied de page ----------------------------------------------- */
 
@@ -387,16 +388,13 @@ picture { display: block; height: 100%; }
 .fast--center svg { display: inline-block; vertical-align: -3px; margin-right: .4rem; }
 .fast--center span { display: inline; }
 
-/* Mobile : seul le surtitre « L'appartement » passe au-dessus de la galerie, comme titre de transition.
-   Nom, sous-titre et adresse restent sous la galerie, puis l'encadré prix, puis les équipements.
-   display: contents laisse ces éléments se ranger dans la même colonne que la galerie. */
+/* Mobile : l'encadré prix remonte juste sous le nom et l'adresse de l'appartement, avant les équipements
+   (display: contents laisse les éléments de .apartment__info se ranger avec l'encadré). */
 @media (max-width: 759px) {
-  #apartment > .container { display: flex; flex-direction: column; gap: .6rem; }
-  .apartment, .apartment__info { display: contents; }
-  #apartment .apartment__info > .label { order: -1; margin-bottom: .9rem; }
-  #apartment .gallery { margin: 0 0 2rem; }
-  .price-card { order: 2; align-self: stretch; margin: 1.25rem 0 1.5rem; }
-  .apartment__info .amenities, .apartment__info .all-amenities { order: 3; }
+  .apartment { flex-direction: column; flex-wrap: nowrap; gap: .6rem; }
+  .apartment__info { display: contents; }
+  .price-card { order: 1; align-self: stretch; margin: 1.25rem 0 1.5rem; }
+  .apartment__info .amenities, .apartment__info .all-amenities { order: 2; }
 }
 
 

@@ -1,6 +1,8 @@
 {#- L'appartement : galerie, caractéristiques, équipements, encadré prix. -#}
 <section class="section" id="apartment">
   <div class="container">
+    {#- Surtitre de section, au-dessus de la galerie (mobile et ordinateur) -#}
+    <p class="label apartment__kicker">{{ t.apartment.kicker }}</p>
     <div class="gallery">
       {#- Ordre de la visionneuse : les 5 photos de la mosaïque, puis la photo d'accueil (vue d'ensemble),
           puis la suite de home.photos. data-open-photo = position dans cette liste.
@@ -18,7 +20,6 @@
 
     <div class="apartment">
       <div class="apartment__info">
-        <p class="label">{{ t.apartment.kicker }}</p>
         <h2>{{ site.apartmentName }}</h2>
         <p class="apartment__subtitle">{{ t.apartment.title }}</p>
         <p class="muted">{{ t.apartment.address | fill }}</p>
