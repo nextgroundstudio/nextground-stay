@@ -114,6 +114,13 @@ export default {
         meta: { en: "Stayed 2 weeks · Sept. 2026", fr: "Séjour de 2 semaines · sept. 2026" },
       },
       {
+        name: "Naomi",
+        lang: "fr",
+        text: "Le logement est conforme à l'annonce et l'hôte a été très accueillant et réactif.",
+        textEn: "The apartment matches the listing, and the host was very welcoming and responsive.",
+        meta: { en: "Oct. 2026", fr: "oct. 2026" },
+      },
+      {
         name: "Nancy",
         lang: "en",
         text: "I had a lovely stay at Amanda's. The home is exactly as pictured, with many thoughtful touches and provisions for guests.",

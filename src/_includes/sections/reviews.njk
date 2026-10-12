@@ -14,8 +14,10 @@
       <figure class="review">
         <div>
           <p class="stars" aria-label="{{ t.reviews.stars }}">★★★★★</p>
-          {%- set translated = lang.code == "fr" and r.textFr and r.lang != "fr" %}
-          <blockquote lang="{{ 'fr' if translated else r.lang }}">{{ "« " if lang.code == "fr" else "“" }}{{ r.textFr if translated else r.text }}{{ " »" if lang.code == "fr" else "”" }}</blockquote>
+          {#- Avis écrit dans l'autre langue : traduction affichée (textFr sur le site français, textEn sur l'anglais) -#}
+          {%- set translation = r.textFr if lang.code == "fr" else r.textEn %}
+          {%- set translated = r.lang != lang.code and translation %}
+          <blockquote lang="{{ lang.code if translated else r.lang }}">{{ "« " if lang.code == "fr" else "“" }}{{ translation if translated else r.text }}{{ " »" if lang.code == "fr" else "”" }}</blockquote>
           {%- if translated %}<p class="review__translated">{{ t.reviews.translated }}</p>{% endif %}
         </div>
         <figcaption>

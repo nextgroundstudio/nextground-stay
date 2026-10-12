@@ -56,6 +56,7 @@ export default {
       title: "They stayed with us.",
       summary: "{rating} · {count} reviews",
       stars: "5 out of 5 stars",
+      translated: "Translated from French",
       prev: "Previous reviews",
       next: "Next reviews",
     },
