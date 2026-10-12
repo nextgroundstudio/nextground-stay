@@ -387,13 +387,15 @@ picture { display: block; height: 100%; }
 .fast--center svg { display: inline-block; vertical-align: -3px; margin-right: .4rem; }
 .fast--center span { display: inline; }
 
-/* Mobile : l'encadré prix remonte juste sous le nom et l'adresse de l'appartement, avant les équipements
-   (display: contents laisse les éléments de .apartment__info se ranger avec l'encadré). */
+/* Mobile : le titre de la section (surtitre, nom, sous-titre, adresse) passe au-dessus de la galerie,
+   puis l'encadré prix, puis les équipements. display: contents laisse ces éléments se ranger
+   ensemble dans la même colonne que la galerie. */
 @media (max-width: 759px) {
-  .apartment { flex-direction: column; flex-wrap: nowrap; gap: .6rem; }
-  .apartment__info { display: contents; }
-  .price-card { order: 1; align-self: stretch; margin: 1.25rem 0 1.5rem; }
-  .apartment__info .amenities, .apartment__info .all-amenities { order: 2; }
+  #apartment > .container { display: flex; flex-direction: column; gap: .6rem; }
+  .apartment, .apartment__info { display: contents; }
+  #apartment .gallery { order: 1; margin: 1.25rem 0 0; }
+  .price-card { order: 2; align-self: stretch; margin: 1.75rem 0 1.5rem; }
+  .apartment__info .amenities, .apartment__info .all-amenities { order: 3; }
 }
 
 /* Accueil : prix « à partir de » juste au-dessus du bouton */
