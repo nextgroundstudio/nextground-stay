@@ -97,6 +97,11 @@ picture { display: block; height: 100%; }
 .section--olive { background: var(--olive); color: var(--blanc); }
 .section__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1rem 2rem; margin-bottom: 2.5rem; }
 .section__head .label, .apartment__info .label, .neighborhood__info .label, .book__intro .label { margin-bottom: .75rem; display: block; }
+/* Surtitre de section suivi d'une ligne d'horizon fine, en rappel de la ligne du logo (filet sauge). */
+.section__head > div { flex: 1 1 auto; }
+.label.kicker { display: flex; align-items: center; gap: 1.1rem; }
+.kicker::after { content: ""; flex: 1; height: 1px; background: var(--sauge); }
+.label--light.kicker::after { background: currentColor; opacity: .35; }
 
 /* 4. En-tête et pied de page ----------------------------------------------- */
 
