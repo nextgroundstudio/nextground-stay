@@ -26,7 +26,7 @@
       <a href="{{ site.contact.tiktok }}" rel="noopener" target="_blank">TikTok</a>
     </div>
     <div class="footer__end">
-      <p class="label label--light">The right place, simply.</p>
+      <p class="label label--light"{% if lang.code != "en" %} lang="en"{% endif %}>The right place, simply.</p>
       <span>{{ site.name }} · {{ t.footer.house }}</span>
       <span>© {% year %} {{ site.company }}</span>
     </div>

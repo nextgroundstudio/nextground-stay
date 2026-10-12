@@ -5,7 +5,7 @@
   <div class="container hero__grid">
     {#- La tagline est un élément visuel ; le titre principal (h1), lu par Google, décrit l'offre
         et s'affiche comme le début de la phrase d'accroche. -#}
-    <p class="hero__title">{{ t.hero.title | safe }}</p>
+    <p class="hero__title"{% if lang.code != "en" %} lang="en"{% endif %}>{{ t.hero.title | safe }}</p>
     <div class="hero__side">
       <div class="lead"><h1 class="hero__h1">{{ t.hero.h1 }}</h1>{% if t.hero.lead %} {{ t.hero.lead }}{% endif %}</div>
       {#- Prix « à partir de », visible dès l'accueil (la devise suit le sélecteur de l'en-tête) -#}
