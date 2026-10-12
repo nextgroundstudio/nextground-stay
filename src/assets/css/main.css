@@ -387,16 +387,18 @@ picture { display: block; height: 100%; }
 .fast--center svg { display: inline-block; vertical-align: -3px; margin-right: .4rem; }
 .fast--center span { display: inline; }
 
-/* Mobile : le titre de la section (surtitre, nom, sous-titre, adresse) passe au-dessus de la galerie,
-   puis l'encadré prix, puis les équipements. display: contents laisse ces éléments se ranger
-   ensemble dans la même colonne que la galerie. */
+/* Mobile : seul le surtitre « L'appartement » passe au-dessus de la galerie, comme titre de transition.
+   Nom, sous-titre et adresse restent sous la galerie, puis l'encadré prix, puis les équipements.
+   display: contents laisse ces éléments se ranger dans la même colonne que la galerie. */
 @media (max-width: 759px) {
   #apartment > .container { display: flex; flex-direction: column; gap: .6rem; }
   .apartment, .apartment__info { display: contents; }
-  #apartment .gallery { order: 1; margin: 1.25rem 0 0; }
-  .price-card { order: 2; align-self: stretch; margin: 1.75rem 0 1.5rem; }
+  #apartment .apartment__info > .label { order: -1; margin-bottom: .9rem; }
+  #apartment .gallery { margin: 0 0 2rem; }
+  .price-card { order: 2; align-self: stretch; margin: 1.25rem 0 1.5rem; }
   .apartment__info .amenities, .apartment__info .all-amenities { order: 3; }
 }
+
 
 /* Accueil : prix « à partir de » juste au-dessus du bouton */
 .hero__price { margin: 0; font-size: 1.1rem; color: var(--charbon); }
