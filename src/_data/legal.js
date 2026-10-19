@@ -145,12 +145,12 @@ export default {
   // Repris du guide de bienvenue. Ne JAMAIS écrire ici de code d'accès ni de mot de passe Wi-Fi :
   // cette page est publique pour quiconque connaît son adresse. Ces informations sont envoyées sur WhatsApp.
   houseRules: {
-    updated: "2026-10-11",
+    updated: "2026-10-19",
     // Une entrée de p peut être un paragraphe (texte) ou un intertitre : { heading: "Gaz" }.
     en: {
       sections: [
         { h: "Arrival", p: [
-          "Check-in from {checkIn}. If you arrive late, please let us know by message.",
+          "Check-in from {checkIn}. Early check-in is possible on request, subject to availability: $10 per hour started, capped at the price of one night of your stay. If you arrive late, please let us know by message.",
           "Before your arrival, please send us the name of each guest.",
           "Have your passport ready to register with the building's security guards. On your first entry, go to reception to access the lift. Your lift badge is in the apartment, on the shoe cabinet by the entrance.",
           "Within 3 hours of your arrival, report any damage or missing item to us, with a photo, on WhatsApp or through the platform used for your booking. After this time, the apartment is considered received in good condition.",
@@ -201,7 +201,7 @@ export default {
         ] },
         { h: "Waste", p: ["Full rubbish bags go to the bins in the building's courtyard, except on cleaning days."] },
         { h: "Departure", p: [
-          "Check-out by {checkOut}. Late check-out is possible on request, for an additional fee.",
+          "Check-out by {checkOut}. Late check-out is possible on request, subject to availability: $10 per hour started, capped at the price of one night of your stay.",
           "Before leaving: close all windows, switch off all appliances and close the taps, place used towels on the shower floor, close the rubbish bags and leave them in the kitchen bin, check you have all your belongings.",
           "Return the lift badge to the first shelf of the shoe cabinet by the entrance, next to the vase.",
         ] },
@@ -210,7 +210,7 @@ export default {
     fr: {
       sections: [
         { h: "Arrivée", p: [
-          "Arrivée dès {checkIn}. En cas d'arrivée tardive, merci de nous prévenir par message.",
+          "Arrivée dès {checkIn}. Arrivée anticipée possible sur demande, selon les disponibilités : 10 $ par heure entamée, plafonnés au prix d'une nuit de votre séjour. En cas d'arrivée tardive, merci de nous prévenir par message.",
           "Avant votre arrivée, merci de nous envoyer le nom de chaque voyageur.",
           "Munissez-vous de votre passeport pour vous enregistrer auprès des gardes de la résidence. Lors du premier passage, présentez-vous à l'accueil pour accéder à l'ascenseur. Votre badge d'ascenseur se trouve dans l'appartement, sur le meuble à chaussures de l'entrée.",
           "Dans les 3 h suivant votre arrivée, signalez-nous tout dommage ou équipement manquant, avec une photo, sur WhatsApp ou via la plateforme utilisée pour votre réservation. Passé ce délai, l'appartement est considéré comme reçu en bon état.",
@@ -261,7 +261,7 @@ export default {
         ] },
         { h: "Déchets", p: ["Les sacs pleins sont à déposer dans les poubelles de la cour de l'immeuble, sauf les jours de ménage."] },
         { h: "Départ", p: [
-          "Départ avant {checkOut}. Départ tardif possible sur demande, avec supplément.",
+          "Départ avant {checkOut}. Départ tardif possible sur demande, selon les disponibilités : 10 $ par heure entamée, plafonnés au prix d'une nuit de votre séjour.",
           "Avant de partir : fermez toutes les fenêtres, éteignez tous les appareils et fermez les robinets, déposez les serviettes utilisées au sol de la douche, fermez les sacs poubelle et laissez-les dans la poubelle de la cuisine, vérifiez que vous n'oubliez rien.",
           "Reposez le badge d'ascenseur sur la première étagère du meuble à chaussures de l'entrée, à côté du vase.",
         ] },
