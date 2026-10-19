@@ -141,7 +141,7 @@ export default {
         },
         {
           q: "Early check-in or late check-out?",
-          a: "Check-in is from 3 pm and check-out by 11 am. An earlier arrival or a later departure is possible for an additional fee, subject to availability. Ask us on WhatsApp.",
+          a: "Check-in is from 3 pm and check-out by 11 am. An earlier arrival or a later departure is possible on request, subject to availability: $10 per hour started, capped at the price of one night of your stay for each. Ask us on WhatsApp.",
         },
         {
           q: "Is cleaning included?",
@@ -337,7 +337,7 @@ export default {
         },
         {
           q: "Arrivée anticipée ou départ tardif ?",
-          a: "L'arrivée se fait à partir de 15 h et le départ avant 11 h. Une arrivée plus tôt ou un départ plus tard sont possibles moyennant un supplément, selon les disponibilités. Demandez-nous sur WhatsApp.",
+          a: "L'arrivée se fait à partir de 15 h et le départ avant 11 h. Une arrivée plus tôt ou un départ plus tard sont possibles sur demande, selon les disponibilités : 10 $ par heure entamée, plafonnés au prix d'une nuit de votre séjour pour chacun. Demandez-nous sur WhatsApp.",
         },
         {
           q: "Le ménage est-il compris ?",

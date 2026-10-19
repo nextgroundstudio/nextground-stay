@@ -86,7 +86,7 @@ export default {
 
   // ------------------------------------------------------------------ Conditions de réservation
   terms: {
-    updated: "2026-10-11",
+    updated: "2026-10-19",
     en: {
       title: "Booking terms",
       sections: [
@@ -106,7 +106,8 @@ export default {
           "Less than 24 hours before arrival: 75% of the booking amount is due.",
         ] },
         { h: "Arrival and departure", p: [
-          "Check-in from {checkIn} (self check-in with a smart lock), check-out by {checkOut}. Early check-in is possible for an additional fee, subject to availability.",
+          "Check-in from {checkIn} (self check-in with a smart lock), check-out by {checkOut}.",
+          "Early check-in and late check-out are available on request, subject to availability: $10 per hour, any hour started being due in full, converted into your payment currency at the rate on the day of payment. Each of the two supplements is capped at the price of one night of your stay.",
           "Minimum stay: {minNights} nights. The apartment hosts a maximum of {guests} guests.",
         ] },
         { h: "During your stay", p: [{ text: "Guests agree to follow the", link: "houseRules", label: "house rules", after: ", which they sign before arrival. Any damage must be reported to us without delay." }] },
@@ -131,7 +132,8 @@ export default {
           "Moins de 24 heures avant l'arrivée : 75 % du montant de la réservation est dû.",
         ] },
         { h: "Arrivée et départ", p: [
-          "Arrivée dès {checkIn} (en autonomie, serrure connectée), départ avant {checkOut}. Arrivée anticipée possible moyennant un supplément, selon les disponibilités.",
+          "Arrivée dès {checkIn} (en autonomie, serrure connectée), départ avant {checkOut}.",
+          "Arrivée anticipée et départ tardif possibles sur demande, selon les disponibilités : 10 $ de l'heure, toute heure entamée étant due, convertis dans la devise de paiement au cours du jour du paiement. Chacun des deux suppléments est plafonné au prix d'une nuit de votre séjour.",
           "Séjour de {minNights} nuits minimum. L'appartement accueille {guests} voyageurs au maximum.",
         ] },
         { h: "Pendant le séjour", p: [{ text: "Les voyageurs s'engagent à respecter le", link: "houseRules", label: "règlement intérieur", after: ", qu'ils signent avant l'arrivée. Tout dommage doit nous être signalé sans délai." }] },
