@@ -192,7 +192,7 @@ picture { display: block; height: 100%; }
 /* Centrés sous la photo à partir de la tablette ; alignés à gauche sur mobile, comme le reste de la page. */
 @media (min-width: 760px) { .highlights { justify-content: center; } }
 /* Mobile : « WESTLANDS · NAIROBI » sur sa propre ligne, détaché des repères en dessous */
-@media (max-width: 759px) { .highlights .label { flex-basis: 100%; margin-bottom: .6rem; } }
+@media (max-width: 759px) { .highlights .label { flex-basis: 100%; margin-bottom: .6rem; text-align: center; } }
 
 /* L'appartement */
 .gallery { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem; }
