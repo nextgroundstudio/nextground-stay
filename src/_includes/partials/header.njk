@@ -1,6 +1,8 @@
 {#- En-tête collant : logo (le trait s'allonge au défilement), menu, langue, devise, bouton Réserver. -#}
 {%- set home = routes.home[lang.code] -%}
-{%- set anchor = "" if pageKey == "home" else home -%}
+{#- Ancres seules (#faq) uniquement sur l'accueil lui-même : la page 404 partage pageKey "home"
+    mais n'a pas ces sections, ses liens doivent donc repartir de l'accueil (/#faq). -#}
+{%- set anchor = "" if (pageKey == "home" and page.url == home) else home -%}
 <header class="header">
   <nav class="header__inner" aria-label="Menu">
     <a class="brand" href="{{ home }}" aria-label="{{ site.name }}">
