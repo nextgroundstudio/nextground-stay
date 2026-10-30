@@ -257,6 +257,10 @@ picture { display: block; height: 100%; }
 .reviews { display: flex; flex-wrap: wrap; gap: 1.5rem; }
 .review { flex: 1 1 320px; margin: 0; background: var(--blanc); border: 1.5px solid var(--sauge); padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.75rem; }
 .review blockquote { margin: 1rem 0 0; font-size: 1.1rem; line-height: 1.6; }
+/* Avis longs : 8 lignes, puis « Lire la suite » (le bouton n'apparaît que si le texte est coupé) */
+.review blockquote.is-clamped { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 8; line-clamp: 8; overflow: hidden; }
+.review__more { margin: .6rem 0 0; padding: 0; background: none; border: 0; font: inherit; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--olive); cursor: pointer; }
+.review__more:hover { text-decoration: underline; text-underline-offset: 3px; }
 .review figcaption { display: flex; align-items: center; gap: .9rem; font-size: 13px; color: var(--muted); }
 .review figcaption strong { color: var(--charbon); font-size: 15px; }
 /* Plus de 2 avis sur mobile, plus de 3 sur ordinateur : une rangée qui défile, la carte suivante dépasse

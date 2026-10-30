@@ -17,7 +17,8 @@
           {#- Avis écrit dans l'autre langue : traduction affichée (textFr sur le site français, textEn sur l'anglais) -#}
           {%- set translation = r.textFr if lang.code == "fr" else r.textEn %}
           {%- set translated = r.lang != lang.code and translation %}
-          <blockquote lang="{{ lang.code if translated else r.lang }}">{{ "« " if lang.code == "fr" else "“" }}{{ translation if translated else r.text }}{{ " »" if lang.code == "fr" else "”" }}</blockquote>
+          <blockquote class="is-clamped" data-review-text lang="{{ lang.code if translated else r.lang }}">{{ "« " if lang.code == "fr" else "“" }}{{ translation if translated else r.text }}{{ " »" if lang.code == "fr" else "”" }}</blockquote>
+          <button class="review__more" type="button" data-review-more data-more="{{ t.reviews.more }}" data-less="{{ t.reviews.less }}" aria-expanded="false" hidden>{{ t.reviews.more }}</button>
           {%- if translated %}<p class="review__translated">{{ t.reviews.translated }}</p>{% endif %}
         </div>
         <figcaption>

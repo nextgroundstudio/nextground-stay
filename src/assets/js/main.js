@@ -137,6 +137,20 @@
   });
 
   /* --- 4 bis. Avis : défilement avec les flèches (au doigt, c'est natif) ------ */
+  // Avis longs : bouton « Lire la suite » affiché seulement si le texte dépasse les 8 lignes.
+  $$("[data-review-text]").forEach((q) => {
+    const btn = q.nextElementSibling;
+    if (!btn || !btn.matches("[data-review-more]")) return;
+    const check = () => { if (q.classList.contains("is-clamped")) btn.hidden = q.scrollHeight <= q.clientHeight + 2; };
+    check();
+    addEventListener("resize", check, { passive: true });
+    document.fonts?.ready.then(check);
+    btn.addEventListener("click", () => {
+      const open = q.classList.toggle("is-clamped") === false;
+      btn.textContent = open ? btn.dataset.less : btn.dataset.more;
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  });
   const reviews = $("[data-reviews]");
   if (reviews) {
     const step = () => (reviews.firstElementChild?.getBoundingClientRect().width || 300) + 24;
