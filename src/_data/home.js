@@ -135,7 +135,8 @@ export default {
         meta: { en: "Stayed 1 night · Oct. 2026", fr: "Séjour d'une nuit · oct. 2026" },
       },
       {
-        name: "Freelance",
+        // Le profil n'indique pas de prénom (« Freelance ») : mention neutre, au pluriel (séjour en groupe).
+        name: { en: "Guests from Accra", fr: "Voyageurs d'Accra" },
         lang: "en",
         text: "Great host. Very helpful and was so supportive. We really felt like home.",
         textFr: "Hôte formidable. Très serviable et d'un grand soutien. Nous nous sommes vraiment sentis comme chez nous.",

@@ -22,8 +22,9 @@
           {%- if translated %}<p class="review__translated">{{ t.reviews.translated }}</p>{% endif %}
         </div>
         <figcaption>
-          <span class="avatar" aria-hidden="true">{{ r.name | first }}</span>
-          <span class="review__who"><strong>{{ r.name }}</strong><span>{{ r.meta | loc(lang.code) }}</span></span>
+          {%- set who = r.name | loc(lang.code) %}
+          <span class="avatar" aria-hidden="true">{{ who | first }}</span>
+          <span class="review__who"><strong>{{ who }}</strong><span>{{ r.meta | loc(lang.code) }}</span></span>
         </figcaption>
       </figure>
       {%- endfor %}
