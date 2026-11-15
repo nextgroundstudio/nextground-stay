@@ -107,6 +107,13 @@ export default {
     // Au-delà de 2 avis sur mobile et de 3 sur ordinateur, ils défilent au doigt ou avec les flèches.
     items: [
       {
+        name: "Freelance",
+        lang: "en",
+        text: "Great host. Very helpful and was so supportive. We really felt like home.",
+        textFr: "Hôte formidable. Très serviable et d'un grand soutien. Nous nous sommes vraiment sentis comme chez nous.",
+        meta: { en: "Stayed 3 nights · Nov. 2026", fr: "Séjour de 3 nuits · nov. 2026" },
+      },
+      {
         name: "Rachel",
         lang: "en",
         text: "I can say with confidence that this is one of the best places I have ever stayed! We truly loved our stay here. The building is very easy to find, secure, and conveniently located close to so many places we had planned to go to, like Sarit Centre, the Museum of Illusions, and JW Marriott. Supermarkets, markets and craft shops are also many in the area. Most of these places are within walking distance. The apartment itself is so pretty… very secure, clean, cosy… exactly as it looks in the pictures. It had everything we needed, and the view from the living room and bedroom balcony is a sight to see, especially at night. And there's the rooftop pool, which we thoroughly enjoyed under the blazing Nairobi sun! The host is very polite, helpful and responsive. The housekeeper, Cynthia, is also great! As long as it's available, this is where I'll be staying whenever I'm in Nairobi. Thank you so much Amanda & Lysiane.",
@@ -126,13 +133,6 @@ export default {
         text: "I had a lovely stay at Amanda's. The home is exactly as pictured, with many thoughtful touches and provisions for guests.",
         textFr: "J'ai passé un très bon séjour chez Amanda. Le logement est exactement comme sur les photos, avec beaucoup d'attentions et tout le nécessaire pour les voyageurs.",
         meta: { en: "Stayed 3 nights · Sept. 2026", fr: "Séjour de 3 nuits · sept. 2026" },
-      },
-      {
-        name: "Freelance",
-        lang: "en",
-        text: "Great host. Very helpful and was so supportive. We really felt like home.",
-        textFr: "Hôte formidable. Très serviable et d'un grand soutien. Nous nous sommes vraiment sentis comme chez nous.",
-        meta: { en: "Stayed 3 nights · Nov. 2026", fr: "Séjour de 3 nuits · nov. 2026" },
       },
       {
         name: "Naomi",
