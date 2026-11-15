@@ -134,6 +134,13 @@ export default {
         textFr: "Le logement est conforme à l'annonce et l'hôte a été très accueillant et réactif.",
         meta: { en: "Stayed 1 night · Oct. 2026", fr: "Séjour d'une nuit · oct. 2026" },
       },
+      {
+        name: "Freelance",
+        lang: "en",
+        text: "Great host. Very helpful and was so supportive. We really felt like home.",
+        textFr: "Hôte formidable. Très serviable et d'un grand soutien. Nous nous sommes vraiment sentis comme chez nous.",
+        meta: { en: "Stayed 3 nights · Nov. 2026", fr: "Séjour de 3 nuits · nov. 2026" },
+      },
     ],
   },
 };
