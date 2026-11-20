@@ -107,6 +107,13 @@ export default {
     // Au-delà de 2 avis sur mobile et de 3 sur ordinateur, ils défilent au doigt ou avec les flèches.
     items: [
       {
+        name: "Farouk",
+        lang: "en",
+        text: "Had a wonderful stay at the apartment. Would definitely stay here whenever I find myself in Nairobi.",
+        textFr: "Un très bon séjour dans l'appartement. J'y reviendrai sans hésiter chaque fois que je serai à Nairobi.",
+        meta: { en: "Stayed 3 nights · Nov. 2026", fr: "Séjour de 3 nuits · nov. 2026" },
+      },
+      {
         name: "Freelance",
         lang: "en",
         text: "Great host. Very helpful and was so supportive. We really felt like home.",
