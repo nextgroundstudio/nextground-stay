@@ -107,6 +107,13 @@ export default {
     // Au-delà de 2 avis sur mobile et de 3 sur ordinateur, ils défilent au doigt ou avec les flèches.
     items: [
       {
+        name: "Bucanayandi",
+        lang: "en",
+        text: "The place was absolutely fabulous. From the moment I arrived, I was impressed by the atmosphere, the attention to detail, and the overall experience. Everything felt thoughtfully put together, making it the perfect place to relax, enjoy myself, and create beautiful memories. It\u2019s not often you find a place that exceeds your expectations in so many ways. Definitely an experience worth having, and one I would happily recommend to anyone looking for something special.",
+        textFr: "Un endroit absolument fabuleux. Dès mon arrivée, l'ambiance, le souci du détail et l'expérience dans son ensemble ont fait forte impression. Tout semblait pensé avec soin, pour en faire l'endroit idéal où se détendre, profiter et créer de beaux souvenirs. Il est rare de trouver un lieu qui dépasse autant vos attentes. Une expérience qui vaut vraiment la peine, que je recommande volontiers à quiconque cherche quelque chose de spécial.",
+        meta: { en: "Stayed 4 nights · Nov. 2026", fr: "Séjour de 4 nuits · nov. 2026" },
+      },
+      {
         name: "Farouk",
         lang: "en",
         text: "Had a wonderful stay at the apartment. Would definitely stay here whenever I find myself in Nairobi.",
