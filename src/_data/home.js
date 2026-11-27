@@ -107,6 +107,13 @@ export default {
     // Au-delà de 2 avis sur mobile et de 3 sur ordinateur, ils défilent au doigt ou avec les flèches.
     items: [
       {
+        name: "Tom",
+        lang: "en",
+        text: "Convenient location.",
+        textFr: "Emplacement pratique.",
+        meta: { en: "Stayed 3 nights · Nov. 2026", fr: "Séjour de 3 nuits · nov. 2026" },
+      },
+      {
         name: "Bucanayandi",
         lang: "en",
         text: "The place was absolutely fabulous. From the moment I arrived, I was impressed by the atmosphere, the attention to detail, and the overall experience. Everything felt thoughtfully put together, making it the perfect place to relax, enjoy myself, and create beautiful memories. It\u2019s not often you find a place that exceeds your expectations in so many ways. Definitely an experience worth having, and one I would happily recommend to anyone looking for something special.",
